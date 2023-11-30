@@ -1,0 +1,109 @@
+.header {
+	.content-layout {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+
+		h1 {
+			font-family: var(--baseFont);
+			font-weight: 400;
+			text-transform: uppercase;
+		}
+		.gnb-menu {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			align-items: center;
+			flex: 2;
+			gap: 2rem;
+
+			.gnb-layout {
+				ul {
+					display: flex;
+					gap: 1.5rem;
+
+					li {
+						font-family: var(--titleFont);
+					}
+				}
+			}
+			.gnb-util {
+				.thema {
+					width: 60px;
+					height: 26px;
+					position: relative;
+					top: 2px;
+					border: 1px solid rgba(var(--baseColor-code), 1);
+					border-radius: 18px;
+					cursor: pointer;
+					transform: scale(0.7);
+
+					.ball {
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						top: 2px;
+						left: 2px;
+						background-color: rgba(var(--baseColor-code), 1);
+						border-radius: 10px;
+						font-size: 0;
+						transition: 0.7s;
+					}
+				}
+				.thema.dark {
+					.ball {
+						left: 35px;
+					}
+				}
+			}
+			.gnb-social {
+				transition: background-color 0.2s, border 0.2s;
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 10px;
+					li {
+						gap: 1;
+						display: flex;
+						border: 1px solid rgba(var(--baseColor-code), 1);
+						border-radius: 50%;
+						overflow: hidden;
+						a {
+							width: 32px;
+							height: 32px;
+							line-height: 32px;
+							font-size: 13px;
+							text-transform: uppercase;
+							text-align: center;
+
+							transition: background-color 0.2s, border 0.2s;
+						}
+						&:hover {
+							color: var(--bgColor);
+							background-color: rgba(var(--baseColor-code), 1);
+						}
+					}
+				}
+			}
+			.line-verticle {
+				width: 1px;
+				height: 32px;
+				background-color: rgba(var(--baseColor-code), 1);
+			}
+		}
+	}
+	.content-layout > * {
+	}
+
+	.line {
+		width: 100%;
+		height: 1px;
+		perspective-origin: 50%;
+		transform-origin: 50%;
+		background-color: rgba(var(--baseColor-code), 1);
+		border-top-width: 0;
+	}
+}

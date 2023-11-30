@@ -1,0 +1,177 @@
+// 전역 스타일
+
+/*
+width, height
+margin, padding
+display
+float
+position, top, left, right, bottom
+background, border
+font, color, letter-spacing, white-space
+text-align, vertical-align, text-decoration, text-indent
+overflow
+z-index
+나머지 속성들
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: none;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: var(--baseFont);
+	vertical-align: baseline;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+a {
+	outline: 0;
+	font-family: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+	color: inherit;
+	line-height: inherit;
+}
+
+html {
+	min-height: 100%;
+	overflow-y: auto;
+
+	body {
+		&::-webkit-scrollbar {
+			width: 4px;
+			background-color: transparent;
+			transition: background-color 1s;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: 4px;
+			background-color: var(--pointColor);
+		}
+
+		#root {
+			padding: 1rem;
+
+			.wrap > * {
+				font-size: 15px;
+				font-weight: 400;
+			}
+
+			.wrap {
+				min-height: 100vh;
+				padding-left: 3rem;
+				padding-right: 3rem;
+				background-color: var(--bgColor);
+				border: 1px solid var(--baseColor);
+				font-family: var(--baseFont);
+				font-size: var(--baseSize);
+				color: var(--baseColor);
+				transition: color 1s, background-color 1s;
+
+				.wide-layout {
+					margin: 0 auto;
+				}
+				.content-layout {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

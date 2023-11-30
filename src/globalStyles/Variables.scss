@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Roboto+Mono:wght@200;300;400;500&family=Syne:wght@400;500;600;700&display=swap');
+@import url('https:; //api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet');
+
+//font-family: 'Satoshi', sans-serif;
+// font-family: 'Nanum Gothic', sans-serif;
+// font-family: 'Noto Sans KR', sans-serif;
+// font-family: 'Roboto Mono', sans-serif;
+// font-family: 'Syne', sans-serif;
+
+:root {
+	--baseFont: 'Satoshi', 'Noto Sans KR', 'Nanum Gothic', '맑은 고딕';
+	--titleFont: 'Roboto Mono', 'sans-serif', 'Noto Sans KR', 'Nanum Gothic', '맑은 고딕';
+	--pointFont: 'Syne', 'sans-serif', 'Noto Sans KR', 'Nanum Gothic', '맑은 고딕';
+	--baseColor: #191919;
+	--baseColor-code: 19, 19, 19;
+	--bgColor: #fdfbf5;
+	--pointColor: #ddb897;
+	--baseSize: 1rem;
+	--tit1Size: 5rem;
+	--tit2Size: 4rem;
+	--tit3Size: 3.5rem;
+	--tit4Size: 1.75rem;
+}
+
+.dark {
+	--baseColor: #efefef;
+	--baseColor-code: 255, 255, 255;
+	--bgColor: #191919;
+}
