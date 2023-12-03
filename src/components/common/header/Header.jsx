@@ -1,11 +1,11 @@
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	return (
 		/* S : header */
 		<header className='header'>
-			<div className='content-layout'>
+			<div className='header-layout'>
 				<h1 className='logo'>
 					<Link to='/'>Logo</Link>
 				</h1>
@@ -14,8 +14,8 @@ export default function Header() {
 					<div className='gnb-layout'>
 						<ul>
 							<li>
-								<NavLink to='/department' activeClassName={'on'}>
-									Department
+								<NavLink to='/aboutUs' activeClassName={'on'}>
+									AboutUs
 								</NavLink>
 							</li>
 							<li>
@@ -25,7 +25,7 @@ export default function Header() {
 							</li>
 							<li>
 								<NavLink to='/gallery' activeClassName={'on'}>
-									Gallay
+									Gallery
 								</NavLink>
 							</li>
 							<li>
@@ -47,7 +47,7 @@ export default function Header() {
 					</div>
 
 					<div className='gnb-util'>
-						<div className='thema'>
+						<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
 							<div className='ball'>
 								<span>ball</span>
 							</div>
@@ -71,7 +71,7 @@ export default function Header() {
 					</div>
 				</div>
 			</div>
-			<div className='line'></div>
+			<div className='line-holizontal'></div>
 		</header>
 		/* // E : header */
 	);

@@ -1,34 +1,24 @@
 {
-  "our+members": [
+  "OUR TEAM": [
     {
-      "name": "David",
+      "name": "Jacob Jones",
       "position": "President",
-      "pic": "member1.jpg"
+      "pic": "member1.mp4"
     },
     {
-      "name": "Julia",
+      "name": "Kristin Watson",
       "position": "Vice President",
-      "pic": "member2.jpg"
+      "pic": "member2.mp4"
     },
     {
-      "name": "Emily",
+      "name": "Cameron Williamson",
       "position": "UI Designer",
-      "pic": "member3.jpg"
+      "pic": "member3.mp4"
     },
     {
-      "name": "Michael",
+      "name": "Guy Hawkins",
       "position": "Front-end Developer",
-      "pic": "member4.jpg"
-    },
-    {
-      "name": "Emma",
-      "position": "Back-end Developer",
-      "pic": "member5.jpg"
-    },
-    {
-      "name": "Peter",
-      "position": "Project Manager",
-      "pic": "member6.jpg"
+      "pic": "member4.mp4"
     }
   ]
 }

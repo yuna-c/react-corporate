@@ -13,17 +13,22 @@
 	--pointFont: 'Syne', 'sans-serif', 'Noto Sans KR', 'Nanum Gothic', '맑은 고딕';
 	--baseColor: #191919;
 	--baseColor-code: 19, 19, 19;
+	--pointColor-code: 255, 255, 255;
 	--bgColor: #fdfbf5;
 	--pointColor: #ddb897;
 	--baseSize: 1rem;
-	--tit1Size: 5rem;
-	--tit2Size: 4rem;
-	--tit3Size: 3.5rem;
-	--tit4Size: 1.75rem;
+	--tit0Size: 8rem;
+	--tit1Size: 6.5rem;
+	--tit2Size: 6rem;
+	--tit3Size: 5rem;
+	--tit4Size: 4rem;
+	--tit5Size: 3.5rem;
+	--tit6Size: 1.75rem;
 }
 
 .dark {
 	--baseColor: #efefef;
 	--baseColor-code: 255, 255, 255;
+	--pointColor-code: 19, 19, 19;
 	--bgColor: #191919;
 }
