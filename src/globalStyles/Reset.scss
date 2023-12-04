@@ -212,6 +212,7 @@ html {
 				font-size: var(--baseSize);
 				color: var(--baseColor);
 				transition: color 1s, background-color 1s;
+
 				.wrapper {
 					padding-left: 3rem;
 					padding-right: 3rem;
@@ -243,6 +244,15 @@ html {
 							padding-top: 4rem;
 							padding-bottom: 4rem;
 						}
+					}
+				}
+			}
+
+			// svg filter 추가
+			.dark {
+				.icon {
+					img {
+						filter: invert(100%);
 					}
 				}
 			}
