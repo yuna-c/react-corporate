@@ -1,8 +1,8 @@
-npx create-react-app 폴더명
-npm i sass --save scss 설치
-npm i react-router-dom@5 --save 리액트 라우터 5버전대 설치
-npm i react@17 react-dom@17 --save 리액트 17버전 다운그레이드
-
+npx create-react-app 폴더명<br>
+npm i sass --save scss 설치<br>
+npm i react-router-dom@5 --save 리액트 라우터 5버전대 설치<br>
+npm i react@17 react-dom@17 --save 리액트 17버전 다운그레이드<br>
+https://react-corporate.vercel.app/<br><br>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
