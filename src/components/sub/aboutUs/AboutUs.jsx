@@ -11,7 +11,7 @@ export default function AboutUs() {
 
 	const path = useRef(process.env.PUBLIC_URL);
 
-	// const shortenText = useCustomText('shorten');
+	const shortenText = useCustomText('shorten');
 	const combinedTitle = useCustomText('combined');
 
 	const fetchAboutUs = () => {
@@ -24,7 +24,7 @@ export default function AboutUs() {
 	};
 
 	const fetchValue = () => {
-		fetch(`${path.current}/DB/Value.json`)
+		fetch(`${path.current}/DB/value.json`)
 			.then((data) => data.json())
 			.then((json) => {
 				setValueTit(Object.keys(json)[0]);
@@ -98,7 +98,7 @@ export default function AboutUs() {
 						return (
 							<article key={member + idx}>
 								<div className='video'>
-									<video src={`${path.current}/img/${member.pic}`} alt={member.name} autoPlay muted loop playsInline />
+									<video src={`${path.current}/img/${member.pic}`} alt={member.name} autoPlay muted loop />
 								</div>
 
 								<h4>{member.name}</h4>
