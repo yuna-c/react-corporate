@@ -75,7 +75,7 @@ export default function Youtube() {
 						</div>
 
 						<div className='video-example'>
-							<video src={`${path.current}/img/services-video-transcode.mp4`} alt='services-content-transcode' autoPlay muted loop />
+							<video src={`${path.current}/img/services-video-transcode.mp4`} alt='services-content-transcode' autoPlay muted loop playsinline />
 						</div>
 
 						<div className='line-holizontal'></div>

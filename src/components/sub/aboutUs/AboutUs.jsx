@@ -98,7 +98,7 @@ export default function AboutUs() {
 						return (
 							<article key={member + idx}>
 								<div className='video'>
-									<video src={`${path.current}/img/${member.pic}`} alt={member.name} autoPlay muted loop />
+									<video src={`${path.current}/img/${member.pic}`} alt={member.name} autoPlay muted loop playsinline />
 								</div>
 
 								<h4>{member.name}</h4>
