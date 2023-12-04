@@ -56,7 +56,15 @@ export default function AboutUs() {
 					<p>
 						Our vision is to <br></br> connect with the <br></br>world trough<br></br> innovation.
 					</p>
-					<button className='btn'>SEE ALL WORK </button>
+
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>SEE ALL WORK </button>
+							<button className='btn-active btn-inner-text-hover'>SEE ALL WORK </button>
+						</div>
+					</div>
+
+					<button className='btn'>NoN animation</button>
 				</div>
 
 				<div className='con-area'>
@@ -124,7 +132,13 @@ export default function AboutUs() {
 				<div className='line-vertical'></div>
 				<div className='con-area'>
 					<p>Together, let's elevate your brand to new heights by unleashing its full potential and captivating your target audience.</p>
-					<button className='btn'>Our Services</button>
+					{/* <button className='btn'>Our Services</button> */}
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>Our Services</button>
+							<button className='btn-active btn-inner-text-hover'>Our Services</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</Layout>

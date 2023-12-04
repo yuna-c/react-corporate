@@ -39,11 +39,37 @@ export default function Youtube() {
 				We create your <br></br>brand together.
 			</h3>
 
-			<div className='button-area'>
+			<div className='sort-area'>
+				{/* 
 				<button className='btn'>BRANDING</button>
 				<button className='btn'>DESIGN</button>
 				<button className='btn'>VIDEO</button>
 				<button className='btn'>CONTENT</button>
+				*/}
+				<div className='btn-area'>
+					<div className='btn-inner'>
+						<button className='btn-active btn-inner-text'>BRANDING</button>
+						<button className='btn-active btn-inner-text-hover'>BRANDING</button>
+					</div>
+				</div>
+				<div className='btn-area'>
+					<div className='btn-inner'>
+						<button className='btn-active btn-inner-text'>MORE TEMPLATES</button>
+						<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
+					</div>
+				</div>
+				<div className='btn-area'>
+					<div className='btn-inner'>
+						<button className='btn-active btn-inner-text'>VIDEO</button>
+						<button className='btn-active btn-inner-text-hover'>VIDEO</button>
+					</div>
+				</div>
+				<div className='btn-area'>
+					<div className='btn-inner'>
+						<button className='btn-active btn-inner-text'>CONTENT</button>
+						<button className='btn-active btn-inner-text-hover'>CONTENT</button>
+					</div>
+				</div>
 			</div>
 
 			<div className='line-holizontal'></div>
@@ -57,7 +83,14 @@ export default function Youtube() {
 					<p>
 						VIDEOS ADS <br></br>SOCIAL MEDIA SHORTS <br></br>MOVIE TRAILERS
 					</p>
-					<button className='btn'>GET IN TOUCH</button>
+
+					{/* <button className='btn'>GET IN TOUCH</button> */}
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>GET IN TOUCH</button>
+							<button className='btn-active btn-inner-text-hover'>GET IN TOUCH</button>
+						</div>
+					</div>
 				</div>
 
 				<div className='con-area'>

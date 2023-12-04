@@ -92,7 +92,13 @@ export default function Footer() {
 									</NavLink>
 								</li>
 								<li>
-									<button className='btn'>MORE TEMPLATES</button>
+									<div className='btn-area'>
+										<div className='btn-inner'>
+											<button className='btn-active btn-inner-text'>MORE TEMPLATES</button>
+											<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
+										</div>
+									</div>
+									{/* <button className='btn'>MORE TEMPLATES</button> */}
 								</li>
 							</ul>
 						</div>
