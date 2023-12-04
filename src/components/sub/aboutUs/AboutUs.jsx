@@ -11,7 +11,7 @@ export default function AboutUs() {
 
 	const path = useRef(process.env.PUBLIC_URL);
 
-	const shortenText = useCustomText('shorten');
+	// const shortenText = useCustomText('shorten');
 	const combinedTitle = useCustomText('combined');
 
 	const fetchAboutUs = () => {
