@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export const useMedia = (opt) => {
-	const defOpt = { mobile: 640, tablet: 1000, laptop: 1400 };
+	const defOpt = { limit: 400, mobile: 640, tablet: 1000, laptop: 1400 };
 	const result = { ...defOpt, ...opt }; // opt : 디폴트 객체 덮어쓰게 하기
 	const [Type, setType] = useState(''); // 문자열
 
@@ -10,7 +10,8 @@ export const useMedia = (opt) => {
 		if (wid >= result.laptop) setType(''); //width가 laptop보다 커지면
 		if (wid >= result.tablet && wid < result.laptop) setType('laptop'); //클래스 명으로 활용
 		if (wid >= result.mobile && wid < result.tablet) setType('tablet');
-		if (wid >= 0 && wid < result.mobile) setType('mobile');
+		if (wid >= result.limit && wid < result.mobile) setType('mobile');
+		if (wid >= 0 && wid < result.limit) setType('limit');
 	};
 
 	useEffect(() => {

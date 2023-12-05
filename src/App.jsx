@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { useMedia } from './hooks/useMidia';
 import './globalStyles/Reset.scss';
 import './globalStyles/Variables.scss';
+import './globalStyles/Common.scss';
 import Header from './components/common/header/Header';
 import Footer from './components/common/footer/Footer';
 // import Menu from './components/common/menu/Menu';

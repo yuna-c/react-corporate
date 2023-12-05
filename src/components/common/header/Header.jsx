@@ -46,28 +46,30 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 						</ul>
 					</div>
 
-					<div className='gnb-util'>
-						<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
-							<div className='ball'>
-								<span>ball</span>
+					<div className='side-layout'>
+						<div className='gnb-util'>
+							<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+								<div className='ball'>
+									<span>ball</span>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div className='line-verticle'></div>
+						<div className='line-verticle'></div>
 
-					<div className='gnb-social'>
-						<ul>
-							<li className='cycle'>
-								<Link to='/'>Tw</Link>
-							</li>
-							<li>
-								<Link to='/'>In</Link>
-							</li>
-							<li>
-								<Link to='/'>Fa</Link>
-							</li>
-						</ul>
+						<div className='gnb-social'>
+							<ul>
+								<li>
+									<Link to='/'>Tw</Link>
+								</li>
+								<li>
+									<Link to='/'>In</Link>
+								</li>
+								<li>
+									<Link to='/'>Fa</Link>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
