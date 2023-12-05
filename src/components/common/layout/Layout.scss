@@ -7,9 +7,9 @@
 	transition: opacity 1s, transform 1s;
 
 	h2 {
+		margin-bottom: 1rem;
 		font-size: 0;
 		font-weight: normal;
-		margin-bottom: 8px;
 		opacity: 0.9;
 		text-transform: uppercase;
 
@@ -19,14 +19,11 @@
 			letter-spacing: -0.04em;
 			opacity: 0;
 			transition-property: opacity;
-
-			// &:nth-child(6) {
-			// 	margin-left: 5px;
-			// }
 		}
 	}
 
 	h3 {
+		display: grid;
 		font-size: var(--tit0Size);
 		line-height: 1;
 	}
@@ -45,7 +42,6 @@
 		h2 {
 			span {
 				opacity: 1;
-				transform: scale(1);
 			}
 		}
 	}
@@ -53,23 +49,20 @@
 
 //tablet
 .tablet,
-.mobile {
+.mobile,
+.limit {
 	.layout {
-		width: 80vw;
-		margin: 60px auto;
+		h3 {
+			font-size: 5.5rem;
+		}
 	}
 }
 
 //mobile
-.mobile {
-	.layout {
-		width: 85vw;
-		margin: 50px auto;
+.mobile,
+.limit {
+}
 
-		h2 {
-			span {
-				font-size: 10vw;
-			}
-		}
-	}
+//limit
+.limit {
 }

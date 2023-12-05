@@ -148,14 +148,10 @@
 
 			.gnb-menu {
 				.side-layout {
-					.line-verticle {
+					.gnb-util {
 						display: none;
 					}
-
-					.gnb-util {
-					}
-
-					.gnb-social {
+					.line-verticle {
 						display: none;
 					}
 				}
@@ -173,7 +169,7 @@
 
 			.gnb-menu {
 				.side-layout {
-					.gnb-util {
+					.gnb-social {
 						display: none;
 					}
 				}

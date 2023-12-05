@@ -1,23 +1,26 @@
 .AboutUs {
-	h3 {
-		font-family: var(--pointFont);
-		font-weight: 400;
-	}
+	.visualBox {
+		h3 {
+			font-family: var(--pointFont);
+			font-weight: 400;
+			margin-bottom: 5rem;
+		}
 
-	.img-area {
-		margin: 5rem 0;
-		border-radius: 1rem;
-		position: relative;
-		overflow: hidden;
-		transform: translate(0);
+		.img-area {
+			margin-bottom: 5rem;
+			border-radius: 1rem;
+			position: relative;
+			overflow: hidden;
+			transform: translate(0);
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			will-change: transform;
-			transform: translate3d(0px, 1.49478%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-			transform-style: preserve-3d;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				will-change: transform;
+				transform: translate3d(0px, -2.57278%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+				transform-style: preserve-3d;
+			}
 		}
 	}
 
@@ -30,6 +33,7 @@
 		position: relative;
 
 		.txt-area {
+			width: 50%;
 			height: 100%;
 
 			h2 {
@@ -76,16 +80,19 @@
 			}
 		}
 
+		.line-vertical {
+			height: 700px;
+		}
+
 		.con-area {
 			width: 40%;
-			padding-left: 60px;
 			position: relative;
 
-			.line-vertical {
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
+			// .line-vertical {
+			// 	position: absolute;
+			// 	top: 0;
+			// 	left: 0;
+			// }
 
 			article {
 				.info {
@@ -145,13 +152,14 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: flex-start;
+		position: relative;
 
 		.txt-area {
+			width: 200px;
 			position: sticky;
 			top: 3rem;
 
 			h3 {
-				max-width: 200px;
 				margin-bottom: 1rem;
 				line-height: 1.3;
 				font-size: var(--tit4Size);
@@ -169,7 +177,7 @@
 
 		.con-area {
 			width: 70%;
-			padding-left: 60px;
+			padding-left: 40px;
 			position: relative;
 			display: flex;
 			flex-wrap: wrap;
@@ -185,7 +193,8 @@
 
 			article {
 				width: 45%;
-				margin-bottom: 50px;
+				margin-bottom: 1rem;
+				transition: 1s;
 
 				.video {
 					width: 100%;
@@ -228,14 +237,16 @@
 		grid-template-rows: auto;
 		grid-template-columns: 1fr 1px 0.45fr;
 		grid-auto-columns: 1fr;
-		position: relative;
+		transition: 1s;
 
 		.txt-area {
+			width: 80%;
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: flex-start;
+			transition: 1s;
 
 			h2 {
 				font-size: var(--baseSize);
@@ -303,6 +314,311 @@
 					.btn-inner {
 						padding: 0 2rem;
 					}
+				}
+			}
+		}
+	}
+}
+
+//tablet
+.tablet,
+.mobile,
+.limit {
+	.AboutUs {
+		.visualBox {
+			h3 {
+				margin-bottom: 3rem;
+			}
+
+			.img-area {
+				margin-bottom: 4rem;
+				height: 50vw;
+			}
+		}
+
+		.valueBox {
+			margin: 4rem 0;
+
+			.txt-area {
+				width: 100%;
+				margin-bottom: 4rem;
+			}
+
+			.line-vertical {
+				width: 100%;
+				height: 1px;
+			}
+
+			.con-area {
+				width: 100%;
+				margin-top: 3rem;
+				padding-left: 0;
+			}
+		}
+
+		.memberBox {
+			margin: 4rem 0;
+
+			.txt-area {
+				width: 23%;
+				margin-top: -20px;
+				top: 0;
+				h3 {
+					font-size: 3.5rem;
+				}
+				p {
+					font-size: 1.2rem;
+				}
+			}
+
+			.con-area {
+				width: 60%;
+				article {
+					width: 100%;
+
+					.video {
+						height: 25vw;
+					}
+				}
+			}
+		}
+
+		.contantBox {
+			margin: 4rem 0 0;
+			grid-row-gap: 3rem;
+			grid-template-columns: auto;
+
+			.txt-area {
+				justify-content: flex-start;
+				p {
+					margin-bottom: 5rem;
+				}
+			}
+			.line-vertical {
+				width: 100%;
+				height: 1px;
+			}
+			.con-area {
+				gap: 5rem;
+
+				p {
+					font-size: 1.75rem;
+				}
+			}
+		}
+	}
+}
+
+//mobile
+.mobile,
+.limit {
+	.AboutUs {
+		.visualBox {
+			h3 {
+				font-size: 4rem;
+			}
+		}
+
+		.valueBox {
+			margin: 3rem 0;
+
+			.txt-area {
+				width: 100%;
+				p {
+					font-size: 3rem;
+				}
+			}
+
+			.con-area {
+				article {
+					.info {
+						grid-template-columns: auto;
+						grid-row-gap: 2rem;
+						.txt {
+							grid-row-gap: 0.5rem;
+							h4 {
+								font-size: 1.8rem;
+							}
+							p {
+								font-size: 1rem;
+								padding-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.memberBox {
+			margin: 3rem 0;
+
+			.txt-area {
+				width: 100%;
+				margin-top: 0;
+				margin-bottom: 3rem;
+				position: relative;
+
+				h3 {
+					font-size: 3rem;
+				}
+				p {
+					font-size: 1rem;
+				}
+			}
+
+			.con-area {
+				width: 100%;
+				padding-top: 3rem;
+				padding-left: 0;
+
+				.line-vertical {
+					width: 100%;
+					height: 1px;
+				}
+				article {
+					width: 100%;
+
+					.video {
+						height: 40vw;
+					}
+				}
+			}
+		}
+
+		.contantBox {
+			margin: 3rem 0 0;
+			grid-row-gap: 3rem;
+			grid-template-columns: auto;
+
+			.txt-area {
+				justify-content: flex-start;
+				p {
+					margin-bottom: 3rem;
+					font-size: 3rem;
+				}
+
+				.icon {
+					width: 80px;
+					height: 80px;
+				}
+			}
+			.line-vertical {
+				width: 100%;
+				height: 1px;
+			}
+			.con-area {
+				gap: 1rem;
+
+				p {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+//limit
+.limit {
+	.AboutUs {
+		.visualBox {
+			h3 {
+				font-size: 3rem;
+			}
+		}
+
+		.valueBox {
+			margin: 2rem 0;
+
+			.txt-area {
+				p {
+					font-size: 2.5rem;
+				}
+			}
+
+			.con-area {
+				margin-top: 2rem;
+
+				article {
+					.line-holizontal {
+						margin-top: 2rem;
+						margin-bottom: 2rem;
+					}
+					.info {
+						.txt {
+							h4 {
+								font-size: 1.3rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.memberBox {
+			margin: 2rem 0;
+
+			.txt-area {
+				margin-bottom: 2rem;
+
+				h3 {
+					font-size: 2.5rem;
+				}
+				p {
+					font-size: 1rem;
+				}
+			}
+
+			.con-area {
+				width: 100%;
+				padding-top: 2rem;
+				padding-left: 0;
+
+				.line-vertical {
+					width: 100%;
+					height: 1px;
+				}
+
+				article {
+					width: 100%;
+					h4 {
+						font-size: 1.5rem;
+					}
+					p {
+						font-size: 1rem;
+					}
+
+					.video {
+						height: 40vw;
+					}
+				}
+			}
+		}
+
+		.contantBox {
+			margin: 2rem 0 0;
+			grid-row-gap: 2rem;
+
+			.txt-area {
+				width: 100%;
+				p {
+					margin-bottom: 2rem;
+					font-size: 2.5rem;
+				}
+
+				.icon {
+					width: 80px;
+					height: 80px;
+				}
+			}
+			.line-vertical {
+				width: 100%;
+				height: 1px;
+			}
+			.con-area {
+				gap: 1rem;
+
+				p {
+					font-size: 1rem;
 				}
 			}
 		}

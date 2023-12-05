@@ -31,7 +31,9 @@ export default function Footer() {
 							</ul>
 						</div>
 					</div>
+
 					<div className='line-vertical'></div>
+
 					<div className='menu-area'>
 						<div className='footer-menu'>
 							<h3>Pages</h3>

@@ -40,22 +40,20 @@ export default function AboutUs() {
 	return (
 		/* S : AboutUs */
 		<Layout title={'AboutUs'}>
-			<h3>
-				Creative studio <br></br>that inspires.
-			</h3>
+			<section className='visualBox'>
+				<h3>Creative studio that inspires.</h3>
 
-			<div className='img-area'>
-				<img src={`${path.current}/img/img1.webp`} alt={path.current} />
-			</div>
+				<div className='img-area'>
+					<img src={`${path.current}/img/img1.webp`} alt={path.current} />
+				</div>
 
-			<div className='line-holizontal'></div>
+				<div className='line-holizontal'></div>
+			</section>
 
 			<section className='valueBox'>
 				<div className='txt-area'>
 					<h2>{combinedTitle(ValueTit)}</h2>
-					<p>
-						Our vision is to <br></br> connect with the <br></br>world trough<br></br> innovation.
-					</p>
+					<p>Our vision is to connect with the world trough innovation.</p>
 
 					<div className='btn-area'>
 						<div className='btn-inner'>
@@ -67,8 +65,10 @@ export default function AboutUs() {
 					<button className='btn'>NoN animation</button>
 				</div>
 
+				<div className='line-vertical'></div>
+
 				<div className='con-area'>
-					<div className='line-vertical'></div>
+					{/* <div className='line-vertical'></div> */}
 					{ValueData.map((value, idx) => {
 						return (
 							<article key={value + idx}>
@@ -95,13 +95,12 @@ export default function AboutUs() {
 				<div className='txt-area'>
 					<h3>{combinedTitle(memberTit)}</h3>
 
-					<p>
-						Meet our talented team<br></br> of creative minds driving <br></br>innovation.
-					</p>
+					<p>Meet our talented team of creative minds driving innovation.</p>
 				</div>
 
 				<div className='con-area'>
 					<div className='line-vertical'></div>
+
 					{memberData.map((member, idx) => {
 						return (
 							<article key={member + idx}>
@@ -122,14 +121,14 @@ export default function AboutUs() {
 			<div className='contantBox'>
 				<div className='txt-area'>
 					<h2>CONTACT</h2>
-					<p>
-						LET'S BRING<br></br> YOUR BRAND TO<br></br> THE NEXT LEVEL
-					</p>
+					<p>LET'S BRING YOUR BRAND TO THE NEXT LEVEL</p>
 					<div className='icon'>
 						<img src={`${path.current}/img/icon02.svg`} alt={path.current} />
 					</div>
 				</div>
+
 				<div className='line-vertical'></div>
+
 				<div className='con-area'>
 					<p>Together, let's elevate your brand to new heights by unleashing its full potential and captivating your target audience.</p>
 					{/* <button className='btn'>Our Services</button> */}

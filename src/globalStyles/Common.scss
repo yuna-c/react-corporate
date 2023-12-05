@@ -46,6 +46,7 @@ body {
 	font-family: var(--baseFont);
 	font-size: var(--baseSize);
 	color: var(--baseColor);
+	transition: 1s;
 }
 
 .wrapper {
@@ -83,6 +84,7 @@ body {
 		.content-padding {
 			padding-top: 4rem;
 			padding-bottom: 4rem;
+			transition: 1s;
 		}
 	}
 
@@ -137,6 +139,10 @@ body {
 .mobile,
 .limit {
 	.wrapper {
+		.content-padding {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
 	}
 }
 
@@ -146,12 +152,18 @@ body {
 	.wrapper {
 		padding-left: 2rem;
 		padding-right: 2rem;
+		.content-padding {
+		}
 	}
 }
 // limit
 .wrap.limit {
 	.wrapper {
-		// padding-left: 1.2rem;
-		// padding-right: 1.2rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		.content-padding {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
 	}
 }
