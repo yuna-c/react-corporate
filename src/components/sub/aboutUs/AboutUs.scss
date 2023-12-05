@@ -1,6 +1,7 @@
 .AboutUs {
 	.visualBox {
 		h3 {
+			width: 60%;
 			font-family: var(--pointFont);
 			font-weight: 400;
 			margin-bottom: 5rem;
@@ -416,6 +417,7 @@
 		.visualBox {
 			h3 {
 				font-size: 4rem;
+				width: 100%;
 			}
 		}
 
