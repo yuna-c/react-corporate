@@ -31,7 +31,7 @@ export default function Footer() {
 							</ul>
 						</div>
 					</div>
-
+					<div className='line-vertical'></div>
 					<div className='menu-area'>
 						<div className='footer-menu'>
 							<h3>Pages</h3>
@@ -68,6 +68,7 @@ export default function Footer() {
 								</li>
 							</ul>
 						</div>
+
 						<div className='footer-menu'>
 							<h3>Cms</h3>
 							<ul>

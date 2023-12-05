@@ -19,11 +19,12 @@ body {
 
 #root {
 	height: 100%;
-	transition: padding 1s;
+	transition: 1s;
 
 	.wrap > * {
 		font-weight: 400;
 		letter-spacing: 0.025em;
+		transition: 1s;
 	}
 
 	// svg filter 추가
@@ -45,7 +46,6 @@ body {
 	font-family: var(--baseFont);
 	font-size: var(--baseSize);
 	color: var(--baseColor);
-	transition: 1s;
 }
 
 .wrapper {
@@ -137,8 +137,6 @@ body {
 .mobile,
 .limit {
 	.wrapper {
-		padding-left: 2rem;
-		padding-right: 2rem;
 	}
 }
 
@@ -146,8 +144,8 @@ body {
 .mobile,
 .limit {
 	.wrapper {
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 }
 // limit

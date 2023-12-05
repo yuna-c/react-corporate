@@ -6,7 +6,6 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		transition: 1s;
 
 		h1 {
 			font-family: var(--baseFont);
@@ -78,10 +77,8 @@
 					}
 				}
 
-				.line-verticle {
-					width: 1px;
+				.line-vertical {
 					height: 32px;
-					background-color: rgba(var(--baseColor-code), 1);
 				}
 
 				.gnb-social {
@@ -131,6 +128,9 @@
 				gap: 1.5rem;
 
 				.gnb-layout {
+					display: none;
+				}
+				.line-vertical {
 					display: none;
 				}
 			}

@@ -55,7 +55,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 							</div>
 						</div>
 
-						<div className='line-verticle'></div>
+						<div className='line-vertical'></div>
 
 						<div className='gnb-social'>
 							<ul>
