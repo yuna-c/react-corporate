@@ -160,6 +160,46 @@ export default function Youtube() {
 			</section>
 
 			<div className='line-holizontal'></div>
+
+			<section className='brandingBox'>
+				<div className='txt-area'>
+					<div className='icon'>
+						<img src={`${path.current}/img/icon01.svg`} alt='icon01.svg' />
+					</div>
+					<h4>branding</h4>
+					<p>
+						LOGO<br></br>CORPORATE IDENTITY<br></br>BRAND GUIDE
+					</p>
+
+					{/* <button className='btn'>GET IN TOUCH</button> */}
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>GET IN TOUCH</button>
+							<button className='btn-active btn-inner-text-hover'>GET IN TOUCH</button>
+						</div>
+					</div>
+				</div>
+
+				<div className='con-area'>
+					<div className='line-vertical'></div>
+
+					<div className='info'>
+						<div className='txt'>
+							<h5>A strong brand is a tool to connect people with your brand all around the world.</h5>
+							<p>
+								A strong brand serves as a powerful conduit, transcending borders and bringing people from all corners of the globe together. It acts as a universal language, fostering connections,
+								and forging lasting relationships. By crafting a compelling brand identity, we equip you with the tools to resonate with diverse audiences, irrespective of geographical boundaries. Our
+								strategic approach ensures that your brand story is authentically communicated, captivating hearts and minds across cultures. Let us guide you in harnessing the true potential of your
+								brand, bridging gaps, and leaving an indelible mark on a global scale. Together, we can connect the world to your brand's unique essence.
+							</p>
+						</div>
+
+						<div className='video-example'>
+							<video src={`${path.current}/img/services-branding-transcode.mp4`} alt='services-content-transcode' autoPlay muted loop playsInline />
+						</div>
+					</div>
+				</div>
+			</section>
 		</Layout>
 		/* //E : Youtube */
 	);
