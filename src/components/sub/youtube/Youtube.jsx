@@ -5,13 +5,12 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Youtube() {
+	const btnData = ['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT'];
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
-	const btnData = ['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT'];
-	const [btnOn, setbtnOn] = useState('');
-
 	const path = useRef(process.env.PUBLIC_URL);
 	const [Vids, setVids] = useState([]);
+	const [btnOn, setbtnOn] = useState('');
 
 	const fetchYoutube = async () => {
 		// const api_key = 'AIzaSyBgRldfomRBMNoipsSTKYAmfOarH1iIu8o';
@@ -37,6 +36,7 @@ export default function Youtube() {
 	};
 	// console.log(btnData.values);
 	// console.log(toggleBtn);
+
 	useEffect(() => {
 		fetchYoutube();
 	}, []);
@@ -44,12 +44,13 @@ export default function Youtube() {
 	return (
 		/* S : Youtube */
 		<Layout title={'Youtube'}>
-			<h3>
-				We create your <br></br>brand together.
-			</h3>
+			<div className='visualBox'>
+				<h3>
+					We create your <br></br>brand together.
+				</h3>
 
-			<div className='sort-area'>
-				{/*
+				<div className='sort-area'>
+					{/*
 				많은 클래스는 어케 로직 짤지 이해해보기
 				<div className='btn-area'>
 					<div className='btn-inner'>
@@ -75,17 +76,18 @@ export default function Youtube() {
 						<button className='btn-active btn-inner-text-hover'>CONTENT</button>
 					</div>
 				</div> */}
-				{/* <button className='btn'>BRANDING</button>
+					{/* <button className='btn'>BRANDING</button>
 				<button className='btn'>DESIGN</button>
 				<button className='btn'>VIDEO</button>
 				<button className='btn'>CONTENT</button> */}
-				{btnData.map((item, idx) => {
-					return (
-						<button value={idx} key={item + idx} className={`btn ${idx == btnOn ? 'on' : ''}`} onClick={toggleBtn}>
-							{item}
-						</button>
-					);
-				})}
+					{btnData.map((item, idx) => {
+						return (
+							<button value={idx} key={item + idx} className={`btn ${idx == btnOn ? 'on' : ''}`} onClick={toggleBtn}>
+								{item}
+							</button>
+						);
+					})}
+				</div>
 			</div>
 
 			<div className='line-holizontal'></div>
