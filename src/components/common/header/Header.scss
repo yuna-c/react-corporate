@@ -96,7 +96,7 @@
 							border-radius: 50%;
 							overflow: hidden;
 
-							a {
+							button {
 								width: 32px;
 								height: 32px;
 								line-height: 32px;
@@ -104,11 +104,16 @@
 								text-transform: uppercase;
 								text-align: center;
 								transition: background-color 0.2s, border 0.2s;
+								color: rgba(var(--baseColor-code), 1);
 							}
-
 							&:hover {
-								color: var(--bgColor);
 								background-color: rgba(var(--baseColor-code), 1);
+
+								button {
+									&:hover {
+										color: rgba(var(--pointColor-code), 1);
+									}
+								}
 							}
 						}
 					}

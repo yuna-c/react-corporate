@@ -2,6 +2,7 @@ import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
+	const urls = [{ TW: ['https://twitter.com'] }, { FA: ['https://www.facebook.com/'] }, { IN: 'https://www.instagram.com/' }];
 	return (
 		/* S : header */
 		<header className='header'>
@@ -60,13 +61,31 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 						<div className='gnb-social'>
 							<ul>
 								<li>
-									<Link to='/'>Tw</Link>
+									<button
+										onClick={() => {
+											window.open(`https://twitter.com`);
+										}}
+									>
+										Tw
+									</button>
 								</li>
 								<li>
-									<Link to='/'>In</Link>
+									<button
+										onClick={() => {
+											window.open('https://www.facebook.com/');
+										}}
+									>
+										In
+									</button>
 								</li>
 								<li>
-									<Link to='/'>Fa</Link>
+									<button
+										onClick={() => {
+											window.open('https://www.instagram.com/');
+										}}
+									>
+										Fa
+									</button>
 								</li>
 							</ul>
 						</div>
