@@ -19,14 +19,32 @@ export default function Footer() {
 
 						<div className='gnb-social'>
 							<ul>
-								<li className='cycle'>
-									<Link to='/'>Tw</Link>
+								<li>
+									<button
+										onClick={() => {
+											window.open(`https://twitter.com`);
+										}}
+									>
+										Tw
+									</button>
 								</li>
 								<li>
-									<Link to='/'>In</Link>
+									<button
+										onClick={() => {
+											window.open('https://www.facebook.com/');
+										}}
+									>
+										In
+									</button>
 								</li>
 								<li>
-									<Link to='/'>Fa</Link>
+									<button
+										onClick={() => {
+											window.open('https://www.instagram.com/');
+										}}
+									>
+										Fa
+									</button>
 								</li>
 							</ul>
 						</div>
