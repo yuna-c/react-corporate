@@ -3,6 +3,7 @@
 		font-family: var(--pointFont);
 		font-weight: 400;
 	}
+
 	.sort-area {
 		margin: 5rem 0;
 		display: flex;
@@ -23,7 +24,8 @@
 			overflow: hidden;
 
 			&:hover {
-				transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+				transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+					skew(0deg, 0deg);
 				transform-style: preserve-3d;
 			}
 		}
@@ -31,6 +33,7 @@
 		.btn-area {
 			background-color: rgba(var(--pointColor-code), 1) !important;
 			border: 1px solid rgba(var(--baseColor-code), 1);
+
 			.btn-inner {
 				.btn-active {
 					color: rgba(var(--baseColor-code), 1) !important;
@@ -91,7 +94,8 @@
 				overflow: hidden;
 
 				&:hover {
-					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+						skew(0deg, 0deg);
 					transform-style: preserve-3d;
 				}
 			}
@@ -157,6 +161,7 @@
 						object-fit: cover;
 					}
 				}
+
 				.line-holizontal {
 					margin-bottom: 3rem;
 					// & :last-child {
@@ -164,6 +169,7 @@
 					// 	margin-bottom: 0;
 					// }
 				}
+
 				.video-area {
 					display: flex;
 					flex-wrap: wrap;
@@ -190,6 +196,7 @@
 								column-gap: 3rem;
 							}
 						}
+
 						.pic {
 							width: 100%;
 							height: auto;

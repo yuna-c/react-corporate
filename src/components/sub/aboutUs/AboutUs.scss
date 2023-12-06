@@ -77,6 +77,7 @@
 
 			.btn-area {
 				max-width: 170px;
+
 				.btn-inner {
 					padding: 0 2rem;
 				}
@@ -124,6 +125,7 @@
 							font-weight: 400;
 							line-height: 1.6;
 						}
+
 						p {
 							padding-right: 10px;
 							line-height: 1.7;
@@ -139,6 +141,7 @@
 					margin-bottom: 3rem;
 				}
 			}
+
 			& :last-child {
 				// border: 1px solid red;
 
@@ -225,6 +228,7 @@
 					font-weight: 400;
 					line-height: 1.8;
 				}
+
 				p {
 					font-family: var(--titleFont);
 					text-transform: uppercase;
@@ -368,9 +372,11 @@
 				width: 23%;
 				margin-top: -20px;
 				top: 0;
+
 				h3 {
 					font-size: 3.5rem;
 				}
+
 				p {
 					font-size: 1.2rem;
 				}
@@ -378,6 +384,7 @@
 
 			.con-area {
 				width: 60%;
+
 				article {
 					width: 100%;
 
@@ -395,14 +402,17 @@
 
 			.txt-area {
 				justify-content: flex-start;
+
 				p {
 					margin-bottom: 5rem;
 				}
 			}
+
 			.line-vertical {
 				width: 100%;
 				height: 1px;
 			}
+
 			.con-area {
 				gap: 5rem;
 
@@ -430,6 +440,7 @@
 
 			.txt-area {
 				width: 100%;
+
 				p {
 					font-size: 3rem;
 				}
@@ -440,11 +451,14 @@
 					.info {
 						grid-template-columns: auto;
 						grid-row-gap: 2rem;
+
 						.txt {
 							grid-row-gap: 0.5rem;
+
 							h4 {
 								font-size: 1.8rem;
 							}
+
 							p {
 								font-size: 1rem;
 								padding-right: 0;
@@ -467,6 +481,7 @@
 				h3 {
 					font-size: 3rem;
 				}
+
 				p {
 					font-size: 1rem;
 				}
@@ -481,6 +496,7 @@
 					width: 100%;
 					height: 1px;
 				}
+
 				article {
 					width: 100%;
 
@@ -498,6 +514,7 @@
 
 			.txt-area {
 				justify-content: flex-start;
+
 				p {
 					margin-bottom: 3rem;
 					font-size: 3rem;
@@ -508,10 +525,12 @@
 					height: 80px;
 				}
 			}
+
 			.line-vertical {
 				width: 100%;
 				height: 1px;
 			}
+
 			.con-area {
 				gap: 1rem;
 
@@ -531,6 +550,7 @@
 				margin-bottom: 2rem;
 				font-size: 3.5rem;
 			}
+
 			.img-area {
 				margin-bottom: 2rem;
 			}
@@ -541,6 +561,7 @@
 
 			.txt-area {
 				margin-bottom: 2rem;
+
 				p {
 					margin-bottom: 2rem;
 					font-size: 2.5rem;
@@ -592,9 +613,11 @@
 
 				article {
 					width: 100%;
+
 					h4 {
 						font-size: 1.5rem;
 					}
+
 					p {
 						font-size: 1rem;
 					}
@@ -612,6 +635,7 @@
 
 			.txt-area {
 				width: 100%;
+
 				p {
 					margin-bottom: 2rem;
 					font-size: 2.5rem;

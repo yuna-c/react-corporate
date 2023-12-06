@@ -49,10 +49,12 @@
 						.on {
 							border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 						}
+
 						&:hover {
 							color: var(--bgColor);
 							background-color: rgba(var(--baseColor-code), 1);
 						}
+
 						a {
 							width: 32px;
 							height: 32px;
@@ -100,6 +102,7 @@
 						.on {
 							border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 						}
+
 						& :hover {
 							border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 						}
@@ -152,9 +155,11 @@
 					a {
 						margin-left: 40px;
 						line-height: 1;
+
 						& :hover {
 							border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 						}
+
 						.on {
 							border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 						}
@@ -165,9 +170,11 @@
 				a {
 					margin-left: 10px;
 				}
+
 				& :hover {
 					border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 				}
+
 				.on {
 					border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 				}
@@ -233,6 +240,7 @@
 					&:nth-child(even) {
 						margin-bottom: 1rem;
 					}
+
 					p {
 						a {
 							margin-left: 10px;
@@ -262,6 +270,7 @@
 						margin-bottom: 1.5rem;
 					}
 				}
+
 				.menu-area {
 					.footer-menu {
 						width: 50%;
@@ -283,19 +292,20 @@
 		.footer-layout {
 			.footer-area {
 				.logo-area {
-					p {
-					}
 				}
 				.menu-area {
 					padding-top: 2rem;
+
 					.footer-menu {
 						width: 100%;
 						margin-bottom: 2rem;
+
 						h3 {
 							margin-bottom: 1rem;
 						}
 					}
-					:last-child  {
+
+					:last-child {
 						margin-bottom: 0;
 					}
 				}
@@ -303,9 +313,11 @@
 
 			.footer-util {
 				padding-top: 2rem;
+
 				div {
 					&:nth-child(even) {
 						font-size: inherit;
+
 						p {
 							a {
 								margin-left: 10px;

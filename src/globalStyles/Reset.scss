@@ -120,10 +120,12 @@ ol,
 li {
 	list-style: none;
 }
+
 th,
 td {
 	padding: 0;
 }
+
 select,
 input,
 textarea,
@@ -141,26 +143,31 @@ button {
 	font-family: inherit;
 	vertical-align: middle;
 }
+
 input,
 button {
 	background: transparent;
 	-webkit-border-radius: 0;
 	-webkit-appearance: none;
 }
+
 input[type='button'],
 button,
 select {
 	cursor: pointer;
 }
+
 select {
 	-o-appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
 }
+
 select::-ms-expand {
 	display: none;
 }
+
 textarea {
 	padding: 0;
 	background: transparent;
@@ -168,6 +175,7 @@ textarea {
 	overflow-y: scroll;
 	resize: none;
 }
+
 a {
 	outline: 0;
 	font-family: inherit;
