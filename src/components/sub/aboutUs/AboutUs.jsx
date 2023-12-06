@@ -8,6 +8,7 @@ export default function AboutUs() {
 	const [memberData, setmemberData] = useState([]);
 	const [ValueTit, setValueTit] = useState('');
 	const [ValueData, setValueData] = useState([]);
+	const [On, setOn] = useState(false);
 
 	const path = useRef(process.env.PUBLIC_URL);
 
@@ -62,7 +63,9 @@ export default function AboutUs() {
 						</div>
 					</div>
 
-					<button className='btn'>NoN animation</button>
+					<button className={`btn ${On ? 'on' : ''}`} onClick={() => setOn(!On)}>
+						NoN animation
+					</button>
 				</div>
 
 				<div className='line-vertical'></div>

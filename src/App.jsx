@@ -15,6 +15,7 @@ import Youtube from './components/sub/youtube/Youtube';
 import Detail from './components/sub/youtube/Detail';
 import Gallery from './components/sub/gallery/Gallery';
 import AboutUs from './components/sub/aboutUs/AboutUs';
+import Eeee from './components/sub/eeee/Eeee';
 
 export default function App() {
 	const [Dark, setDark] = useState(false); //toggle 은 boolean
@@ -32,6 +33,8 @@ export default function App() {
 				<Route path='/contant' component={Contant} />
 				<Route path='/youtube' component={Youtube} />
 				<Route path='/detail/:id' component={Detail} />
+				<Route path='/eeee' component={Eeee} />
+
 				<Footer />
 				{/* <Menu /> */}
 			</div>

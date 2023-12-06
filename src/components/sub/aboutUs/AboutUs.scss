@@ -1,7 +1,7 @@
 .AboutUs {
 	.visualBox {
 		h3 {
-			width: 60%;
+			width: 55%;
 			font-family: var(--pointFont);
 			font-weight: 400;
 			margin-bottom: 5rem;
@@ -19,8 +19,7 @@
 				height: 100%;
 				object-fit: cover;
 				will-change: transform;
-				transform: translate3d(0px, -2.57278%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg)
-					rotateZ(0deg) skew(0deg, 0deg);
+				transform: translate3d(0px, -2.57278%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 				transform-style: preserve-3d;
 			}
 		}
@@ -69,9 +68,14 @@
 				overflow: hidden;
 
 				&:hover {
-					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
-						skew(0deg, 0deg);
-					transform-style: preserve-3d;
+					background-color: rgba(var(--baseColor-code), 1) !important;
+					border: 1px solid rgba(var(--pointColor-code), 1);
+					color: rgba(var(--pointColor-code), 1);
+				}
+				&.on {
+					background-color: rgba(var(--baseColor-code), 1) !important;
+					border: 1px solid rgba(var(--pointColor-code), 1);
+					color: rgba(var(--pointColor-code), 1);
 				}
 			}
 
@@ -216,8 +220,7 @@
 						height: 100%;
 						object-fit: cover;
 						will-change: transform;
-						transform: translate3d(0px, 0.22596%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg)
-							rotateZ(0deg) skew(0deg, 0deg);
+						transform: translate3d(0px, 0.22596%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 						transform-style: preserve-3d;
 					}
 				}
@@ -314,8 +317,7 @@
 				overflow: hidden;
 
 				&:hover {
-					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
-						skew(0deg, 0deg);
+					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 					transform-style: preserve-3d;
 				}
 
@@ -336,6 +338,7 @@
 	.AboutUs {
 		.visualBox {
 			h3 {
+				width: 75%;
 				margin-bottom: 3rem;
 			}
 
@@ -378,7 +381,7 @@
 				}
 
 				p {
-					font-size: 1.2rem;
+					font-size: 1.5rem;
 				}
 			}
 

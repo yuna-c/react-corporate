@@ -143,7 +143,9 @@ export default function Footer() {
 						</div>
 					</div>
 				</div>
+
 				<div className='line-holizontal'></div>
+
 				<div className='footer-util'>
 					{/* style={{ border: '1px solid red' }} */}
 					<div>

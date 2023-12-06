@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom';
 export default function Youtube() {
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
-	const path = useRef(process.env.PUBLIC_URL);
+	const btnData = ['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT'];
+	const [btnOn, setbtnOn] = useState('');
 
+	const path = useRef(process.env.PUBLIC_URL);
 	const [Vids, setVids] = useState([]);
 
 	const fetchYoutube = async () => {
@@ -28,6 +30,13 @@ export default function Youtube() {
 		}
 	};
 
+	const toggleBtn = (e) => {
+		setbtnOn((btn) => {
+			return e.target.value;
+		});
+	};
+	// console.log(btnData.values);
+	// console.log(toggleBtn);
 	useEffect(() => {
 		fetchYoutube();
 	}, []);
@@ -40,12 +49,8 @@ export default function Youtube() {
 			</h3>
 
 			<div className='sort-area'>
-				{/* 
-				<button className='btn'>BRANDING</button>
-				<button className='btn'>DESIGN</button>
-				<button className='btn'>VIDEO</button>
-				<button className='btn'>CONTENT</button>
-				*/}
+				{/*
+				많은 클래스는 어케 로직 짤지 이해해보기
 				<div className='btn-area'>
 					<div className='btn-inner'>
 						<button className='btn-active btn-inner-text'>BRANDING</button>
@@ -58,7 +63,7 @@ export default function Youtube() {
 						<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
 					</div>
 				</div>
-				<div className='btn-area'>
+				<div className='btn-area on'>
 					<div className='btn-inner'>
 						<button className='btn-active btn-inner-text'>VIDEO</button>
 						<button className='btn-active btn-inner-text-hover'>VIDEO</button>
@@ -69,7 +74,18 @@ export default function Youtube() {
 						<button className='btn-active btn-inner-text'>CONTENT</button>
 						<button className='btn-active btn-inner-text-hover'>CONTENT</button>
 					</div>
-				</div>
+				</div> */}
+				{/* <button className='btn'>BRANDING</button>
+				<button className='btn'>DESIGN</button>
+				<button className='btn'>VIDEO</button>
+				<button className='btn'>CONTENT</button> */}
+				{btnData.map((item, idx) => {
+					return (
+						<button value={idx} key={item + idx} className={`btn ${idx == btnOn ? 'on' : ''}`} onClick={toggleBtn}>
+							{item}
+						</button>
+					);
+				})}
 			</div>
 
 			<div className='line-holizontal'></div>
