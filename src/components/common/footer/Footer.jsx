@@ -157,6 +157,11 @@ export default function Footer() {
 										Changelog
 									</NavLink>
 								</li>
+								<li>
+									<NavLink to='/eeee' activeClassName={'on'}>
+										Eeee
+									</NavLink>
+								</li>
 							</ul>
 						</div>
 					</div>

@@ -6,7 +6,7 @@ import './globalStyles/Variables.scss';
 import './globalStyles/Common.scss';
 import Header from './components/common/header/Header';
 import Footer from './components/common/footer/Footer';
-// import Menu from './components/common/menu/Menu';
+import Menu from './components/common/menu/Menu';
 import MainWrap from './components/main/mainWrap/MainWrap';
 import Community from './components/sub/community/Community';
 import Members from './components/sub/members/Members';
@@ -18,7 +18,7 @@ import AboutUs from './components/sub/aboutUs/AboutUs';
 import Eeee from './components/sub/eeee/Eeee';
 
 export default function App() {
-	const [Dark, setDark] = useState(false); //toggle 은 boolean
+	const [Dark, setDark] = useState(false);
 	const [Toggle, setToggle] = useState(false);
 
 	return (
@@ -36,7 +36,7 @@ export default function App() {
 				<Route path='/eeee' component={Eeee} />
 
 				<Footer />
-				{/* <Menu /> */}
+				{Toggle && <Menu setToggle={setToggle} />}
 			</div>
 		</div>
 	);

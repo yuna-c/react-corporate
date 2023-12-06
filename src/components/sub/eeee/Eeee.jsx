@@ -1,3 +1,4 @@
+import './Eeee.scss';
 import { useState } from 'react';
 
 export default function Eeee() {
@@ -5,11 +6,11 @@ export default function Eeee() {
 
 	const [On, setOn] = useState(false);
 
-	let data = [1, 2, 3, 4, 5];
-	let [btnActive, setBtnActive] = useState('');
+	const data = [1, 2, 3, 4, 5];
+	const [btnActive, setBtnActive] = useState('');
 
 	const toggleActive = (e) => {
-		setBtnActive((prev) => {
+		setBtnActive((btn) => {
 			return e.target.value;
 		});
 	};
@@ -44,12 +45,10 @@ export default function Eeee() {
 			<div>
 				{data.map((item, idx) => {
 					return (
-						<>
-							<button key={item + idx} value={idx} className={`btn ${idx == btnActive ? 'on' : ''}`} onClick={toggleActive}>
-								{/* 'btn' + (idx == btnActive ? ' on' : '') */}
-								{item}
-							</button>
-						</>
+						<button value={idx} key={item + idx} className={`btn ${idx == btnActive ? 'on' : ''}`} onClick={toggleActive}>
+							{/* 'btn' + (idx == btnActive ? ' on' : '') */}
+							{item}
+						</button>
 					);
 				})}
 			</div>

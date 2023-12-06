@@ -52,6 +52,7 @@ body {
 .wrapper {
 	padding-left: 3rem;
 	padding-right: 3rem;
+	position: relative;
 	border: 1px solid var(--baseColor);
 
 	// line
@@ -141,6 +142,9 @@ body {
 .mobile,
 .limit {
 	.wrapper {
+		padding-left: 3rem;
+		padding-right: 3rem;
+
 		.content-padding {
 			padding-top: 3rem;
 			padding-bottom: 3rem;
@@ -151,15 +155,13 @@ body {
 //mobile
 .mobile,
 .limit {
-	html {
-		font-size: 12px;
-	}
-
 	.wrapper {
 		padding-left: 2rem;
 		padding-right: 2rem;
 
 		.content-padding {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
 		}
 	}
 }
@@ -170,8 +172,8 @@ body {
 		padding-right: 1.5rem;
 
 		.content-padding {
-			padding-top: 2rem;
-			padding-bottom: 2rem;
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
 		}
 	}
 }

@@ -40,6 +40,7 @@
 					}
 				}
 			}
+
 			.side-layout {
 				display: flex;
 				align-items: center;
@@ -119,6 +120,10 @@
 					}
 				}
 			}
+
+			.gnb-toggle {
+				display: none;
+			}
 		}
 	}
 }
@@ -135,6 +140,11 @@
 				.gnb-layout {
 					display: none;
 				}
+
+				.gnb-toggle {
+					display: block;
+				}
+
 				.line-vertical {
 					display: none;
 				}

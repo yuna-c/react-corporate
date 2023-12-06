@@ -2,7 +2,6 @@ import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
-	const urls = [{ TW: ['https://twitter.com'] }, { FA: ['https://www.facebook.com/'] }, { IN: 'https://www.instagram.com/' }];
 	return (
 		/* S : header */
 		<header className='header'>
@@ -12,7 +11,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 				</h1>
 
 				<div className='gnb-menu'>
-					<div className='gnb-layout'>
+					<div className='gnb-layout' name='mobile'>
 						<ul>
 							<li>
 								<NavLink to='/aboutUs' activeClassName={'on'}>
@@ -88,6 +87,10 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 									</button>
 								</li>
 							</ul>
+						</div>
+
+						<div className='gnb-toggle'>
+							<button onClick={() => setToggle(!Toggle)}>menu</button>
 						</div>
 					</div>
 				</div>
