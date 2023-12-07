@@ -17,6 +17,7 @@
 				color: rgba(var(--baseColor-code), 1);
 				text-align: center;
 				background-color: rgba(var(--pointColor-code), 1);
+				font-size: 14px;
 				font-weight: 500;
 				text-transform: uppercase;
 				letter-spacing: 1px;
@@ -26,12 +27,12 @@
 
 				&:hover {
 					background-color: rgba(var(--baseColor-code), 1) !important;
-					border: 1px solid rgba(var(--pointColor-code), 1);
+					border-color: rgba(var(--pointColor-code), 1);
 					color: rgba(var(--pointColor-code), 1);
 				}
 				&.on {
 					background-color: rgba(var(--baseColor-code), 1) !important;
-					border: 1px solid rgba(var(--pointColor-code), 1);
+					border-color: rgba(var(--pointColor-code), 1);
 					color: rgba(var(--pointColor-code), 1);
 				}
 			}
@@ -113,7 +114,8 @@
 				overflow: hidden;
 
 				&:hover {
-					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+						skew(0deg, 0deg);
 					transform-style: preserve-3d;
 				}
 			}
@@ -293,7 +295,8 @@
 				overflow: hidden;
 
 				&:hover {
-					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+					transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+						skew(0deg, 0deg);
 					transform-style: preserve-3d;
 				}
 			}
