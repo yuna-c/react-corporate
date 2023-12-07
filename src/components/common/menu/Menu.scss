@@ -1,7 +1,7 @@
 .Menu {
 	width: auto;
 	height: 60vh;
-	margin: 0 3rem;
+	margin: 0 2rem;
 	margin-top: -1px;
 	background: rgba(var(--pointColor-code), 1);
 	border: 1px solid rgba(var(--baseColor-code), 1);
@@ -12,10 +12,10 @@
 	z-index: 5;
 
 	// .content-padding {
-	// 	padding-top: 3rem;
-	// 	padding-bottom: 3rem;
-	// 	padding-left: 3rem;
-	// 	padding-right: 3rem;
+	//    padding-top: 3rem;
+	//    padding-bottom: 3rem;
+	//    padding-left: 3rem;
+	//    padding-right: 3rem;
 	// }
 }
 
@@ -24,6 +24,8 @@
 .mobile,
 .limit {
 	.Menu {
+		margin-top: -1px;
+
 		.content-padding {
 			padding-left: 3rem;
 			padding-right: 3rem;
@@ -35,7 +37,8 @@
 .mobile,
 .limit {
 	.Menu {
-		margin: 0 2rem;
+		margin: 0 1.5rem;
+		margin-top: -1px;
 		top: 6rem;
 
 		.content-padding {
@@ -48,8 +51,7 @@
 //limit
 .limit {
 	.Menu {
-		margin: 0 1.5rem;
-		top: 6rem;
+		top: 5rem;
 
 		.content-padding {
 			padding-left: 1.5rem;

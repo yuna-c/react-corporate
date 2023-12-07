@@ -1,7 +1,10 @@
+import { useRef } from 'react';
 import './Footer.scss';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Footer() {
+	const path = useRef(process.env.PUBLIC_URL);
+
 	return (
 		/* S : footer */
 		<footer className='footer'>
@@ -10,7 +13,10 @@ export default function Footer() {
 				<div className='footer-area'>
 					<div className='logo-area'>
 						<h1 className='logo'>
-							<Link to='/'>Logo</Link>
+							<Link to='/'>
+								{' '}
+								<img src={`${path.current}/img/logo.svg`} alt='logo.svg' />
+							</Link>
 						</h1>
 
 						<p>

@@ -1,13 +1,18 @@
+import { useRef } from 'react';
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
+	const path = useRef(process.env.PUBLIC_URL);
+
 	return (
 		/* S : header */
 		<header className='header'>
 			<div className='header-layout'>
 				<h1 className='logo'>
-					<Link to='/'>Logo</Link>
+					<Link to='/'>
+						<img src={`${path.current}/img/logo.svg`} alt='logo.svg' />
+					</Link>
 				</h1>
 
 				<div className='gnb-menu'>

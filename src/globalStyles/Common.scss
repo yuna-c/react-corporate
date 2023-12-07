@@ -15,6 +15,7 @@ body {
 	// 	border-radius: 4px;
 	// 	background-color: var(--pointColor);
 	// }
+	background-color: var(--bgColor);
 }
 
 #root {
@@ -30,6 +31,11 @@ body {
 	// svg filter 추가
 	.dark {
 		.icon {
+			img {
+				filter: invert(100%);
+			}
+		}
+		.logo {
 			img {
 				filter: invert(100%);
 			}
