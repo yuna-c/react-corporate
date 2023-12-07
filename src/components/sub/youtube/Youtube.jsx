@@ -136,7 +136,7 @@ export default function Youtube() {
 								const [date, time] = data.snippet.publishedAt.split('T');
 								return (
 									<article key={data.id}>
-										<h6>{shortenText(data.snippet.title, 50)}</h6>
+										<h6>{shortenText(data.snippet.title, 40)}</h6>
 
 										<div className='pic'>
 											<Link to={`/detail/${data.id}`}>
@@ -145,7 +145,7 @@ export default function Youtube() {
 										</div>
 
 										<div className='txt'>
-											<p>{shortenText(data.snippet.description, 250)}</p>
+											<p>{shortenText(data.snippet.description, 180)}</p>
 											<div className='infoBox'>
 												<span>{customText(date, '.')}</span>
 												<em>{time.split('Z')[0]}</em>

@@ -14,7 +14,7 @@
 		text-transform: uppercase;
 
 		span {
-			font-size: var(--baseSize);
+			font-size: 1rem;
 			font-weight: 500;
 			letter-spacing: -0.04em;
 			opacity: 0;
@@ -52,8 +52,14 @@
 .mobile,
 .limit {
 	.layout {
+		h2 {
+			margin-bottom: 0.5rem;
+			span {
+				font-size: 0.9rem;
+			}
+		}
 		h3 {
-			font-size: 5.5rem;
+			font-size: 6rem;
 		}
 	}
 }

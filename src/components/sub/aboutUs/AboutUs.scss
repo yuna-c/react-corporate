@@ -5,22 +5,23 @@
 			font-family: var(--pointFont);
 			font-weight: 400;
 			margin-bottom: 5rem;
+			word-wrap: break-word;
 		}
 
 		.img-area {
-			margin-bottom: 5rem;
 			border-radius: 1rem;
-			position: relative;
+			margin-bottom: 5rem;
 			overflow: hidden;
+			position: relative;
 			transform: translate(0);
 
 			img {
-				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				will-change: transform;
-				transform: translate3d(0px, -2.57278%, 0px) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+				transform: translate3d(0, -2.57278%, 0) scale3d(1.1, 1.1, 1) rotateX(0deg) rotateY(0deg) rotate(0deg) skew(0deg, 0deg);
 				transform-style: preserve-3d;
+				width: 100%;
+				will-change: transform;
 			}
 		}
 	}
@@ -38,7 +39,7 @@
 			height: 100%;
 
 			h2 {
-				font-size: var(--baseSize);
+				font-size: 1rem;
 				font-weight: 500;
 				letter-spacing: -0.04em;
 			}
@@ -46,7 +47,7 @@
 			p {
 				margin-bottom: 3rem;
 				font-family: var(--pointFont);
-				font-size: 5.3rem;
+				font-size: 5.5rem;
 				font-weight: 400;
 				line-height: 1.1;
 				letter-spacing: -0.04rem;
@@ -61,7 +62,7 @@
 				text-align: center;
 				text-transform: uppercase;
 				background-color: rgba(var(--pointColor-code), 1);
-				font-size: 1rem;
+				font-size: 0.9rem;
 				font-weight: 500;
 				letter-spacing: 0.03rem;
 				border: 1px solid rgba(var(--baseColor-code), 1);
@@ -81,7 +82,7 @@
 			}
 
 			.btn-area {
-				max-width: 170px;
+				width: 170px;
 
 				.btn-inner {
 					padding: 0 2rem;
@@ -89,19 +90,16 @@
 			}
 		}
 
-		.line-vertical {
-			height: 700px;
-		}
-
 		.con-area {
-			width: 40%;
+			width: 45%;
+			padding-left: 60px;
 			position: relative;
 
-			// .line-vertical {
-			// 	position: absolute;
-			// 	top: 0;
-			// 	left: 0;
-			// }
+			.line-vertical {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
 
 			article {
 				.info {
@@ -148,8 +146,6 @@
 			}
 
 			& :last-child {
-				// border: 1px solid red;
-
 				.line-holizontal {
 					display: none;
 				}
@@ -188,7 +184,7 @@
 
 		.con-area {
 			width: 70%;
-			padding-left: 40px;
+			padding-left: 60px;
 			position: relative;
 			display: flex;
 			flex-wrap: wrap;
@@ -210,7 +206,6 @@
 				.video {
 					width: 100%;
 					height: 18vw;
-					max-height: 300px;
 					border-radius: 1rem;
 					overflow: hidden;
 					transform: translate(0);
@@ -261,7 +256,7 @@
 			transition: 1s;
 
 			h2 {
-				font-size: var(--baseSize);
+				font-size: 1rem;
 				font-weight: 500;
 				letter-spacing: -0.04em;
 			}
@@ -269,7 +264,7 @@
 			p {
 				margin-bottom: 15rem;
 				font-family: var(--pointFont);
-				font-size: 5.3rem;
+				font-size: 5.5rem;
 				font-weight: 400;
 				line-height: 1.1;
 				letter-spacing: -0.04rem;
@@ -354,7 +349,10 @@
 
 			.txt-area {
 				width: 100%;
-				margin-bottom: 4rem;
+
+				h2 {
+					font-size: 0.9rem;
+				}
 			}
 
 			.line-vertical {
@@ -365,6 +363,7 @@
 			.con-area {
 				width: 100%;
 				margin-top: 3rem;
+				padding-top: 3rem;
 				padding-left: 0;
 			}
 		}
@@ -373,7 +372,7 @@
 			margin: 4rem 0;
 
 			.txt-area {
-				width: 23%;
+				width: 35%;
 				margin-top: -20px;
 				top: 0;
 
@@ -388,12 +387,14 @@
 
 			.con-area {
 				width: 60%;
+				padding-left: 40px;
 
 				article {
 					width: 100%;
 
 					.video {
 						height: 25vw;
+						margin-bottom: 0;
 					}
 				}
 			}
@@ -405,8 +406,12 @@
 			grid-template-columns: auto;
 
 			.txt-area {
+				width: 100%;
 				justify-content: flex-start;
 
+				h2 {
+					font-size: 0.9rem;
+				}
 				p {
 					margin-bottom: 5rem;
 				}
@@ -435,7 +440,10 @@
 		.visualBox {
 			h3 {
 				width: 100%;
-				font-size: 4rem;
+				font-size: 4.5rem;
+			}
+			.img-area {
+				margin-bottom: 3rem;
 			}
 		}
 
@@ -446,7 +454,11 @@
 				width: 100%;
 
 				p {
-					font-size: 3rem;
+					font-size: 4rem;
+				}
+
+				.btn {
+					margin-bottom: 0;
 				}
 			}
 
@@ -454,17 +466,15 @@
 				article {
 					.info {
 						grid-template-columns: auto;
-						grid-row-gap: 2rem;
+						grid-row-gap: 1rem;
 
 						.txt {
 							grid-row-gap: 0.5rem;
 
 							h4 {
-								font-size: 1.8rem;
 							}
 
 							p {
-								font-size: 1rem;
 								padding-right: 0;
 							}
 						}
@@ -483,11 +493,11 @@
 				position: relative;
 
 				h3 {
-					font-size: 3rem;
+					font-size: 4rem;
 				}
 
 				p {
-					font-size: 1rem;
+					font-size: 1.8rem;
 				}
 			}
 
@@ -503,9 +513,20 @@
 
 				article {
 					width: 100%;
+					margin-bottom: 1.5rem;
 
+					h4 {
+						font-size: 1.8rem;
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						word-break: break-all;
+					}
+					p {
+						line-height: 1;
+					}
 					.video {
-						height: 40vw;
+						height: 50vw;
 					}
 				}
 			}
@@ -521,7 +542,7 @@
 
 				p {
 					margin-bottom: 3rem;
-					font-size: 3rem;
+					font-size: 4rem;
 				}
 
 				.icon {
@@ -557,6 +578,10 @@
 
 			.img-area {
 				margin-bottom: 2rem;
+
+				img {
+					transform: translate(0);
+				}
 			}
 		}
 
@@ -564,16 +589,22 @@
 			margin: 2rem 0;
 
 			.txt-area {
-				margin-bottom: 2rem;
+				margin-bottom: 0;
 
 				p {
 					margin-bottom: 2rem;
 					font-size: 2.5rem;
+
+					/* white-space: nowrap; */
+					/* overflow: hidden; */
+					/* text-overflow: unset; */
+					/* white-space: normal;*/
 				}
 			}
 
 			.con-area {
 				margin-top: 2rem;
+				padding-top: 2rem;
 
 				article {
 					.line-holizontal {
@@ -627,7 +658,6 @@
 					}
 
 					.video {
-						height: 40vw;
 					}
 				}
 			}

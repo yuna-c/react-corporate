@@ -9,7 +9,7 @@
 
 		h1 {
 			font-family: var(--baseFont);
-			font-size: 32px;
+			font-size: 2rem;
 			font-weight: 400;
 			text-transform: uppercase;
 		}
@@ -179,8 +179,8 @@
 .limit {
 	.header {
 		.header-layout {
-			// padding-top: 1.2rem;
-			// padding-bottom: 1.2rem;
+			padding-top: 1.2rem;
+			padding-bottom: 1.2rem;
 
 			.gnb-menu {
 				.side-layout {

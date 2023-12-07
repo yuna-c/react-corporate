@@ -68,10 +68,9 @@ export default function AboutUs() {
 					</button>
 				</div>
 
-				<div className='line-vertical'></div>
-
 				<div className='con-area'>
-					{/* <div className='line-vertical'></div> */}
+					<div className='line-vertical'></div>
+
 					{ValueData.map((value, idx) => {
 						return (
 							<article key={value + idx}>
