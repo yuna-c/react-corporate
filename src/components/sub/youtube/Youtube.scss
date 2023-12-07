@@ -27,12 +27,12 @@
 
 				&:hover {
 					background-color: rgba(var(--baseColor-code), 1) !important;
-					border-color: rgba(var(--pointColor-code), 1);
+					border: none;
 					color: rgba(var(--pointColor-code), 1);
 				}
 				&.on {
 					background-color: rgba(var(--baseColor-code), 1) !important;
-					border-color: rgba(var(--pointColor-code), 1);
+					border: none;
 					color: rgba(var(--pointColor-code), 1);
 				}
 			}
