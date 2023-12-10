@@ -1,0 +1,67 @@
+.Gallery {
+	.visualBox {
+		margin-bottom: 5rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		.txt-area {
+			width: 60%;
+
+			h3 {
+				font-size: 8rem;
+				font-weight: 400;
+				font-family: var(--pointFont);
+				margin-bottom: 1rem;
+				text-transform: uppercase;
+			}
+			p {
+				line-height: 1.5;
+				font-size: 1.75rem;
+				font-weight: 400;
+			}
+		}
+
+		.con-area {
+			width: 35%;
+			padding-left: 80px;
+			position: relative;
+
+			.line-vertical {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.info {
+				ul {
+					li {
+						margin-bottom: 2rem;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+						font-family: Roboto Mono, sans-serif;
+						font-size: 15px;
+						font-weight: 400;
+						dl {
+							dt {
+								color: rgba(var(--baseColor-code), 0.4);
+							}
+							dd {
+								a {
+									border-bottom: 1px solid rgba(var(--baseColor-code), 0.3);
+									&:hover {
+										border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.galleryBox {
+		border: 1px solid red;
+	}
+}

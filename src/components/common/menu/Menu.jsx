@@ -15,7 +15,6 @@ export default function Menu({ setToggle, name }) {
 		disable && setToggle(false);
 	};
 
-	console.log(disabled);
 	useEffect(() => {
 		window.addEventListener('resize', closeMenu);
 		window.addEventListener('click', disabled);
