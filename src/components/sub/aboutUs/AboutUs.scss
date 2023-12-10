@@ -54,10 +54,12 @@
 			}
 
 			.btn {
-				min-width: 170px;
+				// min-width: 170px;
 				margin-top: 10px;
 				margin-bottom: 10px;
 				padding: 0.5rem 1rem;
+				display: flex;
+				flex-wrap: wrap;
 				color: rgba(var(--baseColor-code), 1);
 				text-align: center;
 				text-transform: uppercase;
@@ -74,18 +76,10 @@
 					border: 1px solid rgba(var(--pointColor-code), 1);
 					color: rgba(var(--pointColor-code), 1);
 				}
-				&.on {
+				.on {
 					background-color: rgba(var(--baseColor-code), 1) !important;
 					border: 1px solid rgba(var(--pointColor-code), 1);
 					color: rgba(var(--pointColor-code), 1);
-				}
-			}
-
-			.btn-area {
-				width: 170px;
-
-				.btn-inner {
-					padding: 0 2rem;
 				}
 			}
 		}

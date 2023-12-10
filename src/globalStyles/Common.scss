@@ -98,7 +98,7 @@ body {
 
 	// btn
 	.btn-area {
-		min-width: 70px;
+		width: max-content;
 		height: 2.4rem;
 		position: relative;
 		overflow: hidden;
@@ -173,6 +173,7 @@ body {
 }
 // limit
 .wrap.limit {
+	word-break: break-all;
 	.wrapper {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;

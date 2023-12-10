@@ -58,8 +58,8 @@ export default function AboutUs() {
 
 					<div className='btn-area'>
 						<div className='btn-inner'>
-							<button className='btn-active btn-inner-text'>SEE ALL WORK </button>
-							<button className='btn-active btn-inner-text-hover'>SEE ALL WORK </button>
+							<button className='btn-active btn-inner-text'>SEE ALL WORK!</button>
+							<button className='btn-active btn-inner-text-hover'>SEE ALL WORK!</button>
 						</div>
 					</div>
 

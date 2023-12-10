@@ -1,7 +1,7 @@
 .Menu {
 	width: auto;
 	height: 60vh;
-	margin: 0 2rem;
+	margin: 0 2.5rem;
 	margin-top: -1px;
 	background: rgba(var(--pointColor-code), 1);
 	border: 1px solid rgba(var(--baseColor-code), 1);
@@ -10,6 +10,7 @@
 	left: 0;
 	right: 0;
 	z-index: 5;
+	transition: 1s;
 
 	// .content-padding {
 	//    padding-top: 3rem;
@@ -24,7 +25,7 @@
 .mobile,
 .limit {
 	.Menu {
-		margin-top: -1px;
+		margin-top: 5px;
 
 		.content-padding {
 			padding-left: 3rem;
@@ -38,7 +39,7 @@
 .limit {
 	.Menu {
 		margin: 0 1.5rem;
-		margin-top: -1px;
+		margin-top: 5px;
 		top: 6rem;
 
 		.content-padding {
@@ -51,6 +52,8 @@
 //limit
 .limit {
 	.Menu {
+		margin-top: 11px;
+
 		top: 5rem;
 
 		.content-padding {
