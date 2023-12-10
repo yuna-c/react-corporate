@@ -45,9 +45,7 @@ export default function Youtube() {
 		/* S : Youtube */
 		<Layout title={'Youtube'}>
 			<div className='visualBox'>
-				<h3>
-					We create your <br></br>brand together.
-				</h3>
+				<h3>We create your brand together.</h3>
 
 				<div className='sort-area'>
 					{/*

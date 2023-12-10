@@ -1,6 +1,7 @@
 .Youtube {
 	.visualBox {
 		h3 {
+			width: 80%;
 			margin-bottom: 5rem;
 			font-family: var(--pointFont);
 			font-weight: 400;
@@ -30,7 +31,7 @@
 					background-color: rgba(var(--baseColor-code), 1) !important;
 					color: rgba(var(--pointColor-code), 1);
 				}
-				.on {
+				&.on {
 					background-color: rgba(var(--baseColor-code), 1) !important;
 					color: rgba(var(--pointColor-code), 1);
 				}
@@ -89,6 +90,7 @@
 			p {
 				margin-bottom: 3rem;
 				line-height: 2.8;
+				font-family: var(--titleFont);
 				font-size: 1rem;
 				font-weight: 400;
 				letter-spacing: -0.04em;
@@ -274,6 +276,7 @@
 			p {
 				margin-bottom: 3rem;
 				line-height: 2.8;
+				font-family: var(--titleFont);
 				font-size: 1rem;
 				font-weight: 400;
 				letter-spacing: -0.04em;
