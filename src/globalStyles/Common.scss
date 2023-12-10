@@ -20,7 +20,7 @@ body {
 
 #root {
 	height: 100%;
-	transition: 1s;
+	// transition: 1s;
 
 	.wrap > * {
 		font-weight: 400;
@@ -52,7 +52,7 @@ body {
 	font-family: var(--baseFont);
 	font-size: var(--baseSize);
 	color: var(--baseColor);
-	transition: 1s;
+	// transition: 1s;
 }
 
 .wrapper {
