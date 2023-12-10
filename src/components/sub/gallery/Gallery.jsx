@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Gallery.scss';
 import Layout from '../../common/layout/Layout';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ export default function Gallery() {
 
 	const fetchFlickr = async () => {
 		console.log('flickr');
-		const num = 500;
+		const num = 200;
 		const flickr_api = '5882059e4bec92178e2406d805cd3429';
 		const method_interest = 'flickr.interestingness.getList';
 		const baseURL = 'https://www.flickr.com/services/rest/?method=';
@@ -90,10 +90,18 @@ export default function Gallery() {
 
 			<section className='galleryBox'>
 				{Pics.map((pic /*, idx*/) => {
-					console.log(pic);
+					console.log(pic.server);
 					return (
-						<article key={pic.id}>
-							<h2>{pic.title}</h2>
+						// URL : https://www.flickr.com/services/api/misc.urls.html
+						<article key={pic.id} className='con-area'>
+							<div className='picture'>
+								<div className='pic'>
+									<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_b.jpg`} />
+								</div>
+								<h4>{pic.title}</h4>
+							</div>
+
+							<div className='profile'></div>
 						</article>
 					);
 				})}

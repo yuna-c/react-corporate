@@ -1,4 +1,7 @@
 .Gallery {
+	--gap: 30px;
+	--num: 4;
+
 	.visualBox {
 		margin-bottom: 5rem;
 		display: flex;
@@ -62,6 +65,69 @@
 	}
 
 	.galleryBox {
-		border: 1px solid red;
+		margin: 5em 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		gap: var(--gap);
+
+		article {
+			width: calc((100% - var(--gap) * (var(--num) - 1)) / var(--num));
+			margin-bottom: 70px;
+			border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+			overflow: hidden;
+
+			.picture {
+				margin-bottom: 10px;
+
+				.pic {
+					height: 300px;
+					margin-bottom: 10px;
+					border-radius: 1rem;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				h4 {
+					font-size: 1.6rem;
+					font-family: var(--pointFont);
+					font-weight: 400;
+					line-height: 1.8;
+					color: rgba(var(--baseColor-code), 1);
+				}
+			}
+
+			.profile {
+			}
+		}
+	}
+}
+
+//tablet
+.tablet,
+.mobile,
+.limit {
+	.Gallery {
+		--num: 3;
+	}
+}
+
+//mobile
+.mobile,
+.limit {
+	.Gallery {
+		--num: 1;
+	}
+}
+
+//limit
+.limit {
+	.Gallery {
+		--num: 1;
 	}
 }
