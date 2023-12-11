@@ -5,7 +5,7 @@ npm i react-router-dom@5 --save 리액트 라우터 5버전대 설치<br>
 npm i react@17 react-dom@17 --save 리액트 17버전 다운그레이드<br>
 npm i framer-motion@4 --save 모션 4버전 설치<br>
 npm i react-masonry-component@6 masonry 설치<br>
-<br>
+
 # Git<br>
 git config --global user.name '사용자명'<br>
 git config --global user.email '이메일주소'<br>
@@ -13,7 +13,6 @@ git config user.name<br>
 git config user.email<br>
 git config --global safe.directory 'E:/2023/frontend/react/react-portfolio'<br>
 git config --global safe.directory 'E:/2023/frontend/react/react-corporate'<br>
-<br>
 
 # Getting Started with Create React App
 
