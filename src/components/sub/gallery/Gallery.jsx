@@ -120,7 +120,7 @@ export default function Gallery() {
       <Layout title={"Gallery"}>
         <section className="visualBox">
           <div className="txt-area">
-            <h3>NEW Watching</h3>
+            <h3>NEW Watch GALLERY</h3>
             <p>
               Discover how we reimagined their brand identity, crafting a
               compelling narrative that authentically connects with their
@@ -135,7 +135,7 @@ export default function Gallery() {
               <ul>
                 <li>
                   <dl>
-                    <dt>CLIENT</dt>
+                    <dt>Client</dt>
                     <dd>LOREM IPSUM</dd>
                   </dl>
                 </li>
@@ -155,9 +155,7 @@ export default function Gallery() {
                   <dl>
                     <dt>WEBSITE</dt>
                     <dd>
-                      <Link to="fylla-template.webflow.io">
-                        fylla-template.webflow.io
-                      </Link>
+                      <Link to="/">fylla-template.webflow.io</Link>
                     </dd>
                   </dl>
                 </li>

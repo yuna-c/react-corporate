@@ -22,10 +22,13 @@
   span {
     cursor: pointer;
     position: absolute;
-    font-size: 0.8rem;
-    font-family: var(--titleFont);
-    color: rgba(var(--pointColor-code), 1);
     top: 3vw;
     right: 3vw;
+    font-size: 0.85rem;
+    font-family: var(--titleFont);
+    text-transform: uppercase;
+    color: rgba(var(--pointColor-code), 1);
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid rgba(var(--pointColor-code), 1);
   }
 }

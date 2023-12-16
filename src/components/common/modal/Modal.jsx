@@ -30,14 +30,14 @@ export default function Modal({ Open, setOpen, children }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { delay: 0.5 } }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
           >
             <motion.div
               className="con"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { delay: 0 } }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               {children}
             </motion.div>

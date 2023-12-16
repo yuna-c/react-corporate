@@ -1,12 +1,78 @@
 .Detail {
+  h3 {
+    margin-bottom: 3rem;
+    font-size: 5rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+
   .videoBox {
     width: 100%;
-    height: 70vh;
+    height: auto;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 56.26%;
+    border-radius: 1rem;
+    overflow: hidden;
 
     iframe {
       width: 100%;
       height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
       object-fit: cover;
+    }
+  }
+}
+
+//tablet
+.tablet,
+.mobile,
+.limit {
+  .Detail {
+    h3 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .videoBox {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+//mobile
+.mobile,
+.limit {
+  .Detail {
+    h3 {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+//limit
+.limit {
+  .Detail {
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 0.8rem;
     }
   }
 }
