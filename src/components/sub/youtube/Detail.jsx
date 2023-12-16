@@ -1,4 +1,3 @@
-import { useCustomText } from "../../../hooks/useText";
 import { useCallback, useEffect, useState } from "react";
 import Layout from "../../common/layout/Layout";
 import "./Detail.scss";
@@ -12,8 +11,6 @@ export default function Detail() {
   // 2. state로 객체 함수 만들기 effect로 한번만 받기
   console.log("re-render");
   console.log("--------------------------------");
-
-  const shortenText = useCustomText("shorten");
 
   const { id } = useParams();
   // console.log(id);
