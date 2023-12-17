@@ -3,10 +3,10 @@ import Layout from "../../common/layout/Layout";
 import "./Contact.scss";
 
 export default function Contact() {
-  const [Index, setIndex] = useState(2);
-
-  const mapFrame = useRef(null);
   const { kakao } = window;
+  const [Index, setIndex] = useState(0);
+  const mapFrame = useRef(null);
+  const marker = useRef(null);
   console.log(kakao);
 
   //지점마다 출력할 정보를 개별적인 객체로 묶어서 배열로 그룹화
@@ -35,7 +35,7 @@ export default function Contact() {
   ]);
 
   //마커 인스턴스 생성
-  const markerInstance = new kakao.maps.Marker({
+  marker.current = new kakao.maps.Marker({
     position: mapInfo.current[Index].latlng,
     image: new kakao.maps.MarkerImage(
       mapInfo.current[Index].imgSrc,
@@ -49,8 +49,8 @@ export default function Contact() {
       center: mapInfo.current[Index].latlng,
       level: 3,
     });
-    markerInstance.setMap(mapInstance);
-  }, []);
+    marker.current.setMap(mapInstance);
+  }, [Index, kakao]);
 
   return (
     <Layout title={"Contact"}>
@@ -69,6 +69,13 @@ export default function Contact() {
       <div className="line-holizontal"></div>
 
       <section className="contentBox">
+        <nav className="btn-area">
+          {mapInfo.current.map((el, idx) =>
+            //prettier-ignore
+            <button key={idx} onClick={() => setIndex(idx)} className={`btn ${idx === Index ? 'on' : ''}`}>{el.title}</button>
+          )}
+        </nav>
+
         <article className="mapBox" ref={mapFrame}></article>
       </section>
     </Layout>
