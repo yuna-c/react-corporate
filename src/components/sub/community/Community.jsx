@@ -10,8 +10,7 @@ export default function Community() {
   const refEmail = useRef(null);
   const refCon = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const createPost = () => {
     setPost([
       ...Post,
       {
@@ -20,6 +19,12 @@ export default function Community() {
         content: refCon.current.value,
       },
     ]);
+  };
+
+  const resetPost = () => {
+    refTit.current.value = "";
+    refEmail.current.value = "";
+    refCon.current.value = "";
   };
 
   const handleSizeHeight = () => {
@@ -90,7 +95,7 @@ export default function Community() {
             </div>
           </div>
 
-          <form className="form-area" onSubmit={handleSubmit}>
+          <form className="form-area">
             <label>Title</label>
             <input
               type="text"
@@ -109,17 +114,17 @@ export default function Community() {
             <textarea
               placeholder="Your Message"
               rows={15}
-              maxLength={"5000"}
+              maxLength={"1500"}
               name="content"
               ref={refCon}
               onChange={handleSizeHeight}
             ></textarea>
 
             <div className="btn-area">
-              <button className="btn" type="reset">
+              <button className="btn" type="reset" onClick={resetPost}>
                 DELETE
               </button>
-              <button className="btn" type="submit">
+              <button className="btn" type="submit" onClick={createPost}>
                 SUBMIT
               </button>
             </div>

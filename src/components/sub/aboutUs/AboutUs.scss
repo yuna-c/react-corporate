@@ -65,9 +65,10 @@
         text-align: center;
         text-transform: uppercase;
         background-color: rgba(var(--pointColor-code), 1);
-        font-size: 0.9rem;
-        font-weight: 500;
-        letter-spacing: 0.03rem;
+        font-family: var(--titleFont);
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
         border: 1px solid rgba(var(--baseColor-code), 1);
         border-radius: 6px;
         overflow: hidden;

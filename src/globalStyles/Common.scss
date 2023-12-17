@@ -121,23 +121,25 @@ body {
       overflow: hidden;
 
       .btn-active {
-        line-height: 2.6;
+        line-height: 2.5;
         text-transform: uppercase;
         color: rgba(var(--pointColor-code), 1);
-        font-size: 0.9rem;
-        font-weight: 500;
-        letter-spacing: 0.03rem;
-        transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg)
-          rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-        transform-style: preserve-3d;
+        font-family: var(--titleFont);
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        // overflow: hidden;
+        // transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg)
+        //   rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        // transform-style: preserve-3d;
         transition: transform 0.3s;
       }
 
-      .btn-inner-text,
-      .btn-inner-text-hover {
-        justify-content: center;
-        align-items: center;
-      }
+      // .btn-inner-text,
+      // .btn-inner-text-hover {
+      //   justify-content: center;
+      //   align-items: center;
+      // }
     }
 
     &:hover .btn-active {
