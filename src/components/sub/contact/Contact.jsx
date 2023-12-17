@@ -97,6 +97,7 @@ export default function Contact() {
     //   }
     // );
     roadview();
+    setView(false);
 
     //지도 타입 컨트롤러 추가
     mapInstance.current.addControl(
