@@ -16,14 +16,21 @@ export default function Community() {
     if (data) return JSON.parse(data);
     return postData.dummyPosts; //[]빈배열에 json 파일 넣기
   };
-  console.log(getLocalData());
+  // console.log(getLocalData());
+
   const [Post, setPost] = useState(getLocalData()); //핸들링 위한 state
+  const [CurNum, setCurNum] = useState(0); //페이징 버튼 클릭시 현재 보일 페이지 번호가 담길 state
+  const [PageNum, setPageNum] = useState(0); //전체 PageNum이 담길 state
+
   const refTit = useRef(null);
   const refEmail = useRef(null);
   const refCon = useRef(null);
   const refEditTit = useRef(null);
   const refEditCon = useRef(null);
   const editMode = useRef(false);
+  const len = useRef(0); //전체 Post갯수를 담을 참조 객체
+  const pageNum = useRef(0); //전체 페이지 갯수를 추후에 연산해서 담을 참조객체
+  const perNum = useRef(6); //한 페이지당 보일 포스트 갯수
 
   const resetPost = () => {
     refTit.current.value = "";
@@ -93,7 +100,7 @@ export default function Community() {
         return el;
       })
     );
-    console.log("update");
+    // console.log("update");
   };
 
   //출력모드
@@ -116,8 +123,28 @@ export default function Community() {
     //Post데이터가 변경되면 수정모드를 강제로 false처리하면서 로컬저장소에 저장하고 컴포넌트 재실행
     Post.map((el) => (el.enableUpdate = false));
     localStorage.setItem("post", JSON.stringify(Post));
+
+    //전체 Post갯수 구함
+    len.current = Post.length;
+
+    //전체 페이지버튼 갯수 구하는 공식
+    //전체 데이터갯수 / 한 페이지당 보일 포스트 갯수 (딱 나눠떨어지면 나눈 몫을 바로 담음)
+    //전체 데이터갯수 / 한 페이지당 보일 포스트 갯수 (만약 나머지가 1,2개 남으면 나눈 몫의 1을 더한값)
+
+    pageNum.current =
+      len.current % perNum.current === 0
+        ? len.current / perNum.current
+        : parseInt(len.current / perNum.current) + 1;
+    console.log(pageNum.current);
+
+    //새로고침했을때 페이징 버튼이 안뜨는 문제
+    //원인 : 현재 로직이 Post값자체게 변경되면 pageNum.current값이 변경되게 하고 있는데..
+    //pageNum.current가 변경되고 state가 아니기 때문에 화면을 자동 재랜더링하지 않는 문제 발생
+    //해결방법 : 만들어진 참조객체값을 state PageNum에 옮겨담음
+    setPageNum(pageNum.current);
   }, [Post]);
-  console.log(Post);
+
+  // console.log(perNum);
 
   return (
     <Layout title={"Community"}>
@@ -224,69 +251,167 @@ export default function Community() {
 
         <div className="line-holizontal"></div>
 
+        <nav className="pagination">
+          {Array(PageNum)
+            .fill()
+            .map((_, idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => idx !== CurNum && setCurNum(idx)}
+                  className={`btn ${idx === CurNum ? "on" : ""}`}
+                >
+                  {idx + 1}
+                </button>
+              );
+            })}
+        </nav>
+
+        <div className="line-holizontal"></div>
+
         <div className="showBox">
           {Post.map((el, idx) => {
             const date = JSON.stringify(el.date);
             const strDate = customText(date.split("T")[0].slice(1), ".");
             const strDate2 = customText(date.split("Z")[0].slice(12), ":");
             const time = Math.floor(strDate2);
+
+            // {Post.map((el, idx) => {
+            //   const date = JSON.stringify(el.date);
+            //   const strDate = customText(date.split("T")[0].slice(1), ".");
+            //   const strDate2 = customText(date.split("Z")[0].slice(12), ":");
+            //   const time = Math.floor(strDate2);
+            //   // console.log(strDate2);
+
+            //   if (el.enableUpdate) {
+            //     return (
+            //       <article key={el + idx}>
+            //         <div className="txt-area">
+            //           <input
+            //             type="text"
+            //             defaultValue={el.title}
+            //             ref={refEditTit}
+            //           />
+            //           <strong>{el.email}</strong>
+            //           <textarea
+            //             placeholder="Your Message"
+            //             rows={15}
+            //             onChange={handleSizeHeight}
+            //             defaultValue={el.content}
+            //             ref={refEditCon}
+            //           ></textarea>
+            //           <span>{strDate}</span>
+            //         </div>
+
+            //         <div className="btn-area">
+            //           <button className="btn" onClick={() => disableUpdate(idx)}>
+            //             Cancel
+            //           </button>
+            //           <button className="btn" onClick={() => updatePost(idx)}>
+            //             Update
+            //           </button>
+            //         </div>
+
+            //         <div className="line-holizontal"></div>
+            //       </article>
+            //     );
+            //   } else {
+            //     //출력모드
+            //     return (
+            //       <article key={el + idx}>
+            //         <div className="txt-area">
+            //           <h6>{el.title}</h6>
+            //           <strong>{el.email}</strong>
+            //           <p>{el.content}</p>
+            //           <span>{strDate}</span>
+            //         </div>
+
+            //         <div className="btn-area">
+            //           <button className="btn" onClick={() => enableUpdate(idx)}>
+            //             Edit
+            //           </button>
+            //           <button className="btn" onClick={() => deletePost(idx)}>
+            //             Delete
+            //           </button>
+            //         </div>
+
+            //         <div className="line-holizontal"></div>
+            //       </article>
+            //     );
+            //   }
+            // })}
+
             // console.log(strDate2);
 
-            if (el.enableUpdate) {
+            if (
+              idx >= perNum.current * CurNum &&
+              idx < perNum.current * (CurNum + 1)
+            ) {
               return (
                 <article key={el + idx}>
-                  <div className="txt-area">
-                    <input
-                      type="text"
-                      defaultValue={el.title}
-                      ref={refEditTit}
-                    />
-                    <strong>{el.email}</strong>
-                    <textarea
-                      placeholder="Your Message"
-                      rows={15}
-                      onChange={handleSizeHeight}
-                      defaultValue={el.content}
-                      ref={refEditCon}
-                    ></textarea>
-                    <span>{strDate}</span>
-                  </div>
+                  {el.enableUpdate ? (
+                    //수정모드
+                    <>
+                      <div className="txt-area">
+                        <input
+                          type="text"
+                          defaultValue={el.title}
+                          ref={refEditTit}
+                        />
+                        <strong>{el.email}</strong>
+                        <textarea
+                          placeholder="Your Message"
+                          rows={15}
+                          onChange={handleSizeHeight}
+                          defaultValue={el.content}
+                          ref={refEditCon}
+                        ></textarea>
+                        <span>{strDate}</span>
+                      </div>
 
-                  <div className="btn-area">
-                    <button className="btn" onClick={() => disableUpdate(idx)}>
-                      Cancel
-                    </button>
-                    <button className="btn" onClick={() => updatePost(idx)}>
-                      Update
-                    </button>
-                  </div>
+                      <div className="btn-area">
+                        <button
+                          className="btn"
+                          onClick={() => disableUpdate(idx)}
+                        >
+                          Cancel
+                        </button>
+                        <button className="btn" onClick={() => updatePost(idx)}>
+                          Update
+                        </button>
+                      </div>
 
-                  <div className="line-holizontal"></div>
+                      <div className="line-holizontal"></div>
+                    </>
+                  ) : (
+                    //출력모드
+                    <>
+                      <div className="txt-area">
+                        <h6>{el.title}</h6>
+                        <strong>{el.email}</strong>
+                        <p>{el.content}</p>
+                        <span>{strDate}</span>
+                      </div>
+
+                      <div className="btn-area">
+                        <button
+                          className="btn"
+                          onClick={() => enableUpdate(idx)}
+                        >
+                          Edit
+                        </button>
+                        <button className="btn" onClick={() => deletePost(idx)}>
+                          Delete
+                        </button>
+                      </div>
+
+                      <div className="line-holizontal"></div>
+                    </>
+                  )}
                 </article>
               );
             } else {
-              //출력모드
-              return (
-                <article key={el + idx}>
-                  <div className="txt-area">
-                    <h6>{el.title}</h6>
-                    <strong>{el.email}</strong>
-                    <p>{el.content}</p>
-                    <span>{strDate}</span>
-                  </div>
-
-                  <div className="btn-area">
-                    <button className="btn" onClick={() => enableUpdate(idx)}>
-                      Edit
-                    </button>
-                    <button className="btn" onClick={() => deletePost(idx)}>
-                      Delete
-                    </button>
-                  </div>
-
-                  <div className="line-holizontal"></div>
-                </article>
-              );
+              return null;
             }
           })}
         </div>

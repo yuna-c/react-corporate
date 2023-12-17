@@ -73,7 +73,6 @@
             gap: 10px;
 
             li {
-              gap: 1;
               display: flex;
               border: 1px solid rgba(var(--baseColor-code), 1);
               border-radius: 50%;
@@ -175,6 +174,40 @@
       }
     }
 
+    .line-holizontal {
+    }
+
+    .pagination {
+      padding: 2rem 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+
+      .btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        color: rgba(var(--pointColor-code), 1);
+        background-color: rgba(var(--baseColor-code), 1);
+        font-family: var(--titleFont);
+        font-weight: 400;
+        text-align: center;
+        border: 1px solid rgba(var(--pointColor-code), 1);
+
+        cursor: pointer;
+
+        &.on {
+          background-color: rgba(var(--pointColor-code), 1) !important;
+          border: 1px solid rgba(var(--baseColor-code), 1);
+          color: rgba(var(--baseColor-code), 1);
+          opacity: 1;
+        }
+      }
+    }
+
+    .line-holizontal {
+    }
+
     .showBox {
       margin-top: 5rem;
 
@@ -220,6 +253,7 @@
             background-color: transparent;
             border-bottom: 1px solid rgba(var(--baseColor-code), 1);
             color: rgba(var(--baseColor-code), 1);
+            background-color: rgba(var(--baseColor-code), 0.05);
           }
 
           textarea:focus {
