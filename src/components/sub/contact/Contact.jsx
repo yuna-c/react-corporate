@@ -1,8 +1,36 @@
 import { useEffect, useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
+import emailjs from '@emailjs/browser';
+// npm install @emailjs/browser --save
 
 export default function Contact() {
+	const form = useRef();
+
+	const resetForm = () => {
+		const elArr = form.current.children;
+
+		Array.from(elArr).forEach(el => {
+			console.log(el);
+			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message') el.value = '';
+		});
+	};
+
+	const sendEmail = e => {
+		e.preventDefault();
+
+		emailjs.sendForm('service_ag7z96s', 'template_oh9ajns', form.current, '23g8RepczesqKPoIX').then(
+			result => {
+				alert('문의 내용이 성공적으로 전송되었습니다.');
+				resetForm();
+			},
+			error => {
+				alert('일시적인 장애로 문의 전송에 실패했습니다. 다음의 메일주소로 보내주세요.');
+				resetForm();
+			}
+		);
+	};
+
 	const kakao = useRef(window.kakao);
 
 	const [Index, setIndex] = useState(0);
@@ -115,7 +143,7 @@ export default function Contact() {
 
 			<div className='line-holizontal'></div>
 
-			<section className='contentBox'>
+			<section id='mapSection' className='contentBox'>
 				<nav className='btn-area'>
 					{mapInfo.current.map((el, idx) =>
 						//prettier-ignore
@@ -140,10 +168,22 @@ export default function Contact() {
 					</button>
 				</nav>
 
-				<section className='tab-area'>
+				<div className='tab-area'>
 					<article className={`mapBox ${View ? '' : 'on'}`} ref={mapFrame}></article>
 					<article className={`viewBox ${View ? 'on' : ''}`} ref={viewFrame}></article>
-				</section>
+				</div>
+			</section>
+
+			<section id='mailSection' className='inputBox'>
+				<form ref={form} onSubmit={sendEmail}>
+					<label>Name</label>
+					<input type='text' name='user_name' />
+					<label>Email</label>
+					<input type='email' name='user_email' />
+					<label>Message</label>
+					<textarea name='message' />
+					<input type='submit' value='Send' />
+				</form>
 			</section>
 		</Layout>
 	);
