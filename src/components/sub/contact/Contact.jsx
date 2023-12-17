@@ -1,5 +1,6 @@
+import Layout from "../../common/layout/Layout";
 import "./Contact.scss";
 
 export default function Contact() {
-  return <div className="contact">Contact</div>;
+  return <Layout title={"Contact"}></Layout>;
 }

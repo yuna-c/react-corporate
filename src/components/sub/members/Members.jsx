@@ -1,5 +1,6 @@
-import './Members.scss';
+import Layout from "../../common/layout/Layout";
+import "./Members.scss";
 
 export default function Members() {
-	return <div className='members'>Members</div>;
+  return <Layout title={"Members"}></Layout>;
 }
