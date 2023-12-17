@@ -208,6 +208,7 @@
 				margin-bottom: 3rem;
 
 				h3 {
+					width: 100%;
 				}
 
 				p {
@@ -239,4 +240,34 @@
 
 //limit
 .limit {
+	.Contact {
+		.visualBox {
+			margin-bottom: 2rem;
+
+			.txt-area {
+				margin-bottom: 2rem;
+
+				h3 {
+					width: 100%;
+				}
+
+				p {
+					font-size: 1rem;
+				}
+			}
+		}
+
+		.contentBox {
+			margin: 2rem 0;
+
+			.tab-area {
+			}
+
+			.btn-area {
+				.btn {
+					width: 45%;
+				}
+			}
+		}
+	}
 }
