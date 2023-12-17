@@ -52,6 +52,7 @@
           border: 1px solid rgba(var(--pointColor-code), 1);
           color: rgba(var(--pointColor-code), 1);
         }
+
         &.on {
           background-color: rgba(var(--baseColor-code), 1) !important;
           border: 1px solid rgba(var(--pointColor-code), 1);
@@ -62,7 +63,12 @@
 
     .mapBox {
       width: 100%;
-      height: 50vh;
+      height: 70vh;
+      background-color: var(--baseColor);
+    }
+    .viewBox {
+      width: 100%;
+      height: 70vh;
       background-color: var(--baseColor);
     }
   }

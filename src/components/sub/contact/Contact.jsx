@@ -7,9 +7,9 @@ export default function Contact() {
 
   const [Index, setIndex] = useState(0);
   const [Traffic, setTraffic] = useState(false);
-  const [CurNum, setCurNum] = useState(0);
 
   const mapFrame = useRef(null);
+  const viewFrame = useRef(null);
   const marker = useRef(null);
   const mapInstance = useRef(null);
 
@@ -65,8 +65,21 @@ export default function Contact() {
       center: mapInfo.current[Index].latlng,
       level: 3,
     });
+
     marker.current.setMap(mapInstance.current);
     setTraffic(false);
+
+    // 뷰박스 추가
+    new kakao.current.maps.RoadviewClient().getNearestPanoId(
+      mapInfo.current[Index].latlng,
+      50,
+      (panoId) => {
+        new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
+          panoId,
+          mapInfo.current[Index].latlng
+        );
+      }
+    );
 
     //지도 타입 컨트롤러 추가
     mapInstance.current.addControl(
@@ -129,8 +142,8 @@ export default function Contact() {
             {Traffic ? "Traffic OFF" : "Traffic ON"}
           </button>
         </nav>
-
         <article className="mapBox" ref={mapFrame}></article>
+        <article className="viewBox" ref={viewFrame}></article>
       </section>
     </Layout>
   );
