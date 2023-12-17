@@ -183,13 +183,17 @@
 
         .txt-area {
           margin-bottom: 2rem;
+          display: flex;
+          flex-direction: column;
 
-          h6 {
+          h6,
+          input {
             line-height: 1.2;
             margin-bottom: 0.5rem;
             font-family: var(--pointFont);
             font-weight: 500;
             font-size: 1.9rem;
+            letter-spacing: 1px;
           }
 
           strong {
@@ -199,11 +203,29 @@
             font-weight: 400;
             font-size: 1.5rem;
           }
-          p {
+
+          p,
+          textarea {
             line-height: 1.6;
             margin-bottom: 2rem;
+            padding: 1rem 0;
+            font-family: var(--titleFont);
             font-size: 1.1rem;
+            font-weight: 400;
+            word-break: break-all;
+            letter-spacing: 1px;
           }
+
+          textarea {
+            background-color: transparent;
+            border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+            color: rgba(var(--baseColor-code), 1);
+          }
+
+          textarea:focus {
+            background-color: rgba(var(--baseColor-code), 0.05);
+          }
+
           span {
             font-family: var(--titleFont);
           }

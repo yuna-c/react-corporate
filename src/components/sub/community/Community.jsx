@@ -20,6 +20,9 @@ export default function Community() {
   const refTit = useRef(null);
   const refEmail = useRef(null);
   const refCon = useRef(null);
+  const refEditTit = useRef(null);
+  const refEditCon = useRef(null);
+  const editMode = useRef(false);
 
   const resetPost = () => {
     refTit.current.value = "";
@@ -63,7 +66,26 @@ export default function Community() {
     // filter(callbackFn, thisArg) : 메서드는 주어진 배열의 일부에 대한 얕은 복사본을 생성, 주어진 배열에서 제공된 함수에 의해 구현된 테스트를 통과한 요소로만 필터링
   };
 
+  const updatePost = (updateIndex) => {
+    if (!refEditTit.current.value.trim() || !refEditCon.current.value.trim()) {
+      return alert("수정할 글의 제목과 본문을 모두 입력하세요.");
+    }
+    editMode.current = false;
+    setPost(
+      Post.map((el, idx) => {
+        if (updateIndex === idx) {
+          el.title = refEditTit.current.value;
+          el.content = refEditCon.current.value;
+          el.enableUpdate = false;
+        }
+        return el;
+      })
+    );
+  };
+
   const enableUpdate = (editIndex) => {
+    if (editMode.current) return;
+    editMode.current = true;
     setPost(
       Post.map((el, idx) => {
         if (editIndex === idx) el.enableUpdate = true;
@@ -73,7 +95,9 @@ export default function Community() {
     console.log("update");
   };
 
+  //출력모드
   const disableUpdate = (editIndex) => {
+    editMode.current = false;
     setPost(
       Post.map((el, idx) => {
         if (editIndex === idx) el.enableUpdate = false;
@@ -209,23 +233,36 @@ export default function Community() {
               return (
                 <article key={el + idx}>
                   <div className="txt-area">
-                    <h6>{el.title}</h6>
+                    <input
+                      type="text"
+                      defaultValue={el.title}
+                      ref={refEditTit}
+                    />
                     <strong>{el.email}</strong>
-                    <p>{el.content}</p>
+                    <textarea
+                      placeholder="Your Message"
+                      rows={15}
+                      onChange={handleSizeHeight}
+                      defaultValue={el.content}
+                      ref={refEditCon}
+                    ></textarea>
                     <span>{strDate}</span>
                   </div>
 
                   <div className="btn-area">
-                    <button className="btn" onClick={() => enableUpdate(idx)}>
-                      Edit
+                    <button className="btn" onClick={() => disableUpdate(idx)}>
+                      Cancel
                     </button>
-                    <button className="btn">Update</button>
+                    <button className="btn" onClick={() => updatePost(idx)}>
+                      Update
+                    </button>
                   </div>
 
                   <div className="line-holizontal"></div>
                 </article>
               );
             } else {
+              //출력모드
               return (
                 <article key={el + idx}>
                   <div className="txt-area">
