@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Layout from "../../common/layout/Layout";
 import "./Community.scss";
 
@@ -23,14 +23,13 @@ export default function Community() {
       !refCon.current.value.trim()
     ) {
       resetPost();
-      return alert("제목, 이메일, 본문을 모두 입력하세요.");
+      return alert("제목과 본문을 모두 입력하세요.");
     }
     setPost([
       {
         title: refTit.current.value,
         email: refEmail.current.value,
         content: refCon.current.value,
-        // date: new Date(korTime),
       },
       ...Post,
     ]);
@@ -149,22 +148,20 @@ export default function Community() {
         <div className="showBox">
           {Post.map((el, idx) => {
             return (
-              <>
-                <article value={idx} key={el + idx}>
-                  <div className="txt-area">
-                    <h6>{el.title}</h6>
-                    <strong>{el.email}</strong>
-                    <p>{el.content}</p>
-                  </div>
+              <article key={el + idx}>
+                <div className="txt-area">
+                  <h6>{el.title}</h6>
+                  <strong>{el.email}</strong>
+                  <p>{el.content}</p>
+                </div>
 
-                  <div className="btn-area">
-                    <button className="btn">Edit</button>
-                    <button className="btn">Delete</button>
-                  </div>
+                <div className="btn-area">
+                  <button className="btn">Edit</button>
+                  <button className="btn">Delete</button>
+                </div>
 
-                  <div className="line-holizontal"></div>
-                </article>
-              </>
+                <div className="line-holizontal"></div>
+              </article>
             );
           })}
         </div>
