@@ -149,7 +149,7 @@ export default function Community() {
 
   return (
     <Layout title={"Community"}>
-      <div className="visualBox">
+      <section className="visualBox">
         <div className="txt-area">
           <h3>Feel free to ask questions</h3>
           <p>
@@ -166,11 +166,11 @@ export default function Community() {
         <div className="img-area">
           <img src={`${path.current}/img/img1.jpg`} alt={path.current} />
         </div>
-      </div>
+      </section>
 
       <div className="line-holizontal"></div>
 
-      <div className="contentBox">
+      <section className="contentBox">
         <div className="inputBox">
           <div className="txt-area">
             <h4>Creating true brands together.</h4>
@@ -436,7 +436,7 @@ export default function Community() {
               );
             })}
         </nav>
-      </div>
+      </section>
     </Layout>
   );
 }
