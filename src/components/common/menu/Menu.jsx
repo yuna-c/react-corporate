@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Mobile from "../layout/Mobile";
 import { motion } from "framer-motion";
 // npm i framer-motion@4
-// 메뉴 닫을때 한번에 빡 닫히는거 수정 요망
 
 export default function Menu({ setToggle, name }) {
   const closeMenu = (e) => {

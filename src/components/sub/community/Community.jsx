@@ -10,27 +10,29 @@ export default function Community() {
   const refEmail = useRef(null);
   const refCon = useRef(null);
 
-  const createPost = () => {
-    setPost([
-      ...Post,
-      {
-        title: refTit.current.value,
-        email: refEmail.current.value,
-        content: refCon.current.value,
-      },
-    ]);
-  };
-
   const resetPost = () => {
     refTit.current.value = "";
     refEmail.current.value = "";
     refCon.current.value = "";
   };
 
+  const createPost = () => {
+    setPost([
+      {
+        title: refTit.current.value,
+        email: refEmail.current.value,
+        content: refCon.current.value,
+        // date: new Date(korTime),
+      },
+      ...Post,
+    ]);
+  };
+
   const handleSizeHeight = () => {
     refCon.current.style.height = "auto";
     refCon.current.style.height = refCon.current.scrollHeight + "px";
   };
+
   console.log(Post);
 
   return (
@@ -95,7 +97,8 @@ export default function Community() {
             </div>
           </div>
 
-          <form className="form-area">
+          <div className="form-area">
+            {/* form tag 있으면 전송되면서 새로고침 됨 */}
             <label>Title</label>
             <input
               type="text"
@@ -121,17 +124,35 @@ export default function Community() {
             ></textarea>
 
             <div className="btn-area">
-              <button className="btn" type="reset" onClick={resetPost}>
+              <button className="btn" onClick={resetPost}>
                 DELETE
               </button>
-              <button className="btn" type="submit" onClick={createPost}>
+              <button className="btn" onClick={createPost}>
                 SUBMIT
               </button>
             </div>
-          </form>
+          </div>
         </div>
 
-        <div className="showBox"></div>
+        <div className="line-holizontal"></div>
+
+        <div className="showBox">
+          {Post.map((el, idx) => {
+            return (
+              <article key={el + idx}>
+                <div className="txt-area">
+                  <h6>{el.title}</h6>
+                  <strong>{el.email}</strong>
+                  <p>{el.content}</p>
+                </div>
+                <div className="btb-area">
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
 
       <div className="line-holizontal"></div>

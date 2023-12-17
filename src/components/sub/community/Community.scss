@@ -42,7 +42,7 @@
     margin: 5rem 0;
 
     .inputBox {
-      margin-bottom: 2rem;
+      margin-bottom: 5rem;
       font-family: var(--baseFont);
       display: flex;
       justify-content: space-between;
@@ -176,8 +176,9 @@
         }
       }
     }
+
     .showBox {
-      margin-bottom: 2rem;
+      margin-top: 5rem;
     }
   }
 }
