@@ -273,7 +273,6 @@
     }
 
     .paginationBox {
-      padding: 2rem 0;
       display: flex;
       justify-content: flex-end;
       gap: 10px;
@@ -429,10 +428,6 @@
           }
         }
       }
-
-      .paginationBox {
-        padding: 2rem 0;
-      }
     }
   }
 }
@@ -525,10 +520,6 @@
           }
         }
       }
-
-      .paginationBox {
-        padding: 1rem 0;
-      }
     }
   }
 }
@@ -573,10 +564,6 @@
             margin-bottom: 2rem;
           }
         }
-      }
-
-      .paginationBox {
-        padding: 0rem 0;
       }
     }
   }
