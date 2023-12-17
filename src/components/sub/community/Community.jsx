@@ -12,9 +12,9 @@ export default function Community() {
 
   const getLocalData = () => {
     const data = localStorage.getItem("post");
-    if (data) return JSON.parse(data);
     // JSON.parse 문자열의 구문을 분석, Js 값이나 객체를 생성
-    else return postData.dummyPosts; //[]빈배열에 json 파일 넣기
+    if (data) return JSON.parse(data);
+    return postData.dummyPosts; //[]빈배열에 json 파일 넣기
   };
   console.log(getLocalData());
   const [Post, setPost] = useState(getLocalData()); //핸들링 위한 state
