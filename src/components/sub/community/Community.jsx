@@ -1,11 +1,17 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Layout from "../../common/layout/Layout";
 import "./Community.scss";
 
 export default function Community() {
   const path = useRef(process.env.PUBLIC_URL);
 
-  const [Post, setPost] = useState([]); //핸들링 위한 state
+  const getLocalData = () => {
+    const data = localStorage.getItem("post");
+    if (data) return JSON.parse(data);
+    // JSON.parse 문자열의 구문을 분석, Js 값이나 객체를 생성
+    else return [];
+  };
+  const [Post, setPost] = useState(getLocalData()); //핸들링 위한 state
   const refTit = useRef(null);
   const refEmail = useRef(null);
   const refCon = useRef(null);
@@ -17,13 +23,21 @@ export default function Community() {
   };
 
   const createPost = () => {
+    if (!refTit.current.value.trim()) {
+      return alert("제목을 입력하세요.");
+    }
+    if (!refEmail.current.value.trim()) {
+      return alert("이메일을 입력하세요.");
+    }
+    if (!refCon.current.value.trim()) {
+      return alert("본문을 입력하세요.");
+    }
     if (
       !refTit.current.value.trim() ||
       !refEmail.current.value.trim() ||
       !refCon.current.value.trim()
     ) {
       resetPost();
-      return alert("제목과 본문을 모두 입력하세요.");
     }
     setPost([
       {
@@ -41,6 +55,9 @@ export default function Community() {
     refCon.current.style.height = refCon.current.scrollHeight + "px";
   };
 
+  useEffect(() => {
+    localStorage.setItem("post", JSON.stringify(Post));
+  }, [Post]);
   console.log(Post);
 
   return (
