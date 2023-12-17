@@ -106,8 +106,6 @@ body {
     height: 2.4rem;
     position: relative;
     overflow: hidden;
-    background-color: rgba(var(--baseColor-code), 1);
-    border: 1px solid rgba(var(--baseColor-code), 1);
     border-radius: 6px;
     letter-spacing: 1px;
     transition: border 0.3s;
@@ -118,6 +116,8 @@ body {
       flex-direction: column;
       font-family: var(--titleFont);
       text-transform: uppercase;
+      background-color: rgba(var(--baseColor-code), 1);
+      border: 1px solid rgba(var(--baseColor-code), 1);
       overflow: hidden;
 
       .btn-active {

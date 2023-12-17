@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Layout from "../../common/layout/Layout";
 import "./Community.scss";
 
@@ -17,6 +17,14 @@ export default function Community() {
   };
 
   const createPost = () => {
+    if (
+      !refTit.current.value.trim() ||
+      !refEmail.current.value.trim() ||
+      !refCon.current.value.trim()
+    ) {
+      resetPost();
+      return alert("제목, 이메일, 본문을 모두 입력하세요.");
+    }
     setPost([
       {
         title: refTit.current.value,
@@ -26,6 +34,7 @@ export default function Community() {
       },
       ...Post,
     ]);
+    // resetPost();
   };
 
   const handleSizeHeight = () => {
@@ -97,7 +106,7 @@ export default function Community() {
             </div>
           </div>
 
-          <div className="form-area">
+          <form className="form-area" onSubmit={(e) => e.preventDefault()}>
             {/* form tag 있으면 전송되면서 새로고침 됨 */}
             <label>Title</label>
             <input
@@ -127,11 +136,12 @@ export default function Community() {
               <button className="btn" onClick={resetPost}>
                 DELETE
               </button>
+
               <button className="btn" onClick={createPost}>
                 SUBMIT
               </button>
             </div>
-          </div>
+          </form>
         </div>
 
         <div className="line-holizontal"></div>
@@ -139,17 +149,22 @@ export default function Community() {
         <div className="showBox">
           {Post.map((el, idx) => {
             return (
-              <article key={el + idx}>
-                <div className="txt-area">
-                  <h6>{el.title}</h6>
-                  <strong>{el.email}</strong>
-                  <p>{el.content}</p>
-                </div>
-                <div className="btb-area">
-                  <button>Edit</button>
-                  <button>Delete</button>
-                </div>
-              </article>
+              <>
+                <article value={idx} key={el + idx}>
+                  <div className="txt-area">
+                    <h6>{el.title}</h6>
+                    <strong>{el.email}</strong>
+                    <p>{el.content}</p>
+                  </div>
+
+                  <div className="btn-area">
+                    <button className="btn">Edit</button>
+                    <button className="btn">Delete</button>
+                  </div>
+
+                  <div className="line-holizontal"></div>
+                </article>
+              </>
             );
           })}
         </div>
