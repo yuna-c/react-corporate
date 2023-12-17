@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 // 메뉴 닫을때 한번에 빡 닫히는거 수정 요망
 
 export default function Menu({ setToggle, name }) {
-  const closeMenu = () => {
+  const closeMenu = (e) => {
+    e.preventDefault();
     window.innerWidth >= 1200 && setToggle(false);
   };
 
@@ -36,12 +37,12 @@ export default function Menu({ setToggle, name }) {
         animate={{
           opacity: 1,
           y: "0",
-          transition: { duration: 0.8, ease: "linear" },
+          transition: { duration: 0.4, ease: "linear" },
         }}
         exit={{
           opacity: 0,
           y: "100px",
-          transition: { delay: 0.2, duration: 0.7 },
+          transition: { delay: 0.2, duration: 0.4 },
         }}
       >
         <div className="content-padding">

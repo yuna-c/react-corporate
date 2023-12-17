@@ -21,6 +21,11 @@ export default function Community() {
       },
     ]);
   };
+
+  const handleSizeHeight = () => {
+    refCon.current.style.height = "auto";
+    refCon.current.style.height = refCon.current.scrollHeight + "px";
+  };
   console.log(Post);
 
   return (
@@ -103,10 +108,11 @@ export default function Community() {
             <label>Message</label>
             <textarea
               placeholder="Your Message"
-              rows="18"
+              rows={15}
               maxLength={"5000"}
               name="content"
               ref={refCon}
+              onChange={handleSizeHeight}
             ></textarea>
 
             <div className="btn-area">
