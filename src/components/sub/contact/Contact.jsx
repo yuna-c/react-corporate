@@ -47,8 +47,23 @@ export default function Contact() {
     },
   ]);
 
-  const setCenter = () =>
+  const roadview = () => {
+    new kakao.current.maps.RoadviewClient().getNearestPanoId(
+      mapInfo.current[Index].latlng,
+      50,
+      (panoId) => {
+        new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
+          panoId,
+          mapInfo.current[Index].latlng
+        );
+      }
+    );
+  };
+
+  const setCenter = () => {
     mapInstance.current.setCenter(mapInfo.current[Index].latlng);
+    roadview();
+  };
 
   //마커 인스턴스 생성
   marker.current = new kakao.current.maps.Marker({
@@ -71,16 +86,17 @@ export default function Contact() {
     setTraffic(false);
 
     // 뷰박스 추가
-    new kakao.current.maps.RoadviewClient().getNearestPanoId(
-      mapInfo.current[Index].latlng,
-      50,
-      (panoId) => {
-        new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
-          panoId,
-          mapInfo.current[Index].latlng
-        );
-      }
-    );
+    // new kakao.current.maps.RoadviewClient().getNearestPanoId(
+    //   mapInfo.current[Index].latlng,
+    //   50,
+    //   (panoId) => {
+    //     new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
+    //       panoId,
+    //       mapInfo.current[Index].latlng
+    //     );
+    //   }
+    // );
+    roadview();
 
     //지도 타입 컨트롤러 추가
     mapInstance.current.addControl(
@@ -146,6 +162,10 @@ export default function Contact() {
 
           <button onClick={() => setView(!View)} className={`btn`}>
             {View ? "map view" : "road view"}
+          </button>
+
+          <button onClick={setCenter} className={`btn`}>
+            위치 초기화
           </button>
         </nav>
 
