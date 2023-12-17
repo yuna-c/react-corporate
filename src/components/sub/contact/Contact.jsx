@@ -7,6 +7,8 @@ export default function Contact() {
   const [Index, setIndex] = useState(0);
   const mapFrame = useRef(null);
   const marker = useRef(null);
+  const mapInstance = useRef(null);
+
   console.log(kakao);
 
   //지점마다 출력할 정보를 개별적인 객체로 묶어서 배열로 그룹화
@@ -40,6 +42,9 @@ export default function Contact() {
     },
   ]);
 
+  const setCenter = () =>
+    mapInstance.current.setCenter(mapInfo.current[Index].latlng);
+
   //마커 인스턴스 생성
   marker.current = new kakao.current.maps.Marker({
     position: mapInfo.current[Index].latlng,
@@ -51,12 +56,15 @@ export default function Contact() {
   });
 
   useEffect(() => {
-    const mapInstance = new kakao.current.maps.Map(mapFrame.current, {
+    mapInstance.current = new kakao.current.maps.Map(mapFrame.current, {
       center: mapInfo.current[Index].latlng,
       level: 3,
     });
-    marker.current.setMap(mapInstance);
-  }, [Index, kakao]);
+    marker.current.setMap(mapInstance.current);
+
+    window.addEventListener("resize", setCenter);
+    return () => window.removeEventListener("resize", setCenter);
+  }, [Index]);
 
   return (
     <Layout title={"Contact"}>
