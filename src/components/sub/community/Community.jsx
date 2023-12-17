@@ -58,8 +58,28 @@ export default function Community() {
   };
 
   const deletePost = (delIndex) => {
+    if (!window.confirm("정말 해당 게시글을 삭제하겠습니까?")) return;
     setPost(Post.filter((_, idx) => delIndex !== idx));
     // filter(callbackFn, thisArg) : 메서드는 주어진 배열의 일부에 대한 얕은 복사본을 생성, 주어진 배열에서 제공된 함수에 의해 구현된 테스트를 통과한 요소로만 필터링
+  };
+
+  const enableUpdate = (editIndex) => {
+    setPost(
+      Post.map((el, idx) => {
+        if (editIndex === idx) el.enableUpdate = true;
+        return el;
+      })
+    );
+    console.log("update");
+  };
+
+  const disableUpdate = (editIndex) => {
+    setPost(
+      Post.map((el, idx) => {
+        if (editIndex === idx) el.enableUpdate = false;
+        return el;
+      })
+    );
   };
 
   const handleSizeHeight = () => {
@@ -183,27 +203,51 @@ export default function Community() {
             const strDate = customText(date.split("T")[0].slice(1), ".");
             const strDate2 = customText(date.split("Z")[0].slice(12), ":");
             const time = Math.floor(strDate2);
-            console.log(strDate2);
+            // console.log(strDate2);
 
-            return (
-              <article key={el + idx}>
-                <div className="txt-area">
-                  <h6>{el.title}</h6>
-                  <strong>{el.email}</strong>
-                  <p>{el.content}</p>
-                  <span>{strDate}</span>
-                </div>
+            if (el.enableUpdate) {
+              return (
+                <article key={el + idx}>
+                  <div className="txt-area">
+                    <h6>{el.title}</h6>
+                    <strong>{el.email}</strong>
+                    <p>{el.content}</p>
+                    <span>{strDate}</span>
+                  </div>
 
-                <div className="btn-area">
-                  <button className="btn">Edit</button>
-                  <button className="btn" onClick={() => deletePost(idx)}>
-                    Delete
-                  </button>
-                </div>
+                  <div className="btn-area">
+                    <button className="btn" onClick={() => enableUpdate(idx)}>
+                      Edit
+                    </button>
+                    <button className="btn">Update</button>
+                  </div>
 
-                <div className="line-holizontal"></div>
-              </article>
-            );
+                  <div className="line-holizontal"></div>
+                </article>
+              );
+            } else {
+              return (
+                <article key={el + idx}>
+                  <div className="txt-area">
+                    <h6>{el.title}</h6>
+                    <strong>{el.email}</strong>
+                    <p>{el.content}</p>
+                    <span>{strDate}</span>
+                  </div>
+
+                  <div className="btn-area">
+                    <button className="btn" onClick={() => enableUpdate(idx)}>
+                      Edit
+                    </button>
+                    <button className="btn" onClick={() => deletePost(idx)}>
+                      Delete
+                    </button>
+                  </div>
+
+                  <div className="line-holizontal"></div>
+                </article>
+              );
+            }
           })}
         </div>
       </div>
