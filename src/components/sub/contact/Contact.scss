@@ -34,23 +34,28 @@
       margin-bottom: 2rem;
 
       .btn {
-        color: rgba(var(--pointColor-code), 1);
+        color: rgba(var(--baseColor-code), 1);
         display: flex;
         flex-wrap: wrap;
-        background-color: rgba(var(--baseColor-code), 1);
+        background-color: rgba(var(--pointColor-code), 1);
         font-size: 1rem;
         font-weight: 400;
         letter-spacing: 1px;
         padding: 0.5rem 1rem;
         text-align: center;
         text-transform: uppercase;
-        border: 1px solid rgba(var(--pointColor-code), 1);
+        border: 1px solid rgba(var(--baseColor-code), 1);
         border-radius: 6px;
 
         &:hover {
-          background-color: rgba(var(--pointColor-code), 1) !important;
-          border: 1px solid rgba(var(--baseColor-code), 1);
-          color: rgba(var(--baseColor-code), 1);
+          background-color: rgba(var(--baseColor-code), 1) !important;
+          border: 1px solid rgba(var(--pointColor-code), 1);
+          color: rgba(var(--pointColor-code), 1);
+        }
+        &.on {
+          background-color: rgba(var(--baseColor-code), 1) !important;
+          border: 1px solid rgba(var(--pointColor-code), 1);
+          color: rgba(var(--pointColor-code), 1);
         }
       }
     }
