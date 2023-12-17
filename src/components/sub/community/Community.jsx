@@ -1,9 +1,28 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Layout from "../../common/layout/Layout";
 import "./Community.scss";
 
 export default function Community() {
   const path = useRef(process.env.PUBLIC_URL);
+
+  const [Post, setPost] = useState([]); //핸들링 위한 state
+  const refTit = useRef(null);
+  const refEmail = useRef(null);
+  const refCon = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setPost([
+      ...Post,
+      {
+        title: refTit.current.value,
+        email: refEmail.current.value,
+        content: refCon.current.value,
+      },
+    ]);
+  };
+  console.log(Post);
+
   return (
     <Layout title={"Community"}>
       <div className="visualBox">
@@ -65,20 +84,38 @@ export default function Community() {
               </ul>
             </div>
           </div>
-          <form className="form-area">
-            <input type="text" placeholder="Your Title" name="tit" />
-            <input type="text" placeholder="Your Email" name="tit" />
 
+          <form className="form-area" onSubmit={handleSubmit}>
+            <label>Title</label>
+            <input
+              type="text"
+              placeholder="Your Title"
+              name="title"
+              ref={refTit}
+            />
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Your Email"
+              name="email"
+              ref={refEmail}
+            />
+            <label>Message</label>
             <textarea
               placeholder="Your Message"
               rows="18"
               maxLength={"5000"}
-              name="con"
+              name="content"
+              ref={refCon}
             ></textarea>
 
             <div className="btn-area">
-              <button className="btn">DELETE</button>
-              <button className="btn">SUBMIT</button>
+              <button className="btn" type="reset">
+                DELETE
+              </button>
+              <button className="btn" type="submit">
+                SUBMIT
+              </button>
             </div>
           </form>
         </div>
