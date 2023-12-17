@@ -24,6 +24,7 @@
 
 	.contentBox {
 		margin: 5rem 0;
+		transition: 1s;
 
 		.btn-area {
 			width: 100%;
@@ -68,7 +69,7 @@
 			background-color: var(--baseColor);
 			position: relative;
 			filter: saturate(0);
-			transition: filter 0.5s;
+			transition: filter 0.5s height 1s;
 
 			&:hover {
 				filter: saturate(1);
@@ -96,6 +97,7 @@
 		form {
 			display: flex;
 			flex-direction: column;
+
 			label {
 				display: none;
 			}
@@ -113,10 +115,6 @@
 				font-weight: 400;
 				color: rgba(var(--baseColor-code), 1);
 				transition: border 0.2s;
-			}
-
-			textarea {
-				min-height: 10rem;
 			}
 
 			input[type='text']::placeholder,
