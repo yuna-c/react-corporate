@@ -201,8 +201,11 @@
           }
           p {
             line-height: 1.6;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             font-size: 1.1rem;
+          }
+          span {
+            font-family: var(--titleFont);
           }
         }
 
