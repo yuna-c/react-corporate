@@ -1,8 +1,9 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useCustomText } from "../../../hooks/useText";
 import Layout from "../../common/layout/Layout";
-import "./Community.scss";
 import postData from "./dummyPosts.json";
+import "./Community.scss";
 
 export default function Community() {
   const path = useRef(process.env.PUBLIC_URL);
@@ -251,24 +252,6 @@ export default function Community() {
 
         <div className="line-holizontal"></div>
 
-        <nav className="pagination">
-          {Array(PageNum)
-            .fill()
-            .map((_, idx) => {
-              return (
-                <button
-                  key={idx}
-                  onClick={() => idx !== CurNum && setCurNum(idx)}
-                  className={`btn ${idx === CurNum ? "on" : ""}`}
-                >
-                  {idx + 1}
-                </button>
-              );
-            })}
-        </nav>
-
-        <div className="line-holizontal"></div>
-
         <div className="showBox">
           {Post.map((el, idx) => {
             const date = JSON.stringify(el.date);
@@ -349,65 +332,87 @@ export default function Community() {
             ) {
               return (
                 <article key={el + idx}>
-                  {el.enableUpdate ? (
-                    //수정모드
-                    <>
-                      <div className="txt-area">
-                        <input
-                          type="text"
-                          defaultValue={el.title}
-                          ref={refEditTit}
-                        />
-                        <strong>{el.email}</strong>
-                        <textarea
-                          placeholder="Your Message"
-                          rows={15}
-                          onChange={handleSizeHeight}
-                          defaultValue={el.content}
-                          ref={refEditCon}
-                        ></textarea>
-                        <span>{strDate}</span>
-                      </div>
+                  <AnimatePresence>
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.8, ease: "linear" },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { delay: 0.2, duration: 0.8 },
+                      }}
+                    >
+                      {el.enableUpdate ? (
+                        //수정모드
+                        <>
+                          <div className="txt-area">
+                            <input
+                              type="text"
+                              defaultValue={el.title}
+                              ref={refEditTit}
+                            />
+                            <strong>{el.email}</strong>
+                            <textarea
+                              placeholder="Your Message"
+                              rows={15}
+                              onChange={handleSizeHeight}
+                              defaultValue={el.content}
+                              ref={refEditCon}
+                            ></textarea>
+                            <span>{strDate}</span>
+                          </div>
 
-                      <div className="btn-area">
-                        <button
-                          className="btn"
-                          onClick={() => disableUpdate(idx)}
-                        >
-                          Cancel
-                        </button>
-                        <button className="btn" onClick={() => updatePost(idx)}>
-                          Update
-                        </button>
-                      </div>
+                          <div className="btn-area">
+                            <button
+                              className="btn"
+                              onClick={() => disableUpdate(idx)}
+                            >
+                              Cancel
+                            </button>
+                            <button
+                              className="btn"
+                              onClick={() => updatePost(idx)}
+                            >
+                              Update
+                            </button>
+                          </div>
 
-                      <div className="line-holizontal"></div>
-                    </>
-                  ) : (
-                    //출력모드
-                    <>
-                      <div className="txt-area">
-                        <h6>{el.title}</h6>
-                        <strong>{el.email}</strong>
-                        <p>{el.content}</p>
-                        <span>{strDate}</span>
-                      </div>
+                          <div className="line-holizontal"></div>
+                        </>
+                      ) : (
+                        //출력모드
+                        <>
+                          <div className="txt-area">
+                            <h6>{el.title}</h6>
+                            <strong>{el.email}</strong>
+                            <p>{el.content}</p>
+                            <span>{strDate}</span>
+                          </div>
 
-                      <div className="btn-area">
-                        <button
-                          className="btn"
-                          onClick={() => enableUpdate(idx)}
-                        >
-                          Edit
-                        </button>
-                        <button className="btn" onClick={() => deletePost(idx)}>
-                          Delete
-                        </button>
-                      </div>
+                          <div className="btn-area">
+                            <button
+                              className="btn"
+                              onClick={() => enableUpdate(idx)}
+                            >
+                              Edit
+                            </button>
+                            <button
+                              className="btn"
+                              onClick={() => deletePost(idx)}
+                            >
+                              Delete
+                            </button>
+                          </div>
 
-                      <div className="line-holizontal"></div>
-                    </>
-                  )}
+                          <div className="line-holizontal"></div>
+                        </>
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
                 </article>
               );
             } else {
@@ -415,6 +420,22 @@ export default function Community() {
             }
           })}
         </div>
+
+        <nav className="paginationBox">
+          {Array(PageNum)
+            .fill()
+            .map((_, idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => idx !== CurNum && setCurNum(idx)}
+                  className={`btn ${idx === CurNum ? "on" : ""}`}
+                >
+                  {idx + 1}
+                </button>
+              );
+            })}
+        </nav>
       </div>
     </Layout>
   );
