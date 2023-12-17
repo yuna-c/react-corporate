@@ -15,11 +15,21 @@ export default function Contact() {
     level: 3,
   });
 
+  const imgSrc = process.env.PUBLIC_URL + "/img/marker1.png";
+  const imgSize = new kakao.maps.Size(232, 99);
+  const imgOpt = { offset: new kakao.maps.Point(116, 99) };
+
   useEffect(() => {
     const mapInstance = new kakao.maps.Map(mapFrame.current, mapOption.current);
-    const posInstance = new kakao.maps.LatLng(33.450701, 126.570667);
+    const markerImageInstance = new kakao.maps.MarkerImage(
+      imgSrc,
+      imgSize,
+      imgOpt
+    );
+
     const markerInstance = new kakao.maps.Marker({
-      position: posInstance,
+      position: mapOption.current.center,
+      image: markerImageInstance,
     });
 
     markerInstance.setMap(mapInstance);
