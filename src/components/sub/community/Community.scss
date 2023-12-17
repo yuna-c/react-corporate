@@ -1,570 +1,570 @@
 .Community {
-  .visualBox {
-    margin-bottom: 5rem;
+	.visualBox {
+		margin-bottom: 5rem;
 
-    .txt-area {
-      margin-bottom: 5rem;
-      h3 {
-        width: 70%;
-        font-family: var(--pointFont);
-        font-weight: 400;
-        margin-bottom: 1rem;
-      }
+		.txt-area {
+			margin-bottom: 5rem;
+			h3 {
+				width: 70%;
+				font-family: var(--pointFont);
+				font-weight: 400;
+				margin-bottom: 1rem;
+			}
 
-      p {
-        font-size: 1.75rem;
-        font-weight: 400;
-        line-height: 1.5;
-      }
-    }
+			p {
+				font-size: 1.75rem;
+				font-weight: 400;
+				line-height: 1.5;
+			}
+		}
 
-    .img-area {
-      height: auto;
-      position: relative;
-      padding-bottom: 56.26%;
-      margin-bottom: 15px;
-      border-radius: 1rem;
-      overflow: hidden;
+		.img-area {
+			height: auto;
+			position: relative;
+			padding-bottom: 56.26%;
+			margin-bottom: 15px;
+			border-radius: 1rem;
+			overflow: hidden;
 
-      img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-        transform: scale3d(1.01, 1.015, 1);
-      }
-    }
-  }
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				object-fit: cover;
+				transform: scale3d(1.01, 1.015, 1);
+			}
+		}
+	}
 
-  .contentBox {
-    margin: 5rem 0 0;
+	.contentBox {
+		margin: 5rem 0 0;
 
-    .inputBox {
-      margin-bottom: 5rem;
-      font-family: var(--baseFont);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+		.inputBox {
+			margin-bottom: 5rem;
+			font-family: var(--baseFont);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
 
-      .txt-area {
-        width: 50%;
+			.txt-area {
+				width: 50%;
 
-        h4 {
-          margin-bottom: 17rem;
-          line-height: 1.3;
-          font-family: var(--pointFont);
-          font-size: 6.5rem;
-          font-weight: 400;
-        }
+				h4 {
+					margin-bottom: 17rem;
+					line-height: 1.3;
+					font-family: var(--pointFont);
+					font-size: 6.5rem;
+					font-weight: 400;
+				}
 
-        .sns-area {
-          h5 {
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            font-weight: 400;
-          }
+				.sns-area {
+					h5 {
+						margin-bottom: 0.5rem;
+						font-size: 1rem;
+						font-weight: 400;
+					}
 
-          ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+					ul {
+						display: flex;
+						flex-wrap: wrap;
+						gap: 10px;
 
-            li {
-              display: flex;
-              border: 1px solid rgba(var(--baseColor-code), 1);
-              border-radius: 50%;
-              overflow: hidden;
+						li {
+							display: flex;
+							border: 1px solid rgba(var(--baseColor-code), 1);
+							border-radius: 50%;
+							overflow: hidden;
 
-              button {
-                width: 32px;
-                height: 32px;
-                line-height: 32px;
-                font-size: 13px;
-                text-transform: uppercase;
-                text-align: center;
-                transition: background-color 0.2s, border 0.2s;
-                color: rgba(var(--baseColor-code), 1);
-              }
-              &:hover {
-                background-color: rgba(var(--baseColor-code), 1);
+							button {
+								width: 32px;
+								height: 32px;
+								line-height: 32px;
+								font-size: 13px;
+								text-transform: uppercase;
+								text-align: center;
+								transition: background-color 0.2s, border 0.2s;
+								color: rgba(var(--baseColor-code), 1);
+							}
+							&:hover {
+								background-color: rgba(var(--baseColor-code), 1);
 
-                button {
-                  &:hover {
-                    color: rgba(var(--pointColor-code), 1);
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+								button {
+									&:hover {
+										color: rgba(var(--pointColor-code), 1);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 
-      .form-area {
-        width: 45%;
-        display: flex;
-        flex-direction: column;
+			.form-area {
+				width: 45%;
+				display: flex;
+				flex-direction: column;
 
-        label {
-          display: none;
-        }
+				label {
+					display: none;
+				}
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-          margin-bottom: 2rem;
-          padding: 1rem;
-          line-height: 1.5;
-          background-color: transparent;
-          border-bottom: 1px solid rgba(var(--baseColor-code), 1);
-          font-family: var(--titleFont);
-          font-size: 1.1rem;
-          font-weight: 400;
-          color: rgba(var(--baseColor-code), 1);
-          transition: border 0.2s;
-        }
+				input[type='text'],
+				input[type='email'],
+				textarea {
+					margin-bottom: 2rem;
+					padding: 1rem;
+					line-height: 1.5;
+					background-color: transparent;
+					border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+					font-family: var(--titleFont);
+					font-size: 1.1rem;
+					font-weight: 400;
+					color: rgba(var(--baseColor-code), 1);
+					transition: border 0.2s;
+				}
 
-        textarea {
-          min-height: 10rem;
-        }
+				textarea {
+					min-height: 10rem;
+				}
 
-        input[type="text"]::placeholder,
-        input[type="email"]::placeholder,
-        textarea::placeholder {
-          color: rgba(var(--baseColor-code), 1);
-        }
+				input[type='text']::placeholder,
+				input[type='email']::placeholder,
+				textarea::placeholder {
+					color: rgba(var(--baseColor-code), 1);
+				}
 
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-          background-color: rgba(var(--baseColor-code), 0.05);
-        }
-      }
+				input[type='text']:focus,
+				input[type='email']:focus,
+				textarea:focus {
+					background-color: rgba(var(--baseColor-code), 0.05);
+				}
+			}
 
-      .btn-area {
-        width: 100%;
-        height: auto;
-        display: flex;
-        gap: 1rem;
-        justify-content: flex-end;
+			.btn-area {
+				width: 100%;
+				height: auto;
+				display: flex;
+				gap: 1rem;
+				justify-content: flex-end;
 
-        .btn {
-          color: rgba(var(--pointColor-code), 1);
-          display: flex;
-          flex-wrap: wrap;
-          background-color: rgba(var(--baseColor-code), 1);
-          font-family: var(--titleFont);
-          font-size: 1rem;
-          font-weight: 400;
-          letter-spacing: 1px;
-          padding: 0.5rem 1rem;
-          text-align: center;
-          text-transform: uppercase;
-          border: 1px solid rgba(var(--pointColor-code), 1);
-          border-radius: 6px;
+				.btn {
+					color: rgba(var(--pointColor-code), 1);
+					display: flex;
+					flex-wrap: wrap;
+					background-color: rgba(var(--baseColor-code), 1);
+					font-family: var(--titleFont);
+					font-size: 1rem;
+					font-weight: 400;
+					letter-spacing: 1px;
+					padding: 0.5rem 1rem;
+					text-align: center;
+					text-transform: uppercase;
+					border: 1px solid rgba(var(--pointColor-code), 1);
+					border-radius: 6px;
 
-          &:hover {
-            background-color: rgba(var(--pointColor-code), 1) !important;
-            border: 1px solid rgba(var(--baseColor-code), 1);
-            color: rgba(var(--baseColor-code), 1);
-          }
-        }
-      }
-    }
+					&:hover {
+						background-color: rgba(var(--pointColor-code), 1) !important;
+						border: 1px solid rgba(var(--baseColor-code), 1);
+						color: rgba(var(--baseColor-code), 1);
+					}
+				}
+			}
+		}
 
-    .line-holizontal {
-    }
+		.line-holizontal {
+		}
 
-    .showBox {
-      margin-top: 5rem;
+		.showBox {
+			margin-top: 5rem;
 
-      article {
-        margin: 5rem 0 3rem;
+			article {
+				margin: 5rem 0 3rem;
 
-        .txt-area {
-          margin-bottom: 2rem;
-          display: flex;
-          flex-direction: column;
+				.txt-area {
+					margin-bottom: 2rem;
+					display: flex;
+					flex-direction: column;
 
-          h6,
-          input {
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-            font-family: var(--pointFont);
-            font-weight: 500;
-            font-size: 1.9rem;
-            letter-spacing: 1px;
-          }
+					h6,
+					input {
+						line-height: 1.2;
+						margin-bottom: 0.5rem;
+						font-family: var(--pointFont);
+						font-weight: 500;
+						font-size: 1.9rem;
+						letter-spacing: 1px;
+					}
 
-          strong {
-            display: inline-block;
-            margin-bottom: 1rem;
-            font-family: var(--pointFont);
-            font-weight: 400;
-            font-size: 1.5rem;
-          }
+					strong {
+						display: inline-block;
+						margin-bottom: 1rem;
+						font-family: var(--pointFont);
+						font-weight: 400;
+						font-size: 1.5rem;
+					}
 
-          p,
-          textarea {
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            padding: 1rem 0;
-            font-family: var(--titleFont);
-            font-size: 1.1rem;
-            font-weight: 400;
-            word-break: break-all;
-            letter-spacing: 1px;
-          }
+					p,
+					textarea {
+						line-height: 1.6;
+						margin-bottom: 2rem;
+						padding: 1rem 0;
+						font-family: var(--titleFont);
+						font-size: 1.1rem;
+						font-weight: 400;
+						word-break: break-all;
+						letter-spacing: 1px;
+					}
 
-          textarea {
-            background-color: transparent;
-            border-bottom: 1px solid rgba(var(--baseColor-code), 1);
-            color: rgba(var(--baseColor-code), 1);
-            background-color: rgba(var(--baseColor-code), 0.05);
-          }
+					textarea {
+						background-color: transparent;
+						border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+						color: rgba(var(--baseColor-code), 1);
+						background-color: rgba(var(--baseColor-code), 0.05);
+					}
 
-          textarea:focus {
-            background-color: rgba(var(--baseColor-code), 0.05);
-          }
+					textarea:focus {
+						background-color: rgba(var(--baseColor-code), 0.05);
+					}
 
-          span {
-            font-family: var(--titleFont);
-          }
-        }
+					span {
+						font-family: var(--titleFont);
+					}
+				}
 
-        .btn-area {
-          width: 100%;
-          height: auto;
-          margin-bottom: 4rem;
-          display: flex;
-          gap: 1rem;
-          justify-content: flex-end;
+				.btn-area {
+					width: 100%;
+					height: auto;
+					margin-bottom: 4rem;
+					display: flex;
+					gap: 1rem;
+					justify-content: flex-end;
 
-          .btn {
-            color: rgba(var(--pointColor-code), 1);
-            display: flex;
-            flex-wrap: wrap;
-            background-color: rgba(var(--baseColor-code), 1);
-            font-family: var(--titleFont);
-            font-size: 1rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            padding: 0.5rem 1rem;
-            text-align: center;
-            text-transform: uppercase;
-            border: 1px solid rgba(var(--pointColor-code), 1);
-            border-radius: 6px;
+					.btn {
+						color: rgba(var(--pointColor-code), 1);
+						display: flex;
+						flex-wrap: wrap;
+						background-color: rgba(var(--baseColor-code), 1);
+						font-family: var(--titleFont);
+						font-size: 1rem;
+						font-weight: 400;
+						letter-spacing: 1px;
+						padding: 0.5rem 1rem;
+						text-align: center;
+						text-transform: uppercase;
+						border: 1px solid rgba(var(--pointColor-code), 1);
+						border-radius: 6px;
 
-            &:hover {
-              background-color: rgba(var(--pointColor-code), 1) !important;
-              border: 1px solid rgba(var(--baseColor-code), 1);
-              color: rgba(var(--baseColor-code), 1);
-            }
-          }
-        }
-      }
+						&:hover {
+							background-color: rgba(var(--pointColor-code), 1) !important;
+							border: 1px solid rgba(var(--baseColor-code), 1);
+							color: rgba(var(--baseColor-code), 1);
+						}
+					}
+				}
+			}
 
-      // :last-child {
-      //   .line-holizontal {
-      //     display: none;
-      //   }
-      // }
-    }
+			// :last-child {
+			//   .line-holizontal {
+			//     display: none;
+			//   }
+			// }
+		}
 
-    .paginationBox {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
+		.paginationBox {
+			display: flex;
+			justify-content: flex-end;
+			gap: 10px;
 
-      .btn {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        color: rgba(var(--pointColor-code), 1);
-        background-color: rgba(var(--baseColor-code), 1);
-        font-family: var(--titleFont);
-        font-weight: 400;
-        text-align: center;
-        border: 1px solid rgba(var(--pointColor-code), 1);
+			.btn {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				color: rgba(var(--pointColor-code), 1);
+				background-color: rgba(var(--baseColor-code), 1);
+				font-family: var(--titleFont);
+				font-weight: 400;
+				text-align: center;
+				border: 1px solid rgba(var(--pointColor-code), 1);
 
-        cursor: pointer;
+				cursor: pointer;
 
-        &.on {
-          background-color: rgba(var(--pointColor-code), 1) !important;
-          border: 1px solid rgba(var(--baseColor-code), 1);
-          color: rgba(var(--baseColor-code), 1);
-          opacity: 1;
-        }
-      }
-    }
-  }
+				&.on {
+					background-color: rgba(var(--pointColor-code), 1) !important;
+					border: 1px solid rgba(var(--baseColor-code), 1);
+					color: rgba(var(--baseColor-code), 1);
+					opacity: 1;
+				}
+			}
+		}
+	}
 }
 
 //tablet
 .tablet,
 .mobile,
 .limit {
-  .Community {
-    .visualBox {
-      margin-bottom: 4rem;
+	.Community {
+		.visualBox {
+			margin-bottom: 4rem;
 
-      .txt-area {
-        margin-bottom: 3rem;
+			.txt-area {
+				margin-bottom: 3rem;
 
-        h3 {
-          margin-bottom: 3rem;
-        }
+				h3 {
+					margin-bottom: 3rem;
+				}
 
-        p {
-          font-size: 1.5rem;
-        }
-      }
-    }
+				p {
+					font-size: 1.5rem;
+				}
+			}
+		}
 
-    .contentBox {
-      margin: 4rem 0 0;
+		.contentBox {
+			margin: 4rem 0 0;
 
-      .inputBox {
-        margin-bottom: 4rem;
+			.inputBox {
+				margin-bottom: 4rem;
 
-        .txt-area {
-          width: 40%;
+				.txt-area {
+					width: 40%;
 
-          h4 {
-            font-size: 4rem;
-          }
+					h4 {
+						font-size: 4rem;
+					}
 
-          .sns-area {
-            h5 {
-              margin-bottom: 0.5rem;
-              font-size: 1rem;
-              font-weight: 400;
-            }
+					.sns-area {
+						h5 {
+							margin-bottom: 0.5rem;
+							font-size: 1rem;
+							font-weight: 400;
+						}
 
-            ul {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 10px;
+						ul {
+							display: flex;
+							flex-wrap: wrap;
+							gap: 10px;
 
-              li {
-                display: flex;
-                border: 1px solid rgba(var(--baseColor-code), 1);
-                border-radius: 50%;
-                overflow: hidden;
+							li {
+								display: flex;
+								border: 1px solid rgba(var(--baseColor-code), 1);
+								border-radius: 50%;
+								overflow: hidden;
 
-                button {
-                  width: 32px;
-                  height: 32px;
-                  line-height: 32px;
-                  font-size: 13px;
-                  text-transform: uppercase;
-                  text-align: center;
-                  transition: background-color 0.2s, border 0.2s;
-                  color: rgba(var(--baseColor-code), 1);
-                }
-                &:hover {
-                  background-color: rgba(var(--baseColor-code), 1);
+								button {
+									width: 32px;
+									height: 32px;
+									line-height: 32px;
+									font-size: 13px;
+									text-transform: uppercase;
+									text-align: center;
+									transition: background-color 0.2s, border 0.2s;
+									color: rgba(var(--baseColor-code), 1);
+								}
+								&:hover {
+									background-color: rgba(var(--baseColor-code), 1);
 
-                  button {
-                    &:hover {
-                      color: rgba(var(--pointColor-code), 1);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+									button {
+										&:hover {
+											color: rgba(var(--pointColor-code), 1);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 
-        .form-area {
-          width: 50%;
+				.form-area {
+					width: 50%;
 
-          input[type="text"],
-          input[type="email"],
-          textarea {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            font-size: 1.1rem;
-          }
+					input[type='text'],
+					input[type='email'],
+					textarea {
+						margin-bottom: 2rem;
+						padding: 1rem;
+						font-size: 1.1rem;
+					}
 
-          textarea {
-            min-height: 10rem;
-          }
+					textarea {
+						min-height: 10rem;
+					}
 
-          input[type="text"]::placeholder,
-          input[type="email"]::placeholder,
-          textarea::placeholder {
-            color: rgba(var(--baseColor-code), 1);
-          }
+					input[type='text']::placeholder,
+					input[type='email']::placeholder,
+					textarea::placeholder {
+						color: rgba(var(--baseColor-code), 1);
+					}
 
-          input[type="text"]:focus,
-          input[type="email"]:focus,
-          textarea:focus {
-            background-color: rgba(var(--baseColor-code), 0.05);
-          }
-        }
-      }
+					input[type='text']:focus,
+					input[type='email']:focus,
+					textarea:focus {
+						background-color: rgba(var(--baseColor-code), 0.05);
+					}
+				}
+			}
 
-      .showBox {
-        margin-top: 4rem;
+			.showBox {
+				margin-top: 4rem;
 
-        article {
-          margin: 4rem 0 3rem;
+				article {
+					margin: 4rem 0 3rem;
 
-          .txt-area {
-            margin-bottom: 2rem;
-            display: flex;
-            flex-direction: column;
+					.txt-area {
+						margin-bottom: 2rem;
+						display: flex;
+						flex-direction: column;
 
-            p,
-            textarea {
-              margin-bottom: 2rem;
-            }
-          }
+						p,
+						textarea {
+							margin-bottom: 2rem;
+						}
+					}
 
-          .btn-area {
-            margin-bottom: 3rem;
-          }
-        }
-      }
-    }
-  }
+					.btn-area {
+						margin-bottom: 3rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 //mobile
 .mobile,
 .limit {
-  .Community {
-    .visualBox {
-      margin-bottom: 3rem;
+	.Community {
+		.visualBox {
+			margin-bottom: 3rem;
 
-      .txt-area {
-        margin-bottom: 1.5rem;
+			.txt-area {
+				margin-bottom: 1.5rem;
 
-        h3 {
-          width: 100%;
-          margin-bottom: 1.5rem;
-        }
+				h3 {
+					width: 100%;
+					margin-bottom: 1.5rem;
+				}
 
-        p {
-          font-size: 1.2rem;
-        }
-      }
-    }
+				p {
+					font-size: 1.2rem;
+				}
+			}
+		}
 
-    .contentBox {
-      margin: 3rem 0 0;
+		.contentBox {
+			margin: 3rem 0 0;
 
-      .inputBox {
-        margin-bottom: 1rem;
+			.inputBox {
+				margin-bottom: 1rem;
 
-        .txt-area {
-          width: 100%;
-          border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+				.txt-area {
+					width: 100%;
+					border-bottom: 1px solid rgba(var(--baseColor-code), 1);
 
-          h4 {
-            font-size: 4rem;
-            margin-bottom: 3rem;
-          }
+					h4 {
+						font-size: 4rem;
+						margin-bottom: 3rem;
+					}
 
-          .sns-area {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3rem;
+					.sns-area {
+						display: flex;
+						justify-content: space-between;
+						margin-bottom: 3rem;
 
-            h5 {
-              width: 49%;
-            }
+						h5 {
+							width: 49%;
+						}
 
-            ul {
-              width: 49%;
-              display: flex;
-              justify-content: flex-end;
-            }
-          }
-        }
+						ul {
+							width: 49%;
+							display: flex;
+							justify-content: flex-end;
+						}
+					}
+				}
 
-        .form-area {
-          width: 100%;
+				.form-area {
+					width: 100%;
 
-          input[type="text"],
-          input[type="email"],
-          textarea {
-            margin-bottom: 1rem;
-          }
-        }
-      }
+					input[type='text'],
+					input[type='email'],
+					textarea {
+						margin-bottom: 1rem;
+					}
+				}
+			}
 
-      // .line-holizontal {
-      //   display: none;
-      // }
+			// .line-holizontal {
+			//   display: none;
+			// }
 
-      .showBox {
-        margin-top: 3rem;
+			.showBox {
+				margin-top: 3rem;
 
-        article {
-          margin: 3rem 0 2rem;
+				article {
+					margin: 3rem 0 2rem;
 
-          .txt-area {
-            margin-bottom: 2rem;
+					.txt-area {
+						margin-bottom: 2rem;
 
-            p,
-            textarea {
-              margin-bottom: 2rem;
-            }
-          }
+						p,
+						textarea {
+							margin-bottom: 2rem;
+						}
+					}
 
-          .btn-area {
-            margin-bottom: 3rem;
-          }
-        }
-      }
-    }
-  }
+					.btn-area {
+						margin-bottom: 3rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 //limit
 .limit {
-  .Community {
-    .visualBox {
-      margin-bottom: 2rem;
-    }
+	.Community {
+		.visualBox {
+			margin-bottom: 2rem;
+		}
 
-    .contentBox {
-      margin: 2rem 0 0;
+		.contentBox {
+			margin: 2rem 0 0;
 
-      .inputBox {
-        margin-bottom: 1rem;
+			.inputBox {
+				margin-bottom: 1rem;
 
-        .txt-area {
-          h4 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-          }
-        }
-      }
+				.txt-area {
+					h4 {
+						font-size: 3.5rem;
+						margin-bottom: 2rem;
+					}
+				}
+			}
 
-      .showBox {
-        margin-top: 2rem;
+			.showBox {
+				margin-top: 2rem;
 
-        article {
-          margin: 2rem 0 2rem;
+				article {
+					margin: 2rem 0 2rem;
 
-          .txt-area {
-            margin-bottom: 2rem;
+					.txt-area {
+						margin-bottom: 2rem;
 
-            p,
-            textarea {
-              margin-bottom: 2rem;
-            }
-          }
+						p,
+						textarea {
+							margin-bottom: 2rem;
+						}
+					}
 
-          .btn-area {
-            margin-bottom: 2rem;
-          }
-        }
-      }
-    }
-  }
+					.btn-area {
+						margin-bottom: 2rem;
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useMedia = (opt) => {
+export const useMedia = opt => {
 	const defOpt = { limit: 400, mobile: 640, tablet: 1200, laptop: 1400 };
 	const result = { ...defOpt, ...opt }; // opt : 디폴트 객체 덮어쓰게 하기
 	const [Type, setType] = useState(''); // 문자열

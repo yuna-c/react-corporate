@@ -1,6 +1,6 @@
-import Layout from "../../common/layout/Layout";
-import "./Members.scss";
+import Layout from '../../common/layout/Layout';
+import './Members.scss';
 
 export default function Members() {
-  return <Layout title={"Members"}></Layout>;
+	return <Layout title={'Members'}></Layout>;
 }
