@@ -1,4 +1,173 @@
 .Community {
+  .visualBox {
+    margin-bottom: 5rem;
+
+    .txt-area {
+      margin-bottom: 5rem;
+      h3 {
+        width: 70%;
+        font-family: var(--pointFont);
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+
+    .img-area {
+      border-radius: 1rem;
+      margin-bottom: 5rem;
+      height: 800px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .contentBox {
+    margin: 5rem 0;
+
+    .inputBox {
+      margin-bottom: 2rem;
+      font-family: var(--baseFont);
+      display: flex;
+      justify-content: space-between;
+
+      .txt-area {
+        width: 50%;
+        position: sticky;
+        top: 3rem;
+
+        h4 {
+          margin-bottom: 12rem;
+          line-height: 1.3;
+          font-family: var(--pointFont);
+          font-size: 6.5rem;
+          font-weight: 400;
+        }
+
+        .sns-area {
+          h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+          }
+
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            li {
+              gap: 1;
+              display: flex;
+              border: 1px solid rgba(var(--baseColor-code), 1);
+              border-radius: 50%;
+              overflow: hidden;
+
+              button {
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                font-size: 13px;
+                text-transform: uppercase;
+                text-align: center;
+                transition: background-color 0.2s, border 0.2s;
+                color: rgba(var(--baseColor-code), 1);
+              }
+              &:hover {
+                background-color: rgba(var(--baseColor-code), 1);
+
+                button {
+                  &:hover {
+                    color: rgba(var(--pointColor-code), 1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .form-area {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+
+        input[type="text"],
+        textarea {
+          margin-bottom: 2rem;
+          padding: 1rem;
+          line-height: 1.5;
+          background-color: transparent;
+          border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+          font-family: var(--titleFont);
+          font-size: 1rem;
+          font-weight: 400;
+          color: rgba(var(--baseColor-code), 1);
+          transition: border 0.2s;
+        }
+
+        textarea {
+          min-height: 18rem;
+        }
+
+        input[type="text"]::placeholder,
+        textarea::placeholder {
+          color: rgba(var(--baseColor-code), 1);
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+          background-color: rgba(var(--baseColor-code), 0.05);
+        }
+      }
+
+      .btn-area {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        background: transparent;
+        border: 0;
+
+        .btn {
+          background-color: rgba(var(--baseColor-code), 1);
+          border: 1px solid rgba(var(--pointColor-code), 1);
+          border-radius: 6px;
+          color: rgba(var(--pointColor-code), 1);
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.03rem;
+          overflow: hidden;
+          padding: 0.5rem 1rem;
+          text-align: center;
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: rgba(var(--pointColor-code), 1) !important;
+            border: 1px solid rgba(var(--baseColor-code), 1);
+            color: rgba(var(--baseColor-code), 1);
+          }
+        }
+      }
+    }
+    .showBox {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 //tablet

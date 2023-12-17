@@ -28,10 +28,21 @@ export default function Menu({ setToggle, name }) {
     <>
       <motion.aside
         className="Menu"
-        initial={{ opacity: 0, y: "50px", transition: { delay: 0.1 } }}
-        animate={{ opacity: 1, y: "0" }}
-        exit={{ opacity: 0, y: "50px", transition: { delay: 0 } }}
-        transition={{ duration: 0.1, delay: 0.3 }}
+        initial={{
+          opacity: 0,
+          y: "100px",
+          // transition: { delay: 0.5, duration: 1 },
+        }}
+        animate={{
+          opacity: 1,
+          y: "0",
+          transition: { duration: 0.8, ease: "linear" },
+        }}
+        exit={{
+          opacity: 0,
+          y: "100px",
+          transition: { delay: 0.2, duration: 0.7 },
+        }}
       >
         <div className="content-padding">
           <h1>{name}</h1>

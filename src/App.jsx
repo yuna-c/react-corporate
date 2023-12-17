@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Route } from "react-router-dom";
 import { useMedia } from "./hooks/useMedia";
+import { AnimatePresence } from "framer-motion";
 import "./globalStyles/Reset.scss";
 import "./globalStyles/Variables.scss";
 import "./globalStyles/Common.scss";
@@ -16,7 +17,6 @@ import Detail from "./components/sub/youtube/Detail";
 import Gallery from "./components/sub/gallery/Gallery";
 import AboutUs from "./components/sub/aboutUs/AboutUs";
 import Eeee from "./components/sub/eeee/Eeee";
-import { AnimatePresence } from "framer-motion";
 
 export default function App() {
   const [Dark, setDark] = useState(false);
@@ -42,6 +42,7 @@ export default function App() {
         <Route path="/eeee" component={Eeee} />
 
         <Footer />
+
         <AnimatePresence>
           {Toggle && <Menu setToggle={setToggle} />}
         </AnimatePresence>

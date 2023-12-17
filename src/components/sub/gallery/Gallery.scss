@@ -147,12 +147,13 @@
         }
 
         form {
-          width: 70%;
+          width: 250px;
           margin-top: 0.5rem;
           position: relative;
           border-bottom: 1px solid rgba(var(--baseColor-code), 1);
 
           input {
+            width: 95%;
             padding: 3px 0;
             font-size: 1rem;
             font-family: var(--titleFont);

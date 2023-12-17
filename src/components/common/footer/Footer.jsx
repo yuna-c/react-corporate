@@ -14,7 +14,6 @@ export default function Footer() {
           <div className="logo-area">
             <h1 className="logo">
               <Link to="/">
-                {" "}
                 <img src={`${path.current}/img/logo.svg`} alt="logo.svg" />
               </Link>
             </h1>
