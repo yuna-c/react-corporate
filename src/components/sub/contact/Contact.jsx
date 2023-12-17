@@ -7,6 +7,7 @@ export default function Contact() {
 
   const [Index, setIndex] = useState(0);
   const [Traffic, setTraffic] = useState(false);
+  const [View, setView] = useState(false);
 
   const mapFrame = useRef(null);
   const viewFrame = useRef(null);
@@ -133,6 +134,7 @@ export default function Contact() {
             <button key={idx} onClick={() => {setIndex(idx); idx !== Index && setIndex(idx);}
               } className={`btn ${idx === Index ? 'on' : ''} `}>{el.title}</button>
           )}
+
           <button
             onClick={() => {
               setTraffic(!Traffic);
@@ -141,9 +143,22 @@ export default function Contact() {
           >
             {Traffic ? "Traffic OFF" : "Traffic ON"}
           </button>
+
+          <button onClick={() => setView(!View)} className={`btn`}>
+            {View ? "map view" : "road view"}
+          </button>
         </nav>
-        <article className="mapBox" ref={mapFrame}></article>
-        <article className="viewBox" ref={viewFrame}></article>
+
+        <section className="tab-area">
+          <article
+            className={`mapBox ${View ? "" : "on"}`}
+            ref={mapFrame}
+          ></article>
+          <article
+            className={`viewBox ${View ? "on" : ""}`}
+            ref={viewFrame}
+          ></article>
+        </section>
       </section>
     </Layout>
   );
