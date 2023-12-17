@@ -90,6 +90,75 @@
 			}
 		}
 	}
+
+	.inputBox {
+		form {
+			display: flex;
+			flex-direction: column;
+			label {
+				display: none;
+			}
+
+			input[type='text'],
+			input[type='email'],
+			textarea {
+				margin-bottom: 2rem;
+				padding: 1rem;
+				line-height: 1.5;
+				background-color: transparent;
+				border-bottom: 1px solid rgba(var(--baseColor-code), 1);
+				font-family: var(--titleFont);
+				font-size: 1.1rem;
+				font-weight: 400;
+				color: red;
+				transition: border 0.2s;
+			}
+
+			textarea {
+				min-height: 10rem;
+			}
+
+			input[type='text']::placeholder,
+			input[type='email']::placeholder,
+			textarea::placeholder {
+				color: rgba(var(--baseColor-code), 1);
+			}
+
+			input[type='text']:focus,
+			input[type='email']:focus,
+			textarea:focus {
+				background-color: rgba(var(--baseColor-code), 0.05);
+			}
+		}
+		.btn-area {
+			width: 100%;
+			height: auto;
+			display: flex;
+			gap: 1rem;
+			justify-content: flex-end;
+
+			.btn {
+				width: max-content;
+				background-color: rgba(var(--baseColor-code), 1);
+				font-family: var(--titleFont);
+				font-size: 1rem;
+				font-weight: 400;
+				color: rgba(var(--pointColor-code), 1);
+				letter-spacing: 1px;
+				padding: 0.5rem 1rem;
+				text-align: center;
+				text-transform: uppercase;
+				border: 1px solid rgba(var(--pointColor-code), 1);
+				border-radius: 6px;
+
+				&:hover {
+					background-color: rgba(var(--pointColor-code), 1) !important;
+					border: 1px solid rgba(var(--baseColor-code), 1);
+					color: rgba(var(--baseColor-code), 1);
+				}
+			}
+		}
+	}
 }
 
 //tablet

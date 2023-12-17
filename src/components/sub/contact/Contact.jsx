@@ -19,7 +19,12 @@ export default function Contact() {
 	const sendEmail = e => {
 		e.preventDefault();
 
-		emailjs.sendForm('service_ag7z96s', 'template_oh9ajns', form.current, '23g8RepczesqKPoIX').then(
+		const [user, email] = form.current.querySelectorAll('input');
+		const txtArea = form.current.querySelector('textarea');
+
+		if (!user.value || !email.value || !txtArea.value) return alert('이름, 답장받을 이메일주소 문의내용을 모두 입력하세요.');
+
+		emailjs.sendForm('service_nytqr3g', 'template_50r2xta', form.current, 'EkR0AJGqHyR3vJV0U').then(
 			result => {
 				alert('문의 내용이 성공적으로 전송되었습니다.');
 				resetForm();
@@ -177,12 +182,17 @@ export default function Contact() {
 			<section id='mailSection' className='inputBox'>
 				<form ref={form} onSubmit={sendEmail}>
 					<label>Name</label>
-					<input type='text' name='user_name' />
+					{/* from_name :템플릿에서 전송하는 사람이름 변수명 */}
+					<input type='text' name='user_name' placeholder='Your Title' />
 					<label>Email</label>
-					<input type='email' name='user_email' />
+					{/* reply_to :템플릿에서 답장할 메일주소 변수명 */}
+					<input type='email' name='user_email' placeholder='Your Email' />
 					<label>Message</label>
-					<textarea name='message' />
-					<input type='submit' value='Send' />
+					{/* message :템플릿에서 문의메세지 변수명 */}
+					<textarea name='message' placeholder='Your Message' />
+					<div className='btn-area'>
+						<input type='submit' value='Send' className='btn' />
+					</div>
 				</form>
 			</section>
 		</Layout>
