@@ -30,7 +30,8 @@ export default function Contact() {
           <p>
             Get in touch with us!
             <br /> Complete the form below to discuss your project. We can't
-            wait to collaborate and bring your vision to life.
+            wait to collaborate and bring your vision to life. Get in touch with
+            us!
           </p>
         </div>
       </section>
