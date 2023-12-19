@@ -150,11 +150,17 @@ export default function Contact() {
 
 			<section id='mapSection' className='contentBox'>
 				<nav className='btn-area'>
-					{mapInfo.current.map((el, idx) =>
-						//prettier-ignore
-						<button key={idx} onClick={() => {setIndex(idx); idx !== Index && setIndex(idx);}
-              } className={`btn ${idx === Index ? 'on' : ''} `}>{el.title}</button>
-					)}
+					{mapInfo.current.map((el, idx) => (
+						<button
+							key={idx}
+							onClick={() => {
+								setIndex(idx);
+								idx !== Index && setIndex(idx);
+							}}
+							className={`btn ${idx === Index ? 'on' : ''} `}>
+							{el.title}
+						</button>
+					))}
 
 					<button
 						onClick={() => {
@@ -189,7 +195,7 @@ export default function Contact() {
 					<input type='email' name='user_email' placeholder='Your Email' />
 					<label>Message</label>
 					{/* message :템플릿에서 문의메세지 변수명 */}
-					<textarea name='message' placeholder='Your Message' />
+					<textarea name='message' placeholder='Your Message' rows={15} />
 					<div className='btn-area'>
 						<input type='submit' value='Send' className='btn' />
 					</div>
