@@ -92,7 +92,12 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 						</div>
 
 						<div className='gnb-toggle'>
-							<button onClick={() => setToggle(!Toggle)}>menu</button>
+							<button onClick={() => setToggle(!Toggle)}>
+								menu
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
 						</div>
 					</div>
 				</div>
