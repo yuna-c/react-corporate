@@ -25,6 +25,7 @@ export default function Menu({ setToggle, name }) {
 	}, []);
 
 	return (
+		/* S : Menu */
 		<>
 			<motion.aside
 				className='Menu'
@@ -49,5 +50,6 @@ export default function Menu({ setToggle, name }) {
 				</div>
 			</motion.aside>
 		</>
+		/* E : Menu */
 	);
 }

@@ -52,21 +52,21 @@ export default function Contact() {
 	//지점마다 출력할 정보를 개별적인 객체로 묶어서 배열로 그룹화
 	const mapInfo = useRef([
 		{
-			title: '삼성역 코엑스',
+			title: 'HAMBURG',
 			latlng: new kakao.current.maps.LatLng(37.51100661425726, 127.06162026853143),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker1.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: '넥슨 본사',
+			title: 'LISBON',
 			latlng: new kakao.current.maps.LatLng(37.40211707077346, 127.10344953763003),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker2.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
 			imgPos: { offset: new kakao.current.maps.Point(116, 99) }
 		},
 		{
-			title: '서울 시청',
+			title: 'BUDAPEST',
 			latlng: new kakao.current.maps.LatLng(37.5662952, 126.9779451),
 			imgSrc: `${process.env.PUBLIC_URL}/img/marker3.png`,
 			imgSize: new kakao.current.maps.Size(232, 99),
@@ -135,13 +135,16 @@ export default function Contact() {
 	}, [Traffic]);
 
 	return (
+		/* S : Contact */
 		<Layout title={'Contact'}>
 			<section className='visualBox'>
 				<div className='txt-area'>
-					<h3>Find us through the map</h3>
+					<h3>Creating true brands together.</h3>
 					<p>
-						Get in touch with us!
-						<br /> Complete the form below to discuss your project. We can't wait to collaborate and bring your vision to life. Get in touch with us!
+						Creating true brands together. Get in touch with us!
+						<br />
+						Complete the form below to discuss your project. We can't wait to collaborate and bring your vision to life. The duration of the branding
+						process varies depending on the complexity of the project. On average, it can take anywhere from several weeks to a few months.
 					</p>
 				</div>
 			</section>
@@ -175,7 +178,7 @@ export default function Contact() {
 					</button>
 
 					<button onClick={setCenter} className={`btn`}>
-						위치 초기화
+						RESET
 					</button>
 				</nav>
 
@@ -202,5 +205,6 @@ export default function Contact() {
 				</form>
 			</section>
 		</Layout>
+		/* E : Contact */
 	);
 }

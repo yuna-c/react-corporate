@@ -144,7 +144,7 @@ button {
 	vertical-align: middle;
 }
 
-input,
+// input,
 button {
 	background: transparent;
 	-webkit-border-radius: 0;
@@ -183,6 +183,12 @@ a {
 	text-decoration: none;
 	color: inherit;
 	line-height: inherit;
+}
+
+.h {
+	position: absolute;
+	top: -9999999px;
+	opacity: 0;
 }
 
 //tablet

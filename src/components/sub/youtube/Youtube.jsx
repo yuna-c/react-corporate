@@ -206,6 +206,6 @@ export default function Youtube() {
 				</div>
 			</section>
 		</Layout>
-		/* //E : Youtube */
+		/* E : Youtube */
 	);
 }

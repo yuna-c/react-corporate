@@ -6,9 +6,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  .custom-control {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-height: 24px;
+    padding-left: 32px;
+    color-adjust: exact;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .custom-control *,
+  .custom-control *::before,
+  .custom-control *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .custom-control-inline {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .custom-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .custom-control-input:checked~.custom-control-label::before {
+    color: #000;
+    border-color: #000;
+    background-color: #000;
+    border-radius: 50%;
+  }
+
+  .custom-control-input.outline:checked~.custom-control-label::before {
+    background-color: #fff;
+  }
+
+  .custom-control-input[disabled]~.custom-control-label,
+  .custom-control-input:disabled~.custom-control-label {
+    color: #bbb;
+  }
+
+  .custom-control-input[disabled]~.custom-control-label::before,
+  .custom-control-input:disabled~.custom-control-label::before {
+    background-color: #f2f2f2;
+    border-color: none;
+  }
+
+  .custom-control-input[disabled]~.custom-control-label::after,
+  .custom-control-input:disabled~.custom-control-label::after {
+    background-image: url("");
+  }
+
+  .custom-control-label {
+    position: relative;
+    margin-bottom: 0;
+    cursor: pointer;
+    display: inline-block;
+    color: #BBBBBB;
+  }
+
+  .custom-control-label::before {
+    position: absolute;
+    top: 0;
+    left: -32px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: #ccc solid 1px;
+  }
+
+  .custom-control-label::after {
+    position: absolute;
+    top: 0;
+    left: -32px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .custom-control-input:checked~.custom-control-label {
+    color: #111;
+  }
+
+  .custom-radio .custom-control-label::before {
+    border-radius: 50%;
+  }
+
+  .custom-radio .custom-control-input:checked~.custom-control-label::after {
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  }
+
+  .custom-radio .custom-control-input:disabled:checked~.custom-control-label::before {
+    background-color: #000;
+  }
+
+  .custom-radio.check .custom-control-input:checked~.custom-control-label::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='11' viewBox='0 0 14 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.9999L5.8 9.7999L13 1.3999' stroke='%23ffffff' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+  }
+</style>
 
 <body>
-  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+  <div class="custom-control custom-control-inline custom-radio">
+
+    <input type="radio" class="custom-control-input" id="customRadio31" name="fnEmailFlg" value="Y"><label
+      class="custom-control-label" for="customRadio31">받음</label>
+  </div>
+  <div class="custom-control custom-control-inline custom-radio">
+    <input type="radio" class="custom-control-input" name="fnSmsFlg" id="customRadio22" required="" value="N">
+    <label class="custom-control-label" for="customRadio22">받지않음</label>
+  </div>
 </body>
 
 </html>

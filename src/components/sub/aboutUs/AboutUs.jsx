@@ -143,6 +143,6 @@ export default function AboutUs() {
 				</div>
 			</div>
 		</Layout>
-		/* // E : AboutUs */
+		/* E : AboutUs */
 	);
 }

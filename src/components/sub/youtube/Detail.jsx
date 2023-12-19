@@ -34,6 +34,7 @@ export default function Detail() {
 	}, [fetchSingleData]);
 
 	return (
+		/* S : Detail */
 		<Layout title={'Detail'}>
 			{youtubeData && (
 				<article>
@@ -47,5 +48,6 @@ export default function Detail() {
 				</article>
 			)}
 		</Layout>
+		/* E : Detail */
 	);
 }

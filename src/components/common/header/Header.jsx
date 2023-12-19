@@ -6,7 +6,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	const path = useRef(process.env.PUBLIC_URL);
 
 	return (
-		/* S : header */
+		/* S : Header */
 		<header className='header'>
 			<div className='header-layout'>
 				<h1 className='logo'>
@@ -99,6 +99,6 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 			</div>
 			<div className='line-holizontal'></div>
 		</header>
-		/* // E : header */
+		/* E : Header */
 	);
 }

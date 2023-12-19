@@ -160,7 +160,7 @@ export default function Community() {
 				</div>
 
 				<div className='img-area'>
-					<img src={`${path.current}/img/img1.jpg`} alt={path.current} />
+					<img src={`${path.current}/img/img2.WEBP`} alt={path.current} />
 				</div>
 			</section>
 
@@ -169,7 +169,7 @@ export default function Community() {
 			<div className='contentBox'>
 				<div className='inputBox'>
 					<div className='txt-area'>
-						<h4>Creating true brands together.</h4>
+						<h4>Please feel free to give your opinion</h4>
 
 						<div className='sns-area'>
 							<h5>FIND US ON</h5>

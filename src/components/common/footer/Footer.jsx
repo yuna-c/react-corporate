@@ -6,7 +6,7 @@ export default function Footer() {
 	const path = useRef(process.env.PUBLIC_URL);
 
 	return (
-		/* S : footer */
+		/* S : Footer */
 		<footer className='footer'>
 			<div className='line-holizontal'></div>
 			<div className='footer-layout'>
@@ -191,6 +191,6 @@ export default function Footer() {
 				</div>
 			</div>
 		</footer>
-		/*// E : footer */
+		/* E : Footer */
 	);
 }

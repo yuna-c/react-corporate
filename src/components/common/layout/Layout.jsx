@@ -16,6 +16,7 @@ export default function Layout({ children, title }) {
 	}, []);
 
 	return (
+		/* S : Layout */
 		<main ref={refFrame} className={`layout ${title}`}>
 			<div className='content-layout'>
 				<div className='content-padding'>
@@ -24,5 +25,6 @@ export default function Layout({ children, title }) {
 				</div>
 			</div>
 		</main>
+		/* E : Layout */
 	);
 }

@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 export default function Mobile() {
 	return (
+		/* S : Mobile */
 		<div className='Mobile'>
 			<div className='gnb-layout'>
 				<ul>
@@ -17,8 +18,8 @@ export default function Mobile() {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to='/gallery' activeClassName={'on'}>
-							Gallery
+						<NavLink to='/Mobile' activeClassName={'on'}>
+							Mobile
 						</NavLink>
 					</li>
 					<li>
@@ -39,5 +40,6 @@ export default function Mobile() {
 				</ul>
 			</div>
 		</div>
+		/* E : Mobile */
 	);
 }

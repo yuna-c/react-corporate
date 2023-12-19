@@ -119,7 +119,7 @@ export default function Gallery() {
 			<Layout title={'Gallery'}>
 				<section className='visualBox'>
 					<div className='txt-area'>
-						<h3>NEW Watch GALLERY</h3>
+						<h3>New watch gallery</h3>
 						<p>
 							Discover how we reimagined their brand identity, crafting a compelling narrative that authentically connects with their audience and
 							propels their business forward.
@@ -270,6 +270,6 @@ export default function Gallery() {
 				)}
 			</Modal>
 		</>
-		/* // E : Gallery */
+		/* E : Gallery */
 	);
 }
