@@ -12,6 +12,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 				<h1 className='logo'>
 					<Link to='/'>
 						<img src={`${path.current}/img/logo.svg`} alt='logo.svg' />
+						<span>React</span>
 					</Link>
 				</h1>
 
@@ -65,28 +66,19 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 						<div className='gnb-social'>
 							<ul>
 								<li>
-									<button
-										onClick={() => {
-											window.open(`https://twitter.com`);
-										}}>
+									<a href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
 										Tw
-									</button>
+									</a>
 								</li>
 								<li>
-									<button
-										onClick={() => {
-											window.open('https://www.facebook.com/');
-										}}>
+									<a href='https://www.facebook.com/' target='_blank' rel='noopener noreferrer'>
 										In
-									</button>
+									</a>
 								</li>
 								<li>
-									<button
-										onClick={() => {
-											window.open('https://www.instagram.com/');
-										}}>
+									<a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
 										Fa
-									</button>
+									</a>
 								</li>
 							</ul>
 						</div>
