@@ -16,7 +16,7 @@
 
 		.logo {
 			a {
-				width: 3.3rem;
+				width: 100%;
 				height: 3.3rem;
 				display: flex;
 				align-items: flex-end;
@@ -116,6 +116,7 @@
 							border: 1px solid rgba(var(--baseColor-code), 1);
 							border-radius: 50%;
 							overflow: hidden;
+							transition: background-color 0.2s, border 0.2s;
 
 							a {
 								width: 32px;
@@ -124,15 +125,15 @@
 								font-size: 13px;
 								text-transform: uppercase;
 								text-align: center;
-								transition: background-color 0.2s, border 0.2s;
-								color: rgba(var(--baseColor-code), 1);
+								// color: rgba(var(--baseColor-code), 1);
 							}
+
 							&:hover {
 								background-color: rgba(var(--baseColor-code), 1);
 
 								a {
 									&:hover {
-										color: rgba(var(--pointColor-code), 1);
+										color: rgba(var(--bgColor-code), 1);
 									}
 								}
 							}

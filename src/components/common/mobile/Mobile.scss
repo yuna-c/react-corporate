@@ -9,16 +9,16 @@
 				padding: 1rem 0;
 				display: block;
 				font-family: var(--titleFont);
-				color: rgba(var(--baseColor-code), 0.5);
-				border-bottom: 1px solid rgba(var(--baseColor-code), 0.5);
+				color: rgba(var(--baseColor-code), 0.8);
+				border-bottom: 1px solid rgba(var(--baseColor-code), 0.8);
 				text-transform: uppercase;
 				letter-spacing: 1px;
 
 				.on {
-					color: rgba(var(--baseColor-code), 1);
+					color: rgba(var(--pointColor-code), 1);
 				}
 				& :hover {
-					color: rgba(var(--baseColor-code), 1);
+					color: rgba(var(--pointColor-code), 1);
 				}
 			}
 		}

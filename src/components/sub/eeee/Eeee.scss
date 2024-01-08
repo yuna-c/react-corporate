@@ -3,7 +3,7 @@
 		padding: 0.5rem 1rem;
 		color: rgba(var(--baseColor-code), 1);
 		text-align: center;
-		background-color: rgba(var(--pointColor-code), 1);
+		background-color: rgba(var(--bgColor-code), 1);
 		font-weight: 500;
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -13,18 +13,18 @@
 
 		&:hover {
 			background-color: rgba(var(--baseColor-code), 1) !important;
-			border: 1px solid rgba(var(--pointColor-code), 1);
-			color: rgba(var(--pointColor-code), 1);
+			border: 1px solid rgba(var(--bgColor-code), 1);
+			color: rgba(var(--bgColor-code), 1);
 		}
 		&.on {
 			background-color: rgba(var(--baseColor-code), 1) !important;
-			border: 1px solid rgba(var(--pointColor-code), 1);
-			color: rgba(var(--pointColor-code), 1);
+			border: 1px solid rgba(var(--bgColor-code), 1);
+			color: rgba(var(--bgColor-code), 1);
 		}
 	}
 
 	.btn-area {
-		background-color: rgba(var(--pointColor-code), 1) !important;
+		background-color: rgba(var(--bgColor-code), 1) !important;
 		border: 1px solid rgba(var(--baseColor-code), 1);
 		z-index: 1;
 
@@ -37,11 +37,11 @@
 
 	.on {
 		background-color: rgba(var(--baseColor-code), 1) !important;
-		border: 1px solid rgba(var(--pointColor-code), 1);
+		border: 1px solid rgba(var(--bgColor-code), 1);
 
 		.btn-inner {
 			.btn-active {
-				color: rgba(var(--pointColor-code), 1) !important;
+				color: rgba(var(--bgColor-code), 1) !important;
 			}
 		}
 	}

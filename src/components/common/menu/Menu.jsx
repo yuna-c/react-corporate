@@ -1,7 +1,7 @@
 import './Menu.scss';
 import { useEffect } from 'react';
-import Mobile from '../layout/Mobile';
 import { motion } from 'framer-motion';
+import Mobile from '../mobile/Mobile';
 // npm i framer-motion@4
 
 export default function Menu({ setToggle, name }) {

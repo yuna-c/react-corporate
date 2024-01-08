@@ -63,7 +63,7 @@
 				color: rgba(var(--baseColor-code), 1);
 				text-align: center;
 				text-transform: uppercase;
-				background-color: rgba(var(--pointColor-code), 1);
+				background-color: rgba(var(--bgColor-code), 1);
 				font-family: var(--titleFont);
 				font-size: 1rem;
 				font-weight: 400;
@@ -74,13 +74,13 @@
 
 				&:hover {
 					background-color: rgba(var(--baseColor-code), 1) !important;
-					border: 1px solid rgba(var(--pointColor-code), 1);
-					color: rgba(var(--pointColor-code), 1);
+					border: 1px solid rgba(var(--bgColor-code), 1);
+					color: rgba(var(--bgColor-code), 1);
 				}
 				.on {
 					background-color: rgba(var(--baseColor-code), 1) !important;
-					border: 1px solid rgba(var(--pointColor-code), 1);
-					color: rgba(var(--pointColor-code), 1);
+					border: 1px solid rgba(var(--bgColor-code), 1);
+					color: rgba(var(--bgColor-code), 1);
 				}
 			}
 		}
@@ -298,7 +298,7 @@
 				display: flex;
 				align-items: flex-end;
 				justify-content: center;
-				color: rgba(var(--pointColor-code), 1);
+				color: rgba(var(--bgColor-code), 1);
 				text-align: center;
 				background-color: rgba(var(--baseColor-code), 1);
 				font-weight: 500;

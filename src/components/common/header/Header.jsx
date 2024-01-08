@@ -17,7 +17,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 				</h1>
 
 				<div className='gnb-menu'>
-					<div className='gnb-layout' name='mobile'>
+					<div className='gnb-layout'>
 						<ul>
 							<li>
 								<NavLink to='/aboutUs' activeClassName={'on'}>

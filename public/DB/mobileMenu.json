@@ -1,0 +1,40 @@
+{
+	"moblieArr": [
+		{
+			"num": "01",
+			"link": "/aboutUs",
+			"menu": "AboutUs",
+			"description": "멤버소개 페이지"
+		},
+		{
+			"num": "02",
+			"link": "/youtube",
+			"menu": "Youtube",
+			"description": "유튜브 페이지"
+		},
+		{
+			"num": "03",
+			"link": "/gallery",
+			"menu": "Gallery",
+			"description": "갤러리 페이지"
+		},
+		{
+			"num": "04",
+			"link": "/community",
+			"menu": "Community",
+			"description": "게시판 페이지"
+		},
+		{
+			"num": "05",
+			"link": "/members",
+			"menu": "Members",
+			"description": "회원가입 페이지"
+		},
+		{
+			"num": "06",
+			"link": "/contact",
+			"menu": "Contact",
+			"description": "오시는 길 페이지"
+		}
+	]
+}

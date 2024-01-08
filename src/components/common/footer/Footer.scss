@@ -65,7 +65,7 @@
 
 							button {
 								&:hover {
-									color: rgba(var(--pointColor-code), 1);
+									color: rgba(var(--bgColor-code), 1);
 								}
 							}
 						}
@@ -115,7 +115,7 @@
 							margin-top: 10px;
 							margin-bottom: 10px;
 							padding: 0.5rem 1rem;
-							color: rgba(var(--pointColor-code), 1);
+							color: rgba(var(--bgColor-code), 1);
 							text-align: center;
 							background-color: rgba(var(--baseColor-code), 1);
 							font-family: var(--titleFont);

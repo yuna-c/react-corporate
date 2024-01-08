@@ -154,7 +154,7 @@
 								justify-content: flex-end;
 
 								.btn {
-									color: rgba(var(--pointColor-code), 1);
+									color: rgba(var(--bgColor-code), 1);
 									display: flex;
 									flex-wrap: wrap;
 									background-color: rgba(var(--baseColor-code), 1);
@@ -165,12 +165,12 @@
 									padding: 0.5rem 1rem;
 									text-align: center;
 									text-transform: uppercase;
-									border: 1px solid rgba(var(--pointColor-code), 1);
+									border: 1px solid rgba(var(--bgColor-code), 1);
 									border-radius: 6px;
 									cursor: pointer;
 
 									&:hover {
-										background-color: rgba(var(--pointColor-code), 1) !important;
+										background-color: rgba(var(--bgColor-code), 1) !important;
 										border: 1px solid rgba(var(--baseColor-code), 1);
 										color: rgba(var(--baseColor-code), 1);
 									}

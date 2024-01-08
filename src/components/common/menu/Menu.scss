@@ -1,55 +1,55 @@
 .Menu {
-  width: auto;
-  height: 60vh;
-  margin: 0 2.5rem;
-  margin-top: -1px;
-  background: rgba(var(--pointColor-code), 1);
-  border: 1px solid rgba(var(--baseColor-code), 1);
-  position: absolute;
-  top: 7rem;
-  left: 0;
-  right: 0;
-  z-index: 5;
+	width: auto;
+	height: 60vh;
+	margin: 0 2.5rem;
+	margin-top: -1px;
+	background: rgba(var(--bgColor-code), 1);
+	border: 1px solid rgba(var(--baseColor-code), 1);
+	position: absolute;
+	top: 7rem;
+	left: 0;
+	right: 0;
+	z-index: 5;
 }
 
 //tablet
 .tablet,
 .mobile,
 .limit {
-  .Menu {
-    margin-top: 5px;
+	.Menu {
+		margin-top: 5px;
 
-    .content-padding {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
-  }
+		.content-padding {
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
+	}
 }
 
 //mobile
 .mobile,
 .limit {
-  .Menu {
-    margin: 0 1.5rem;
-    margin-top: 5px;
-    top: 6rem;
+	.Menu {
+		margin: 0 1.5rem;
+		margin-top: 5px;
+		top: 6rem;
 
-    .content-padding {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
+		.content-padding {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
 }
 
 //limit
 .limit {
-  .Menu {
-    margin-top: 11px;
-    top: 5rem;
+	.Menu {
+		margin-top: 11px;
+		top: 5rem;
 
-    .content-padding {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-  }
+		.content-padding {
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+	}
 }
