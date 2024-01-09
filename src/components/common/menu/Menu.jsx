@@ -5,6 +5,7 @@ import Mobile from '../mobile/Mobile';
 // npm i framer-motion@4
 
 export default function Menu({ setToggle, Dark, setDark }) {
+	console.log(setToggle);
 	const closeMenu = useCallback(() => {
 		// e.preventDefault();
 		window.innerWidth >= 1200 && setToggle(false);
@@ -14,6 +15,11 @@ export default function Menu({ setToggle, Dark, setDark }) {
 		const disable = document.getElementsByClassName('wrapper');
 		disable && setToggle(false);
 	}, [setToggle]);
+
+	// const disable = () => {
+	// 	const disable = document.getElementsByClassName('wrapper');
+	// 	disable && setToggle(false);
+	// };
 
 	useEffect(() => {
 		window.addEventListener('resize', closeMenu);
