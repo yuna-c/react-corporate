@@ -1,24 +1,34 @@
 {
-  "OUR TEAM": [
-    {
-      "name": "Jacob Jones",
-      "position": "President",
-      "pic": "member1.mp4"
-    },
-    {
-      "name": "Kristin Watson",
-      "position": "Vice President",
-      "pic": "member2.mp4"
-    },
-    {
-      "name": "Cameron Williamson",
-      "position": "UI Designer",
-      "pic": "member3.mp4"
-    },
-    {
-      "name": "Guy Hawkins",
-      "position": "Front-end Developer",
-      "pic": "member4.mp4"
-    }
-  ]
+	"OUR TEAM": [
+		{
+			"name": "Jacob Jones",
+			"position": "President",
+			"pic": "member1.mp4"
+		},
+		{
+			"name": "Kristin Watson",
+			"position": "Vice President",
+			"pic": "member2.mp4"
+		},
+		{
+			"name": "Cameron Williamson",
+			"position": "UI Designer",
+			"pic": "member3.mp4"
+		},
+		{
+			"name": "Guy Hawkins",
+			"position": "Front-end Developer",
+			"pic": "member4.mp4"
+		},
+		{
+			"name": "Green Valenzuela",
+			"position": "Senior Manager",
+			"pic": "member5.mp4"
+		},
+		{
+			"name": "Cervantes Snow",
+			"position": "No position",
+			"pic": "member6.mp4"
+		}
+	]
 }
