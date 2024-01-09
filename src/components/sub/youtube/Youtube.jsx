@@ -170,6 +170,7 @@ export default function Youtube() {
 					<div className='icon'>
 						<img src={`${path.current}/img/icon01.svg`} alt='icon01.svg' />
 					</div>
+
 					<h4>branding</h4>
 					<p>
 						LOGO<br></br>CORPORATE IDENTITY<br></br>BRAND GUIDE
