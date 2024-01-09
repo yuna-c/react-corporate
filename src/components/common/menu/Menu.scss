@@ -1,6 +1,6 @@
 .Menu {
 	width: auto;
-	height: 60vh;
+	height: fit-content;
 	margin: 0 2.5rem;
 	margin-top: -1px;
 	background: rgba(var(--bgColor-code), 1);
@@ -12,37 +12,84 @@
 	z-index: 5;
 
 	.content-padding {
-		.gnb-util {
+		transition: 1s;
+
+		.util-layout {
 			padding: 1rem 0;
-			margin-left: -10px;
+			display: none;
+			justify-content: space-between;
+			align-items: center;
+			transition: 1s;
 
-			.thema {
-				width: 60px;
-				height: 26px;
-				position: relative;
-				top: 0;
-				left: 0;
-				border: 1px solid rgba(var(--baseColor-code), 1);
-				border-radius: 18px;
-				transform: scale(0.7);
-				cursor: pointer;
+			.gnb-util {
+				margin-left: -10px;
 
-				.ball {
-					width: 20px;
-					height: 20px;
-					position: absolute;
-					top: 2px;
-					left: 2px;
-					background-color: rgba(var(--baseColor-code), 1);
-					border-radius: 10px;
-					font-size: 0;
-					transition: 0.7s;
+				.thema {
+					width: 60px;
+					height: 26px;
+					position: relative;
+					top: 0;
+					left: 0;
+					border: 1px solid rgba(var(--baseColor-code), 1);
+					border-radius: 18px;
+					transform: scale(0.7);
+					cursor: pointer;
+
+					.ball {
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						top: 2px;
+						left: 2px;
+						background-color: rgba(var(--baseColor-code), 1);
+						border-radius: 10px;
+						font-size: 0;
+						transition: 0.7s;
+					}
+				}
+
+				.thema.dark {
+					.ball {
+						left: 35px;
+					}
 				}
 			}
 
-			.thema.dark {
-				.ball {
-					left: 35px;
+			.gnb-social {
+				transition: background-color 0.2s, border 0.2s;
+
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 10px;
+
+					li {
+						gap: 1;
+						display: flex;
+						border: 1px solid rgba(var(--baseColor-code), 1);
+						border-radius: 50%;
+						overflow: hidden;
+						transition: background-color 0.2s, border 0.2s;
+
+						a {
+							width: 32px;
+							height: 32px;
+							line-height: 32px;
+							font-size: 13px;
+							text-transform: uppercase;
+							text-align: center;
+						}
+
+						&:hover {
+							background-color: rgba(var(--baseColor-code), 1);
+
+							a {
+								&:hover {
+									color: rgba(var(--bgColor-code), 1);
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -74,6 +121,18 @@
 		.content-padding {
 			padding-left: 2rem;
 			padding-right: 2rem;
+
+			.util-layout {
+				display: flex;
+
+				.gnb-util {
+					display: flex;
+				}
+
+				.gnb-social {
+					display: flex;
+				}
+			}
 		}
 	}
 }
@@ -87,6 +146,10 @@
 		.content-padding {
 			padding-left: 1.5rem;
 			padding-right: 1.5rem;
+
+			.util-layout {
+				display: flex;
+			}
 		}
 	}
 }

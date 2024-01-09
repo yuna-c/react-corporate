@@ -42,11 +42,33 @@ export default function Menu({ setToggle, Dark, setDark }) {
 				<div className='content-padding'>
 					<Mobile />
 
-					<div className='gnb-util'>
-						<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
-							<div className='ball'>
-								<span>ball</span>
+					<div className='util-layout'>
+						<div className='gnb-util'>
+							<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+								<div className='ball'>
+									<span>ball</span>
+								</div>
 							</div>
+						</div>
+
+						<div className='gnb-social'>
+							<ul>
+								<li>
+									<a href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
+										Tw
+									</a>
+								</li>
+								<li>
+									<a href='https://www.facebook.com/' target='_blank' rel='noopener noreferrer'>
+										In
+									</a>
+								</li>
+								<li>
+									<a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
+										Fa
+									</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>

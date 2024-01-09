@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	const path = useRef(process.env.PUBLIC_URL);
+	// const [Social, setSocial] = useState([]);
 
 	return (
 		/* S : Header */
@@ -47,6 +48,11 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 							<li>
 								<NavLink to='/contact' activeClassName={'on'}>
 									Contact
+								</NavLink>
+							</li>
+							<li>
+								<NavLink to='/eeee' activeClassName={'on'}>
+									Eeee
 								</NavLink>
 							</li>
 						</ul>
@@ -94,6 +100,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 					</div>
 				</div>
 			</div>
+
 			<div className='line-holizontal'></div>
 		</header>
 		/* E : Header */
