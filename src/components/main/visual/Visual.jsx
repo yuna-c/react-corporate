@@ -31,6 +31,16 @@ export default function Visual() {
 		/* S : Visual */
 		<figure className='Visual'>
 			<div className='visualBox'>
+				<div className='txt-area'>
+					<h2>memoization </h2>
+					<h3>We are a digital agency from Lisbon.</h3>
+					<p>Elevating brands through creative digital solutions, proudly representing Lisbon's vibrant innovation.</p>
+				</div>
+			</div>
+
+			<div className='line-holizontal'></div>
+
+			<div className='videoBox'>
 				{Vids.message ? (
 					<h1>{Vids.message}</h1>
 				) : (

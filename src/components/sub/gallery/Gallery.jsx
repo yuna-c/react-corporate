@@ -21,7 +21,6 @@ export default function Gallery() {
 
 	const [Pics, setPics] = useState([]);
 	const [Index, setIndex] = useState(0);
-	const [Keyword, setKeyword] = useState('');
 
 	const path = useRef(process.env.PUBLIC_URL);
 	const shortenText = useCustomText('shorten');

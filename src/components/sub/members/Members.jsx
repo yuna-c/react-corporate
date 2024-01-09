@@ -8,7 +8,7 @@ export default function Members() {
 	const history = useHistory();
 	const initVal = useRef({ userid: '', pwd1: '', pwd2: '', email: '', comments: '', edu: '', gender: '', interest: [] });
 	const [Val, setVal] = useState(initVal.current);
-	//useDebouce 훅의 인수로 특정 state를 전달해서 debouncing이 적용된 새로운 state값 반환받음
+
 	const DebouncedVal = useDebounce(Val);
 	const [Errs, setErrs] = useState({});
 
@@ -19,14 +19,9 @@ export default function Members() {
 	const handleChange = e => {
 		// console.log('name', e.target.name);
 		// console.log('value', e.target.value);
-		// const key = e.target.name; // userid
-		// const value = e.target.value; //현재 입력하고 있는 인풋값
 		const { name, value } = e.target;
 		setVal({ ...Val, [name]: value });
 	};
-
-	// 동작 안되는 이유 .. ? key는 문자가 아니어야 하는데 문자로 할당되니까 변수치환 못하니까.. 대괄호[]로 감싸면 돼
-	// 이거는 많이 쓰일 것 같아
 
 	const handleCheck = e => {
 		const { name } = e.target;
@@ -37,7 +32,7 @@ export default function Members() {
 	};
 
 	const check = value => {
-		console.log('check');
+		// console.log('check');
 		const errs = {};
 		const num = /[0-9]/; //정규 표현식 (조건안의 내용이 true여야 반환)
 		const txt = /[a-zA-Z]/;
@@ -67,8 +62,6 @@ export default function Members() {
 		}
 	};
 
-	//debounding이 적용된 state를 의존성배열에 등록해서
-	//해당 값으로 check함수 호출
 	useEffect(() => {
 		setErrs(check(DebouncedVal));
 	}, [DebouncedVal]);

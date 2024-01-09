@@ -5,13 +5,10 @@ import Mobile from '../mobile/Mobile';
 // npm i framer-motion@4
 
 export default function Menu({ setToggle, Dark, setDark }) {
-	const closeMenu = useCallback(
-		e => {
-			e.preventDefault();
-			window.innerWidth >= 1200 && setToggle(false);
-		},
-		[setToggle]
-	);
+	const closeMenu = useCallback(() => {
+		// e.preventDefault();
+		window.innerWidth >= 1200 && setToggle(false);
+	}, [setToggle]);
 
 	const disable = useCallback(() => {
 		const disable = document.getElementsByClassName('wrapper');

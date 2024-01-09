@@ -1,10 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
 	const path = useRef(process.env.PUBLIC_URL);
-	// const [Social, setSocial] = useState([]);
 
 	return (
 		/* S : Header */

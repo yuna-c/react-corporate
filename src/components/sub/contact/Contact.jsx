@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
@@ -47,7 +47,7 @@ export default function Contact() {
 	const marker = useRef(null);
 	const mapInstance = useRef(null);
 
-	console.log(kakao);
+	// console.log(kakao);
 
 	//지점마다 출력할 정보를 개별적인 객체로 묶어서 배열로 그룹화
 	const mapInfo = useRef([
@@ -74,16 +74,16 @@ export default function Contact() {
 		}
 	]);
 
-	const roadview = () => {
+	const roadview = useRef(() => {
 		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
 			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
 		});
-	};
+	});
 
-	const setCenter = () => {
+	const setCenter = useCallback(() => {
 		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
-		roadview();
-	};
+		roadview.current();
+	}, [Index]);
 
 	//마커 인스턴스 생성
 	marker.current = new kakao.current.maps.Marker({
@@ -100,20 +100,8 @@ export default function Contact() {
 
 		marker.current.setMap(mapInstance.current);
 		setTraffic(false);
-
-		// 뷰박스 추가
-		// new kakao.current.maps.RoadviewClient().getNearestPanoId(
-		//   mapInfo.current[Index].latlng,
-		//   50,
-		//   (panoId) => {
-		//     new kakao.current.maps.Roadview(viewFrame.current).setPanoId(
-		//       panoId,
-		//       mapInfo.current[Index].latlng
-		//     );
-		//   }
-		// );
-		roadview();
 		setView(false);
+		roadview.current();
 
 		//지도 타입 컨트롤러 추가
 		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
@@ -126,7 +114,7 @@ export default function Contact() {
 
 		window.addEventListener('resize', setCenter);
 		return () => window.removeEventListener('resize', setCenter);
-	}, [Index]);
+	}, [Index, setCenter]);
 
 	useEffect(() => {
 		Traffic

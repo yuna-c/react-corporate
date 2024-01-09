@@ -1,7 +1,7 @@
 import { useCustomText } from '../../../hooks/useText';
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Youtube() {
@@ -12,7 +12,7 @@ export default function Youtube() {
 	const [Vids, setVids] = useState([]);
 	const [btnOn, setbtnOn] = useState('');
 
-	const fetchYoutube = async () => {
+	const fetchYoutube = useCallback(async () => {
 		// const api_key = 'AIzaSyBgRldfomRBMNoipsSTKYAmfOarH1iIu8o';
 		// const pid = 'PL_gXk6OSOQ5LVWytUDP2MgKhA1-A5h1TJ';
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
@@ -27,7 +27,7 @@ export default function Youtube() {
 		} catch (err) {
 			console.error(err);
 		}
-	};
+	}, []);
 
 	const toggleBtn = e => {
 		setbtnOn(btn => {
@@ -49,35 +49,35 @@ export default function Youtube() {
 
 				<div className='sort-area'>
 					{/*
-				많은 클래스는 어케 로직 짤지 이해해보기
-				<div className='btn-area'>
-					<div className='btn-inner'>
-						<button className='btn-active btn-inner-text'>BRANDING</button>
-						<button className='btn-active btn-inner-text-hover'>BRANDING</button>
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>BRANDING</button>
+							<button className='btn-active btn-inner-text-hover'>BRANDING</button>
+						</div>
 					</div>
-				</div>
-				<div className='btn-area'>
-					<div className='btn-inner'>
-						<button className='btn-active btn-inner-text'>MORE TEMPLATES</button>
-						<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>MORE TEMPLATES</button>
+							<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
+						</div>
 					</div>
-				</div>
-				<div className='btn-area on'>
-					<div className='btn-inner'>
-						<button className='btn-active btn-inner-text'>VIDEO</button>
-						<button className='btn-active btn-inner-text-hover'>VIDEO</button>
+					<div className='btn-area on'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>VIDEO</button>
+							<button className='btn-active btn-inner-text-hover'>VIDEO</button>
+						</div>
 					</div>
-				</div>
-				<div className='btn-area'>
-					<div className='btn-inner'>
-						<button className='btn-active btn-inner-text'>CONTENT</button>
-						<button className='btn-active btn-inner-text-hover'>CONTENT</button>
-					</div>
-				</div> */}
-					{/* <button className='btn'>BRANDING</button>
-				<button className='btn'>DESIGN</button>
-				<button className='btn'>VIDEO</button>
-				<button className='btn'>CONTENT</button> */}
+					<div className='btn-area'>
+						<div className='btn-inner'>
+							<button className='btn-active btn-inner-text'>CONTENT</button>
+							<button className='btn-active btn-inner-text-hover'>CONTENT</button>
+						</div>
+					</div> 
+					<button className='btn'>BRANDING</button>
+					<button className='btn'>DESIGN</button>
+					<button className='btn'>VIDEO</button>
+					<button className='btn'>CONTENT</button> 
+					*/}
 					{btnData.map((item, idx) => {
 						return (
 							<button value={idx} key={item + idx} className={`btn ${idx == btnOn ? 'on' : ''}`} onClick={toggleBtn}>

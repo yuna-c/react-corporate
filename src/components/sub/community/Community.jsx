@@ -159,7 +159,7 @@ export default function Community() {
 				</div>
 
 				<div className='img-area'>
-					<img src={`${path.current}/img/img2.WEBP`} alt={path.current} />
+					<img src={`${path.current}/img/img2.webp`} alt='img' />
 				</div>
 			</section>
 

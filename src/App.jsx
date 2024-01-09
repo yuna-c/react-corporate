@@ -17,6 +17,7 @@ import Detail from './components/sub/youtube/Detail';
 import Gallery from './components/sub/gallery/Gallery';
 import AboutUs from './components/sub/aboutUs/AboutUs';
 import Eeee from './components/sub/eeee/Eeee';
+import Contact_ from './components/sub/contact/Contact_';
 
 export default function App() {
 	const [Dark, setDark] = useState(false);
@@ -32,6 +33,7 @@ export default function App() {
 				<Route path='/community' component={Community} />
 				<Route path='/members' component={Members} />
 				<Route path='/contact' component={Contact} />
+				<Route path='/contact' component={Contact_} />
 				<Route path='/youtube' component={Youtube} />
 				<Route path='/detail/:id' component={Detail} />
 				<Route path='/eeee' component={Eeee} />

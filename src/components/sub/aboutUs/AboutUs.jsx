@@ -45,7 +45,7 @@ export default function AboutUs() {
 				<h3>Creative studio that inspires.</h3>
 
 				<div className='img-area'>
-					<img src={`${path.current}/img/img1.webp`} alt={path.current} />
+					<img src={`${path.current}/img/img1.webp`} alt='img' />
 				</div>
 
 				<div className='line-holizontal'></div>
