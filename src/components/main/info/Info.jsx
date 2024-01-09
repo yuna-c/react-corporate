@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom/';
 import { useCustomText } from '../../../hooks/useText';
 import './Info.scss';
 import postData from './dummyPosts.json';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Info() {
 	const changeText = useCustomText('combined');
@@ -14,9 +15,14 @@ export default function Info() {
 
 	const [Post] = useState(getLocalData());
 
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(Post));
+	}, [Post]);
+
 	return (
 		<section className='Info'>
 			<div className='showBox'>
+				<div className='line-holizontal'></div>
 				{Post.map((el, idx) => {
 					const date = JSON.stringify(el.date);
 					const strDate = changeText(date.split('T')[0].slice(1), '.');
@@ -24,11 +30,15 @@ export default function Info() {
 					if (idx >= 4) return null;
 					return (
 						<article key={el + idx}>
-							<div className='txt'>
-								<h2>{el.title}</h2>
+							<div className='txt-area'>
+								<h2>
+									<Link to='/community/'>{el.title}</Link>
+								</h2>
+								<strong>{el.email}</strong>
 								<p>{el.content}</p>
 								<span>{strDate}</span>
 							</div>
+							<div className='line-holizontal'></div>
 						</article>
 					);
 				})}

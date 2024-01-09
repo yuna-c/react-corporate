@@ -7,14 +7,13 @@ import './Community.scss';
 
 export default function Community() {
 	const path = useRef(process.env.PUBLIC_URL);
-	// const customText = useCustomText("combined");
 	const customText = useCustomText('combined');
 	// console.log(customText);
 
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		// JSON.parse 문자열의 구문을 분석, Js 값이나 객체를 생성
-		if (data) return JSON.parse(data);
+		if (data) JSON.parse(data);
 		return postData.dummyPosts; //[]빈배열에 json 파일 넣기
 	};
 	// console.log(getLocalData());

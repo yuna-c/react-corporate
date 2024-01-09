@@ -209,13 +209,14 @@
 
 					p,
 					textarea {
-						line-height: 1.6;
-						margin-bottom: 2rem;
+						margin-bottom: 1rem;
 						padding: 1rem 0;
 						font-family: var(--titleFont);
-						font-size: 1.1rem;
+						font-size: 1.2rem;
 						font-weight: 400;
 						letter-spacing: 1px;
+						white-space: pre-line; /* Json data 개행 전처리 */
+						line-height: 2rem;
 					}
 
 					textarea {

@@ -1,7 +1,89 @@
 .Info {
 	width: 100%;
-	height: 70vh;
-	padding: 300px 15vw;
-	background-color: rgba(var(--baseColor-code), 0.4);
-	color: var(--bgColor);
+	height: 100%;
+	// padding: 300px 15vw;
+	// background-color: rgba(var(--baseColor-code), 0.4);
+	color: var(--baseColor);
+
+	.showBox {
+		margin-top: 5rem;
+
+		article {
+			margin: 3rem 0 3rem;
+
+			.txt-area {
+				margin-bottom: 3rem;
+				display: flex;
+				flex-direction: column;
+
+				h2 {
+					line-height: 1.2;
+					margin-bottom: 0.5rem;
+					font-family: var(--pointFont);
+					font-weight: 500;
+					font-size: 1.9rem;
+					letter-spacing: 1px;
+				}
+
+				strong {
+					display: inline-block;
+					margin-bottom: 1rem;
+					font-family: var(--pointFont);
+					font-weight: 400;
+					font-size: 1.5rem;
+				}
+
+				p {
+					margin-bottom: 1rem;
+					padding: 1rem 0;
+					display: inline-block;
+					font-family: var(--titleFont);
+					font-size: 1.2rem;
+					font-weight: 400;
+					letter-spacing: 1px;
+					white-space: pre-line; /* Json data 개행 전처리 */
+					line-height: 2rem;
+				}
+				span {
+					font-family: var(--titleFont);
+				}
+			}
+
+			.btn-area {
+				width: 100%;
+				height: auto;
+				margin-bottom: 4rem;
+				display: flex;
+				justify-content: flex-end;
+				gap: 1rem;
+
+				.btn {
+					color: rgba(var(--bgColor-code), 1);
+					display: flex;
+					flex-wrap: wrap;
+					background-color: rgba(var(--baseColor-code), 1);
+					font-family: var(--titleFont);
+					font-size: 1rem;
+					font-weight: 400;
+					letter-spacing: 1px;
+					padding: 0.5rem 1rem;
+					text-align: center;
+					text-transform: uppercase;
+					border: 1px solid rgba(var(--bgColor-code), 1);
+					border-radius: 6px;
+
+					&:hover {
+						background-color: rgba(var(--bgColor-code), 1) !important;
+						border: 1px solid rgba(var(--baseColor-code), 1);
+						color: rgba(var(--baseColor-code), 1);
+					}
+				}
+			}
+			&:last-child {
+				.line-holizontal {
+					display: none;
+				}
+			}
+		}
+	}
 }
