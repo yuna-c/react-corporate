@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 
+// useDebounce로 인풋값 변경에 의해서 check가 너무 많이 호출되는 것을 막음
 export const useDebounce = (value, gap = 500) => {
 	const [DebouncedVal, setDebouncedVal] = useState(value);
 	const eventBlocker = useRef(null); //setTimeout의 리턴값을 받을 참조객체

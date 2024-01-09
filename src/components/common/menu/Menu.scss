@@ -10,6 +10,43 @@
 	left: 0;
 	right: 0;
 	z-index: 5;
+
+	.content-padding {
+		.gnb-util {
+			padding: 1rem 0;
+			margin-left: -10px;
+
+			.thema {
+				width: 60px;
+				height: 26px;
+				position: relative;
+				top: 0;
+				left: 0;
+				border: 1px solid rgba(var(--baseColor-code), 1);
+				border-radius: 18px;
+				transform: scale(0.7);
+				cursor: pointer;
+
+				.ball {
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					top: 2px;
+					left: 2px;
+					background-color: rgba(var(--baseColor-code), 1);
+					border-radius: 10px;
+					font-size: 0;
+					transition: 0.7s;
+				}
+			}
+
+			.thema.dark {
+				.ball {
+					left: 35px;
+				}
+			}
+		}
+	}
 }
 
 //tablet

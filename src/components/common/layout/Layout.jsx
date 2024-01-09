@@ -9,11 +9,11 @@ export default function Layout({ children, title }) {
 
 	useEffect(() => {
 		splitText(refTitle.current, title, 0.7, 0.15);
+		// 지연시간을 통해 scss가 적용될 시간을 줌
 		setTimeout(() => {
-			// 지연시간을 통해 scss가 적용될 시간을 줌
 			refFrame.current.classList.add('on');
 		}, 300);
-	}, []);
+	}, [splitText, title]);
 
 	return (
 		/* S : Layout */

@@ -36,7 +36,7 @@ export default function App() {
 				<Route path='/detail/:id' component={Detail} />
 				{/* <Route path='/eeee' component={Eeee} /> */}
 				<Footer />
-				<AnimatePresence>{Toggle && <Menu setToggle={setToggle} />}</AnimatePresence>
+				<AnimatePresence>{Toggle && <Menu setToggle={setToggle} Dark={Dark} setDark={setDark} />}</AnimatePresence>
 			</div>
 		</div>
 	);
