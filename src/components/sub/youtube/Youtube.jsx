@@ -39,7 +39,7 @@ export default function Youtube() {
 
 	useEffect(() => {
 		fetchYoutube();
-	}, []);
+	}, [fetchYoutube]);
 
 	return (
 		/* S : Youtube */
@@ -78,6 +78,7 @@ export default function Youtube() {
 					<button className='btn'>VIDEO</button>
 					<button className='btn'>CONTENT</button> 
 					*/}
+
 					{btnData.map((item, idx) => {
 						return (
 							<button value={idx} key={item + idx} className={`btn ${idx == btnOn ? 'on' : ''}`} onClick={toggleBtn}>

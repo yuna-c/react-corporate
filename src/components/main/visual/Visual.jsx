@@ -50,7 +50,7 @@ export default function Visual() {
 							<article key={vid.id}>
 								<div className='pic'>
 									<Link to={`/detail/${vid.id}`}>
-										<img src={vid.snippet.thumbnails.default.url} alt={vid.snippet.title} />
+										<img src={vid.snippet.thumbnails.standard.url} alt={vid.snippet.title} />
 									</Link>
 								</div>
 							</article>
