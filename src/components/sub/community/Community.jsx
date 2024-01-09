@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import Layout from '../../common/layout/Layout';
-import postData from './dummyPosts.json';
+import postData from '../../main/info/dummyPosts.json';
 import './Community.scss';
 
 export default function Community() {
@@ -14,7 +14,7 @@ export default function Community() {
 		const data = localStorage.getItem('post');
 		// JSON.parse 문자열의 구문을 분석, Js 값이나 객체를 생성
 		if (data) JSON.parse(data);
-		return postData.dummyPosts; //[]빈배열에 json 파일 넣기
+		return postData.dummyPosts; //info []빈배열에 json 파일 넣기
 	};
 	// console.log(getLocalData());
 
