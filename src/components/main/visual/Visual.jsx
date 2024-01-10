@@ -45,7 +45,7 @@ export default function Visual({ title }) {
 		<figure className='Visual'>
 			<div className='visualBox'>
 				<div ref={refFrame} className='txt-area'>
-					<h2 ref={refTitle} className={` ${(title = 'memoization')}`}>
+					<h2 ref={refTitle} className={` ${(title = 'React-Query')}`}>
 						{title}
 					</h2>
 

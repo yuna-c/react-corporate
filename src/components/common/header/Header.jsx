@@ -12,7 +12,7 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 				<h1 className='logo'>
 					<Link to='/'>
 						<img src={`${path.current}/img/logo.svg`} alt='logo.svg' />
-						<span>React</span>
+						<span>React-Query</span>
 					</Link>
 				</h1>
 
