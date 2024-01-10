@@ -8,6 +8,8 @@ export default function Visual() {
 	const shortenText = useCustomText('shorten');
 	const [Vids, setVids] = useState([]);
 
+	const path = useRef(process.env.PUBLIC_URL);
+
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
 		const pid = process.env.REACT_APP_YOUTUBE_LIST;
@@ -35,6 +37,10 @@ export default function Visual() {
 					<h2>memoization </h2>
 					<h3>We are a digital agency from Lisbon.</h3>
 					<p>Elevating brands through creative digital solutions, proudly representing Lisbon's vibrant innovation.</p>
+				</div>
+
+				<div className='img-area'>
+					<img src={`${path.current}/img/img9.webp`} alt='img' />
 				</div>
 			</div>
 
