@@ -1,0 +1,14 @@
+{
+	"my-component": {
+		"scope":"javascript, typescript, javascriptreact, typescriptreact",
+		"prefix":"my:component",
+		"body": [
+			"import './${TM_FILENAME_BASE}.scss';",
+			"export default function ${TM_FILENAME_BASE}(){",
+				"return(",
+					"<div className=\"${TM_FILENAME_BASE}$1\">${TM_FILENAME_BASE}$2</div>",
+					");",
+			"}",
+		]
+	}
+}

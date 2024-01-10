@@ -1,0 +1,15 @@
+{
+	"my-component-lowercase": {
+		"scope":"javascript, typescript, javascriptreact, typescriptreact",
+		"prefix":"mcl",
+		"body": [
+			"import './${TM_FILENAME_BASE/(.)/${1:/downcase}/}.scss';",
+			"",
+			"export default function ${TM_FILENAME_BASE}(){",
+				"\treturn(",
+					"\t\t<div className=\"${TM_FILENAME_BASE/(.)/${1:/downcase}/}\">${TM_FILENAME_BASE}$2</div>",
+				"\t);",
+			"}",
+		]
+	}
+}

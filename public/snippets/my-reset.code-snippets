@@ -1,0 +1,12 @@
+{
+	"my-reset": {
+		"scope":"css,scss",
+		"prefix":"my:reset",
+		"body": [
+			"* {margin: 0;padding: 0;box-sizing: border-box;}",
+			"a {text-decoration: none;color: inherit;	font-family: inherit;	font-weight: inherit;}",
+			"ul,ol,li {list-style: none;}",
+			"html {font-size: 16px;}"
+		]
+	}
+}

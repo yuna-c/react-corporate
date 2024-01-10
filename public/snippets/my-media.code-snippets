@@ -1,0 +1,12 @@
+{
+	"my-mediaquery": {
+		"scope":"css,scss",
+		"prefix":"my:media",
+		"body": [
+			"@media screen and (max-width:$1){",
+				"$2",
+			"}"		
+		]
+	}
+}
+​

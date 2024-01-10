@@ -1,0 +1,10 @@
+{
+	"my-useRef": {
+		"scope": "javascript,typescript,javascriptreact",
+		"prefix":"mur",
+		"body": [
+			"const $1 = useRef$3($2);",
+			"$4"		
+		]
+	}
+}

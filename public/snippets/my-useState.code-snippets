@@ -1,0 +1,10 @@
+{
+	"my-useState": {
+		"scope": "javascript,typescript,javascriptreact",
+		"prefix":"mus",
+		"body": [
+			"const [${1/(.)/${1:/upcase}/}, set${1/(.)/${1:/upcase}/}] = useState$2($3);",
+			"$4"
+		]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"my-style": {
+		"scope":"css,scss",
+		"prefix":"my:style",
+		"body": [
+			"@import 'reset';",
+			"@import 'variable';"
+		]
+	}
+}
