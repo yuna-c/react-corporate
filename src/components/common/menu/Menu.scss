@@ -1,7 +1,7 @@
 .Menu {
 	width: auto;
 	height: fit-content;
-	min-height:52vh;
+	min-height: 42vh;
 	margin: 0 2.5rem;
 	margin-top: -1px;
 	background: rgba(var(--bgColor-code), 1);
@@ -16,11 +16,11 @@
 		transition: padding 1s;
 
 		.util-layout {
-			padding: 1rem 0;
+			padding: 1rem 0 0;
 			display: none;
 			justify-content: space-between;
 			align-items: center;
-			
+
 			.gnb-util {
 				margin-left: -10px;
 

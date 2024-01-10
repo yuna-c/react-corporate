@@ -139,7 +139,7 @@
 	.Visual {
 		.visualBox {
 			padding-top: 3rem;
-			padding-bottom: 1rem;
+			padding-bottom: 0;
 
 			.txt-area {
 				width: 80%;
@@ -172,8 +172,8 @@
 .limit {
 	.Visual {
 		.visualBox {
-			padding-bottom: 2rem;
 			padding-top: 2rem;
+			padding-bottom: 0;
 
 			.txt-area {
 				width: 100%;
@@ -218,8 +218,14 @@
 					font-size: 3.5rem;
 				}
 			}
+
+			.video-area {
+				margin-bottom: 0;
+			}
 		}
 		.videoBox {
+			margin-top: 2rem;
+			margin-bottom: 0;
 			article {
 				width: 100%;
 				margin-bottom: 2rem;

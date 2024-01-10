@@ -85,3 +85,23 @@
 		}
 	}
 }
+
+//tablet
+.tablet,
+.mobile,
+.limit {
+}
+
+//mobile
+.mobile,
+.limit {
+}
+
+//limit
+.limit {
+	.showBox {
+		article {
+			margin: 2rem 0 2rem;
+		}
+	}
+}
