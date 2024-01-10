@@ -1,19 +1,19 @@
 {
-  "OUR VALUES": [
-    {
-      "name": "VISION",
-      "detail": "Our relentless pursuit of a shared vision fuels our creativity and propels us forward. With clarity and foresight, we craft strategies that align with our clients' goals and aspirations, transforming their dreams into reality and shaping a future worth embracing.",
-      "icon": "icon01.svg"
-    },
-    {
-      "name": "INNOVATION",
-      "detail": "Innovation is at the core of everything we do. We embrace curiosity, explore uncharted territories, and challenge the status quo.",
-      "icon": "icon02.svg"
-    },
-    {
-      "name": "CONNECTION",
-      "detail": "We believe in the power of connection. We strive to build bridges between brands and their audiences, fostering genuine and lasting relationships.",
-      "icon": "icon03.svg"
-    }
-  ]
+	"values": [
+		{
+			"name": "VISION",
+			"detail": "Our relentless pursuit of a shared vision fuels our creativity and propels us forward. With clarity and foresight, we craft strategies that align with our clients' goals and aspirations, transforming their dreams into reality and shaping a future worth embracing.",
+			"icon": "icon01.svg"
+		},
+		{
+			"name": "INNOVATION",
+			"detail": "Innovation is at the core of everything we do. We embrace curiosity, explore uncharted territories, and challenge the status quo.",
+			"icon": "icon02.svg"
+		},
+		{
+			"name": "CONNECTION",
+			"detail": "We believe in the power of connection. We strive to build bridges between brands and their audiences, fostering genuine and lasting relationships.",
+			"icon": "icon03.svg"
+		}
+	]
 }
