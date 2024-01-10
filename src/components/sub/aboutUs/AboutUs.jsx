@@ -1,6 +1,6 @@
 import './AboutUs.scss';
-import Layout from '../../common/layout/Layout';
 import { useRef, useState } from 'react';
+import Layout from '../../common/layout/Layout';
 import { useCustomText } from '../../../hooks/useText';
 import { useValueQuery } from '../../../hooks/useValueQuery';
 import { useDepartmentQuery } from '../../../hooks/useDepartmentQuery';

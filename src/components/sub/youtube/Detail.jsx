@@ -1,14 +1,14 @@
-import { useRef } from 'react';
-import Layout from '../../common/layout/Layout';
 import './Detail.scss';
+import { useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import Layout from '../../common/layout/Layout';
 import { useYoutubeQueryById } from '../../../hooks/useYoutubeQuery';
 
 export default function Detail() {
 	const refTitle = useRef(null);
 	const { id } = useParams();
 	const { data: YoutubeData, isSuccess, isError, error, isLoading } = useYoutubeQueryById(id);
-	console.log(YoutubeData, isSuccess, isError, error);
+	// console.log(YoutubeData, isSuccess, isError, error);
 
 	// Optional Chaining : 객체명?.property 해당객체에 값이 없을땐 무시하고 값이 있을때만 property접근
 	return (
