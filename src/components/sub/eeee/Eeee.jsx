@@ -9,14 +9,30 @@ export default function Eeee() {
 	const data = [1, 2, 3, 4, 5];
 	const [btnActive, setBtnActive] = useState('');
 
-	const toggleActive = (e) => {
-		setBtnActive((btn) => {
+	const toggleActive = e => {
+		setBtnActive(btn => {
 			return e.target.value;
 		});
 	};
 
+	const [isHovering, setIsHovering] = useState(false);
+
+	const handleMouseOver = () => {
+		setIsHovering(true);
+	};
+
+	const handleMouseOut = () => {
+		setIsHovering(false);
+	};
+
 	return (
 		<div className='ex'>
+			<div className="hover">
+				<div className={isHovering ? 'grow' : ''} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+					Hover
+				</div>
+			</div>
+
 			<div>
 				<h1>Color Chart</h1>
 

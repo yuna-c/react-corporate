@@ -39,8 +39,8 @@ export default function Visual() {
 					<p>Elevating brands through creative digital solutions, proudly representing Lisbon's vibrant innovation.</p>
 				</div>
 
-				<div className='img-area'>
-					<img src={`${path.current}/img/img9.webp`} alt='img' />
+				<div className='video-area'>
+					<video src={`${path.current}/img/services-video-visual.mp4`} alt='services-content-transcode' autoPlay muted loop playsInline />
 				</div>
 			</div>
 

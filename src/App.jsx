@@ -18,6 +18,7 @@ import Gallery from './components/sub/gallery/Gallery';
 import AboutUs from './components/sub/aboutUs/AboutUs';
 import Eeee from './components/sub/eeee/Eeee';
 import Contact_ from './components/sub/contact/Contact_';
+import Mouse from './components/sub/mouse/Mouse';
 
 export default function App() {
 	const [Dark, setDark] = useState(false);
@@ -37,6 +38,7 @@ export default function App() {
 				<Route path='/youtube' component={Youtube} />
 				<Route path='/detail/:id' component={Detail} />
 				<Route path='/eeee' component={Eeee} />
+				<Route path='/mouse' component={Mouse} />
 				<Footer />
 				<AnimatePresence>{Toggle && <Menu setToggle={setToggle} Dark={Dark} setDark={setDark} />}</AnimatePresence>
 			</div>
