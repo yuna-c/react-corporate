@@ -94,22 +94,22 @@ export default function Footer() {
 							<h3>Cms</h3>
 							<ul>
 								<li>
-									<NavLink to='/contact' activeClassName={'on'}>
+									<NavLink to='/WORK' activeClassName={'on'}>
 										WORK
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/youtube' activeClassName={'on'}>
+									<NavLink to='/WORK SINGLE' activeClassName={'on'}>
 										WORK SINGLE
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/gallery' activeClassName={'on'}>
+									<NavLink to='/BLOG' activeClassName={'on'}>
 										BLOG
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/gallery' activeClassName={'on'}>
+									<NavLink to='/Shopping' activeClassName={'on'}>
 										Shopping
 									</NavLink>
 								</li>
@@ -129,38 +129,28 @@ export default function Footer() {
 							<h3>Utility Pages</h3>
 							<ul>
 								<li>
-									<NavLink to='/contact' activeClassName={'on'}>
+									<NavLink to='/404 ERROR PAGE' activeClassName={'on'}>
 										404 ERROR PAGE
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/youtube' activeClassName={'on'}>
+									<NavLink to='/Password Protected' activeClassName={'on'}>
 										Password Protected
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/gallery' activeClassName={'on'}>
+									<NavLink to='/STYLEGUIDE' activeClassName={'on'}>
 										STYLEGUIDE
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/community' activeClassName={'on'}>
+									<NavLink to='/Licensing' activeClassName={'on'}>
 										Licensing
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/members' activeClassName={'on'}>
-										Members
-									</NavLink>
-								</li>
-								<li>
-									<NavLink to='/contact' activeClassName={'on'}>
+									<NavLink to='/Changelog' activeClassName={'on'}>
 										Changelog
-									</NavLink>
-								</li>
-								<li>
-									<NavLink to='/eeee' activeClassName={'on'}>
-										Eeee
 									</NavLink>
 								</li>
 							</ul>

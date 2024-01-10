@@ -15,14 +15,34 @@
 		.txt-area {
 			width: 60%;
 			margin-bottom: 5rem;
+			opacity: 1;
+			transform-origin: left top;
+			transition: opacity 1s;
 
 			h2 {
 				margin-bottom: 1rem;
-				font-size: 1rem;
-				font-weight: 500;
+				font-size: 0;
+				font-weight: normal;
 				opacity: 0.9;
-				letter-spacing: -0.01em;
 				text-transform: uppercase;
+				letter-spacing: -0.01em;
+
+				span {
+					font-size: 1rem;
+					font-weight: 500;
+
+					opacity: 0;
+					transition-property: opacity;
+				}
+			}
+
+			&.on {
+				opacity: 1;
+				h2 {
+					span {
+						opacity: 1;
+					}
+				}
 			}
 
 			h3 {
@@ -146,7 +166,9 @@
 				margin-bottom: 3rem;
 
 				h2 {
-					font-size: 0.9rem;
+					span {
+						font-size: 0.9rem;
+					}
 				}
 
 				h3 {
@@ -179,10 +201,6 @@
 				width: 100%;
 				margin-bottom: 1.5rem;
 
-				h2 {
-					font-size: 0.9rem;
-				}
-
 				h3 {
 					margin-bottom: 1.5rem;
 					font-size: 4.5rem;
@@ -210,10 +228,6 @@
 			padding-top: 2rem;
 
 			.txt-area {
-				h2 {
-					font-size: 0.9rem;
-				}
-
 				h3 {
 					font-size: 3.5rem;
 				}

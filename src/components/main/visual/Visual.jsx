@@ -1,14 +1,18 @@
-import { useEffect, useRef, useState } from 'react';
-import { useCustomText } from '../../../hooks/useText';
 import './Visual.scss';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSplitText } from '../../../hooks/useText';
 
-export default function Visual() {
-	const customText = useCustomText('combined');
-	const shortenText = useCustomText('shorten');
+export default function Visual({ title }) {
+	// const customText = useCustomText('combined');
+	// const shortenText = useCustomText('shorten');
 	const [Vids, setVids] = useState([]);
 
 	const path = useRef(process.env.PUBLIC_URL);
+	const refFrame = useRef(null);
+	const refTitle = useRef(null);
+	const splitText = useSplitText();
+	console.log(refTitle);
 
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
@@ -26,15 +30,26 @@ export default function Visual() {
 	};
 
 	useEffect(() => {
+		splitText(refTitle.current, title, 0.7, 0.15);
+		setTimeout(() => {
+			refFrame.current.classList.add('on');
+		}, 300);
+	}, [splitText, title]);
+
+	useEffect(() => {
 		fetchYoutube();
 	}, []);
 
 	return (
 		/* S : Visual */
+
 		<figure className='Visual'>
 			<div className='visualBox'>
-				<div className='txt-area'>
-					<h2>memoization </h2>
+				<div ref={refFrame} className='txt-area'>
+					<h2 ref={refTitle} className={` ${(title = 'memoization')}`}>
+						{title}
+					</h2>
+
 					<h3>We are a digital agency from Lisbon.</h3>
 					<p>Elevating brands through creative digital solutions, proudly representing Lisbon's vibrant innovation.</p>
 				</div>

@@ -54,6 +54,11 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 									Eeee
 								</NavLink>
 							</li>
+							<li>
+								<NavLink to='/mouse' activeClassName={'on'}>
+									mouse
+								</NavLink>
+							</li>
 						</ul>
 					</div>
 
