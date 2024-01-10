@@ -47,17 +47,18 @@
 	}
 }
 
-div.hover {
+.hover div {
 	width: 100px;
 	height: 100px;
 	background-color: aliceblue;
 	text-align: center;
 	line-height: 100px;
+	// transition: 1s;
 	transition-property: width, height;
 	transition-duration: 1s, 1s;
-}
 
-.grow {
-	width: 200px;
-	height: 120px;
+	&.grow {
+		width: 200px;
+		height: 120px;
+	}
 }
