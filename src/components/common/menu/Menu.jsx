@@ -38,18 +38,18 @@ export default function Menu({ setToggle, Dark, setDark }) {
 				className='Menu'
 				initial={{
 					opacity: 0,
-					y: '100px'
-					// transition: { delay: 0.5, duration: 1 },
+					y: '100px',
+					transition: { delay: 0, duration: 1 }
 				}}
 				animate={{
 					opacity: 1,
 					y: '0',
-					transition: { duration: 0.4, ease: 'linear' }
+					transition: { delay: 0, duration: 0.5, ease: 'linear' }
 				}}
 				exit={{
 					opacity: 0,
 					y: '100px',
-					transition: { delay: 0.2, duration: 0.4 }
+					transition: { duration: 0.4 }
 				}}>
 				<div className='content-padding'>
 					<Mobile />
