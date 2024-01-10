@@ -1,20 +1,14 @@
 import './AboutUs.scss';
 import Layout from '../../common/layout/Layout';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
 import { useValueQuery } from '../../../hooks/useValueQuery';
 import { useDepartmentQuery } from '../../../hooks/useDepartmentQuery';
 
 export default function AboutUs() {
-	// const [memberTit, setmemberTit] = useState('');
-	// const [memberData, setmemberData] = useState([]);
-	// const [ValueTit, setValueTit] = useState('');
-	// const [ValueData, setValueData] = useState([]);
 	const [On, setOn] = useState(false);
 	const path = useRef(process.env.PUBLIC_URL);
 	const combinedTitle = useCustomText('combined');
-
-	// const shortenText = useCustomText('shorten');
 
 	const { data: ValueData, isSuccess: isValue } = useValueQuery();
 	const { data: MemberData, isSuccess: isMember } = useDepartmentQuery();
@@ -60,6 +54,7 @@ export default function AboutUs() {
 										<div className='icon'>
 											<img src={`${path.current}/img/${value.icon}`} alt={value.name} />
 										</div>
+
 										<div className='txt'>
 											<h4>{value.name}</h4>
 											<p>{value.detail}</p>
@@ -107,6 +102,7 @@ export default function AboutUs() {
 				<div className='txt-area'>
 					<h2>CONTACT</h2>
 					<p>LET'S BRING YOUR BRAND TO THE NEXT LEVEL</p>
+
 					<div className='icon'>
 						<img src={`${path.current}/img/icon02.svg`} alt={path.current} />
 					</div>
@@ -116,7 +112,7 @@ export default function AboutUs() {
 
 				<div className='con-area'>
 					<p>Together, let's elevate your brand to new heights by unleashing its full potential and captivating your target audience.</p>
-					{/* <button className='btn'>Our Services</button> */}
+
 					<div className='btn-area'>
 						<div className='btn-inner'>
 							<button className='btn-active btn-inner-text'>Our Services</button>
