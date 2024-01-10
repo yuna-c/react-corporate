@@ -13,8 +13,7 @@ export default function Youtube() {
 	const btnArr = useRef(['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT']);
 
 	const { data: Vids, isSuccess, isError, error, isLoading } = useYoutubeQuery();
-	console.log(isError);
-	console.log(error);
+	console.log(isError, error);
 
 	return (
 		/* S : Youtube */
