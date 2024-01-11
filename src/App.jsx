@@ -4,11 +4,12 @@ import './globalStyles/Common.scss';
 import './globalStyles/Variables.scss';
 import { Route } from 'react-router-dom';
 import { useMedia } from './hooks/useMedia';
-import { AnimatePresence } from 'framer-motion';
 import Eeee from './components/sub/eeee/Eeee';
-import Mouse from './components/sub/mouse/Mouse';
+import { AnimatePresence } from 'framer-motion';
 import Menu from './components/common/menu/Menu';
+import Mouse from './components/sub/mouse/Mouse';
 import Detail from './components/sub/youtube/Detail';
+import { useGlobalData } from './hooks/useGlobalData';
 import Header from './components/common/header/Header';
 import Footer from './components/common/footer/Footer';
 import Members from './components/sub/members/Members';
@@ -23,6 +24,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export default function App() {
 	const queryClient = new QueryClient();
+	const { Mode } = useGlobalData();
 	const [Dark, setDark] = useState(false);
 	const [Toggle, setToggle] = useState(false);
 

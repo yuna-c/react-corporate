@@ -69,41 +69,8 @@ export default function Gallery() {
 		searched.current = true;
 	};
 
-	// const fetchFlickr = async opt => {
-	// 	console.log('fetching again');
-	// 	const num = 100;
-	// 	const flickr_api = process.env.REACT_APP_FLICKR_API;
-
-	// 	// const baseURL = "https://www.flickr.com/services/rest/?method=";
-	// 	const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&extras=description,date_taken&method=`;
-	// 	const method_interest = 'flickr.interestingness.getList';
-	// 	const method_user = 'flickr.people.getPhotos';
-	// 	const method_search = 'flickr.photos.search'; //search method 추가
-
-	// 	const interestURL = `${baseURL}${method_interest}`;
-	// 	const userURL = `${baseURL}${method_user}&user_id=${opt.id}`;
-	// 	const searchURL = `${baseURL}${method_search}&tags=${opt.keyword}`; //search url 추가
-
-	// 	let url = '';
-	// 	opt.type === 'user' && (url = userURL);
-	// 	opt.type === 'interest' && (url = interestURL);
-	// 	opt.type === 'search' && (url = searchURL);
-
-	// 	const data = await fetch(url);
-	// 	const json = await data.json();
-
-	// 	// if (json.photos.photo.length === 0) {
-	// 	//   return alert("해당 검색어의 결과값이 없습니다");
-	// 	// }
-
-	// 	setPics(json.photos.photo);
-	// 	// console.log(json.photos.photo);
-	// };
-
 	useEffect(() => {
 		refFrameWrap.current.style.setProperty('--gap', gap.current + 'px');
-		// fetchFlickr({ type: 'user', id: myID.current });
-		//fetchFlickr({ type: "search", keyword: "landscpe" });
 	}, []);
 
 	return (
