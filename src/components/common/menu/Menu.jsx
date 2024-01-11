@@ -5,8 +5,6 @@ import Mobile from '../mobile/Mobile';
 // npm i framer-motion@4
 
 export default function Menu({ setToggle, Dark, setDark }) {
-	// console.log(setToggle);
-
 	const closeMenu = useCallback(() => {
 		// e.preventDefault();
 		window.innerWidth >= 1200 && setToggle(false);
@@ -45,7 +43,8 @@ export default function Menu({ setToggle, Dark, setDark }) {
 				animate={{
 					opacity: 1,
 					y: '0',
-					transition: { delay: 0, duration: 0.5, ease: 'linear' }
+					transition: { delay: 0, duration: 0.5 }
+					// ease: 'linear'
 				}}
 				exit={{
 					opacity: 0,

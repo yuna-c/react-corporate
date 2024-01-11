@@ -10,14 +10,12 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: flex-start;
-		transition: 0.3s;
+		transition: 1s;
 
 		.txt-area {
 			width: 60%;
 			margin-bottom: 5rem;
 			opacity: 1;
-			transform-origin: left top;
-			transition: opacity 1s;
 
 			h2 {
 				margin-bottom: 1rem;
