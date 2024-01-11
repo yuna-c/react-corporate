@@ -12,7 +12,6 @@ export default function Visual({ title }) {
 	const refFrame = useRef(null);
 	const refTitle = useRef(null);
 	const splitText = useSplitText();
-	// console.log(refTitle);
 
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
@@ -46,7 +45,7 @@ export default function Visual({ title }) {
 		<figure className='Visual'>
 			<div className='visualBox'>
 				<div ref={refFrame} className='txt-area'>
-					<h2 ref={refTitle} className={` ${(title = 'memoization')}`}>
+					<h2 ref={refTitle} className={` ${(title = 'React-Query')}`}>
 						{title}
 					</h2>
 

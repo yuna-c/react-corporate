@@ -1,42 +1,17 @@
 import './AboutUs.scss';
+import { useRef, useState } from 'react';
 import Layout from '../../common/layout/Layout';
 import { useCustomText } from '../../../hooks/useText';
-import { useEffect, useRef, useState } from 'react';
+import { useValueQuery } from '../../../hooks/useValueQuery';
+import { useDepartmentQuery } from '../../../hooks/useDepartmentQuery';
 
 export default function AboutUs() {
-	const [memberTit, setmemberTit] = useState('');
-	const [memberData, setmemberData] = useState([]);
-	const [ValueTit, setValueTit] = useState('');
-	const [ValueData, setValueData] = useState([]);
 	const [On, setOn] = useState(false);
-
 	const path = useRef(process.env.PUBLIC_URL);
-
-	// const shortenText = useCustomText('shorten');
 	const combinedTitle = useCustomText('combined');
 
-	const fetchAboutUs = () => {
-		fetch(`${path.current}/DB/department.json`)
-			.then(data => data.json())
-			.then(json => {
-				setmemberTit(Object.keys(json)[0]);
-				setmemberData(Object.values(json)[0]);
-			});
-	};
-
-	const fetchValue = () => {
-		fetch(`${path.current}/DB/value.json`)
-			.then(data => data.json())
-			.then(json => {
-				setValueTit(Object.keys(json)[0]);
-				setValueData(Object.values(json)[0]);
-			});
-	};
-
-	useEffect(() => {
-		fetchAboutUs();
-		fetchValue();
-	}, []);
+	const { data: ValueData, isSuccess: isValue } = useValueQuery();
+	const { data: MemberData, isSuccess: isMember } = useDepartmentQuery();
 
 	return (
 		/* S : AboutUs */
@@ -53,7 +28,7 @@ export default function AboutUs() {
 
 			<section className='valueBox'>
 				<div className='txt-area'>
-					<h2>{combinedTitle(ValueTit)}</h2>
+					<h2>{combinedTitle('Our Values')}</h2>
 					<p>Our vision is to connect with the world trough innovation.</p>
 
 					<div className='btn-area'>
@@ -71,23 +46,25 @@ export default function AboutUs() {
 				<div className='con-area'>
 					<div className='line-vertical'></div>
 
-					{ValueData.map((value, idx) => {
-						return (
-							<article key={value + idx}>
-								<div className='info'>
-									<div className='icon'>
-										<img src={`${path.current}/img/${value.icon}`} alt={value.name} />
-									</div>
-									<div className='txt'>
-										<h4>{value.name}</h4>
-										<p>{value.detail}</p>
-									</div>
-								</div>
+					{isValue &&
+						ValueData.map((value, idx) => {
+							return (
+								<article key={value + idx}>
+									<div className='info'>
+										<div className='icon'>
+											<img src={`${path.current}/img/${value.icon}`} alt={value.name} />
+										</div>
 
-								<div className='line-holizontal'></div>
-							</article>
-						);
-					})}
+										<div className='txt'>
+											<h4>{value.name}</h4>
+											<p>{value.detail}</p>
+										</div>
+									</div>
+
+									<div className='line-holizontal'></div>
+								</article>
+							);
+						})}
 				</div>
 			</section>
 
@@ -95,7 +72,7 @@ export default function AboutUs() {
 
 			<section className='memberBox'>
 				<div className='txt-area'>
-					<h3>{combinedTitle(memberTit)}</h3>
+					<h3>{combinedTitle('Our Team')}</h3>
 
 					<p>Meet our talented team of creative minds driving innovation.</p>
 				</div>
@@ -103,18 +80,19 @@ export default function AboutUs() {
 				<div className='con-area'>
 					<div className='line-vertical'></div>
 
-					{memberData.map((member, idx) => {
-						return (
-							<article key={member + idx}>
-								<div className='video'>
-									<video src={`${path.current}/img/${member.pic}`} alt={member.name} autoPlay muted loop playsInline />
-								</div>
+					{isMember &&
+						MemberData.map((member, idx) => {
+							return (
+								<article key={member + idx}>
+									<div className='video'>
+										<video src={`${path.current}/img/${member.pic}`} alt={member.name} autoPlay muted loop playsInline />
+									</div>
 
-								<h4>{member.name}</h4>
-								<p>{member.position}</p>
-							</article>
-						);
-					})}
+									<h4>{member.name}</h4>
+									<p>{member.position}</p>
+								</article>
+							);
+						})}
 				</div>
 			</section>
 
@@ -124,6 +102,7 @@ export default function AboutUs() {
 				<div className='txt-area'>
 					<h2>CONTACT</h2>
 					<p>LET'S BRING YOUR BRAND TO THE NEXT LEVEL</p>
+
 					<div className='icon'>
 						<img src={`${path.current}/img/icon02.svg`} alt={path.current} />
 					</div>
@@ -133,7 +112,7 @@ export default function AboutUs() {
 
 				<div className='con-area'>
 					<p>Together, let's elevate your brand to new heights by unleashing its full potential and captivating your target audience.</p>
-					{/* <button className='btn'>Our Services</button> */}
+
 					<div className='btn-area'>
 						<div className='btn-inner'>
 							<button className='btn-active btn-inner-text'>Our Services</button>
