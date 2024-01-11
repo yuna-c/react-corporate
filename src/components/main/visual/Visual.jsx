@@ -1,6 +1,6 @@
 import './Visual.scss';
-import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 import { useSplitText } from '../../../hooks/useText';
 
 export default function Visual({ title }) {

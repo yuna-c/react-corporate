@@ -31,16 +31,16 @@ export default function App() {
 			<div className={`wrap ${Dark ? 'dark' : ''} ${useMedia()}`}>
 				<div className='wrapper'>
 					<Header Dark={Dark} setDark={setDark} Toggle={Toggle} setToggle={setToggle} />
+					<Route path='/eeee' component={Eeee} />
+					<Route path='/mouse' component={Mouse} />
 					<Route exact path='/' component={MainWrap} />
 					<Route path='/aboutUs' component={AboutUs} />
 					<Route path='/gallery' component={Gallery} />
-					<Route path='/community' component={Community} />
 					<Route path='/members' component={Members} />
 					<Route path='/contact' component={Contact} />
 					<Route path='/youtube' component={Youtube} />
 					<Route path='/detail/:id' component={Detail} />
-					<Route path='/eeee' component={Eeee} />
-					<Route path='/mouse' component={Mouse} />
+					<Route path='/community' component={Community} />
 					<Footer />
 					<AnimatePresence>{Toggle && <Menu setToggle={setToggle} Dark={Dark} setDark={setDark} />}</AnimatePresence>
 				</div>

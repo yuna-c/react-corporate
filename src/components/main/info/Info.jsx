@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom/';
-import { useCustomText } from '../../../hooks/useText';
 import './Info.scss';
+import { Link } from 'react-router-dom/';
 import postData from './dummyPosts.json';
 import { useEffect, useState } from 'react';
+import { useCustomText } from '../../../hooks/useText';
 
 export default function Info() {
 	const changeText = useCustomText('combined');

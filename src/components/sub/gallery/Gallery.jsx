@@ -1,30 +1,33 @@
-import { useEffect, useRef, useState } from 'react';
-import Masonry from 'react-masonry-component';
-import Layout from '../../common/layout/Layout';
 import './Gallery.scss';
 import { Link } from 'react-router-dom';
 import { LuSearch } from 'react-icons/lu';
-import { useCustomText } from '../../../hooks/useText';
 import Modal from '../../common/modal/Modal';
+import Masonry from 'react-masonry-component';
+import Layout from '../../common/layout/Layout';
+import { useEffect, useRef, useState } from 'react';
+import { useCustomText } from '../../../hooks/useText';
+import { useGlobalData } from '../../../hooks/useGlobalData';
+import { useFlickrQuery } from '../../../hooks/useFlickrQuery';
 
 // npm i react-masonry-component@6
 // https://www.flickr.com/services/api/
 
 export default function Gallery() {
-	// 초기 ID 값
 	const myID = useRef('199645532@N06');
-	const isUser = useRef(myID.current);
-	const refNav = useRef(null);
+	const path = useRef(process.env.PUBLIC_URL);
+	const shortenText = useCustomText('shorten');
 	const refFrameWrap = useRef(null);
 	const searched = useRef(false);
 	const gap = useRef(30);
 
-	const [Pics, setPics] = useState([]);
+	const isUser = useRef(myID.current);
+	const refNav = useRef(null);
+	const [Opt, setOpt] = useState({ type: 'user', id: myID.current });
+	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
 
-	const path = useRef(process.env.PUBLIC_URL);
-	const shortenText = useCustomText('shorten');
-	const [Open, setOpen] = useState(false);
+	const { isSuccess, data: Pics } = useFlickrQuery(Opt);
+	// const { setModalOpen } = useGlobalData();
 
 	const activateBtn = e => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -36,7 +39,7 @@ export default function Gallery() {
 		if (e.target.classList.contains('on')) return;
 		isUser.current = '';
 		activateBtn(e);
-		fetchFlickr({ type: 'interest' });
+		setOpt({ type: 'interest' });
 		console.log('hot');
 	};
 
@@ -44,71 +47,62 @@ export default function Gallery() {
 		if (e.target.classList.contains('on') || isUser.current === myID.current) return;
 		isUser.current = myID.current;
 		activateBtn(e);
-		fetchFlickr({ type: 'user', id: myID.current });
+		setOpt({ type: 'user', id: myID.current });
 		console.log('mine');
 	};
 
 	const handleUser = e => {
-		//isUSer값이 비어있기만 하면 중지
 		if (isUser.current) return;
 		isUser.current = e.target.innerText;
 		activateBtn();
-		fetchFlickr({ type: 'user', id: e.target.innerText });
+		setOpt({ type: 'user', id: e.target.innerText });
 	};
 
 	const handleSearch = e => {
 		e.preventDefault();
-		// console.log(e.target.children[0].value); submit 눌러야댐
 		isUser.current = '';
 		activateBtn();
-
 		const keyword = e.target.children[0].value;
-		if (!keyword.trim()) return; // 빈 값 삭제
-		console.log(keyword);
-		e.target.children[0].value = ''; // 엔터 키워드 지우기
-		fetchFlickr({ type: 'search', keyword: keyword });
-
+		if (!keyword.trim()) return;
+		e.target.children[0].value = '';
+		setOpt({ type: 'search', keyword: keyword });
 		searched.current = true;
 	};
 
-	const openModal = e => {
-		setOpen(true);
-	};
+	// const fetchFlickr = async opt => {
+	// 	console.log('fetching again');
+	// 	const num = 100;
+	// 	const flickr_api = process.env.REACT_APP_FLICKR_API;
 
-	const fetchFlickr = async opt => {
-		console.log('fetching again');
-		const num = 100;
-		const flickr_api = process.env.REACT_APP_FLICKR_API;
+	// 	// const baseURL = "https://www.flickr.com/services/rest/?method=";
+	// 	const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&extras=description,date_taken&method=`;
+	// 	const method_interest = 'flickr.interestingness.getList';
+	// 	const method_user = 'flickr.people.getPhotos';
+	// 	const method_search = 'flickr.photos.search'; //search method 추가
 
-		// const baseURL = "https://www.flickr.com/services/rest/?method=";
-		const baseURL = `https://www.flickr.com/services/rest/?&api_key=${flickr_api}&per_page=${num}&format=json&nojsoncallback=1&extras=description,date_taken&method=`;
-		const method_interest = 'flickr.interestingness.getList';
-		const method_user = 'flickr.people.getPhotos';
-		const method_search = 'flickr.photos.search'; //search method 추가
+	// 	const interestURL = `${baseURL}${method_interest}`;
+	// 	const userURL = `${baseURL}${method_user}&user_id=${opt.id}`;
+	// 	const searchURL = `${baseURL}${method_search}&tags=${opt.keyword}`; //search url 추가
 
-		const interestURL = `${baseURL}${method_interest}`;
-		const userURL = `${baseURL}${method_user}&user_id=${opt.id}`;
-		const searchURL = `${baseURL}${method_search}&tags=${opt.keyword}`; //search url 추가
+	// 	let url = '';
+	// 	opt.type === 'user' && (url = userURL);
+	// 	opt.type === 'interest' && (url = interestURL);
+	// 	opt.type === 'search' && (url = searchURL);
 
-		let url = '';
-		opt.type === 'user' && (url = userURL);
-		opt.type === 'interest' && (url = interestURL);
-		opt.type === 'search' && (url = searchURL);
+	// 	const data = await fetch(url);
+	// 	const json = await data.json();
 
-		const data = await fetch(url);
-		const json = await data.json();
+	// 	// if (json.photos.photo.length === 0) {
+	// 	//   return alert("해당 검색어의 결과값이 없습니다");
+	// 	// }
 
-		// if (json.photos.photo.length === 0) {
-		//   return alert("해당 검색어의 결과값이 없습니다");
-		// }
-
-		setPics(json.photos.photo);
-		// console.log(json.photos.photo);
-	};
+	// 	setPics(json.photos.photo);
+	// 	// console.log(json.photos.photo);
+	// };
 
 	useEffect(() => {
 		refFrameWrap.current.style.setProperty('--gap', gap.current + 'px');
-		fetchFlickr({ type: 'user', id: myID.current });
+		// fetchFlickr({ type: 'user', id: myID.current });
 		//fetchFlickr({ type: "search", keyword: "landscpe" });
 	}, []);
 
@@ -199,30 +193,19 @@ export default function Gallery() {
 								</button>
 							</form>
 						</article>
-
-						{/* <div className="btn-area">
-            <div className="btn-inner">
-              <button className="btn-active btn-inner-text">
-                GET IN TOUCH
-              </button>
-              <button className="btn-active btn-inner-text-hover">
-                GET IN TOUCH
-              </button>
-            </div>
-          </div> */}
 					</div>
 
 					<div className='con-area' ref={refFrameWrap}>
 						<div className='line-vertical'></div>
 
 						<Masonry className={'frame'} options={{ transitionDuration: '0.5s', gutter: gap.current }}>
-							{searched.current && Pics.length === 0 ? (
+							{isSuccess && searched.current && Pics.length === 0 ? (
 								<h2>해당 키워드에 대한 검색결과가 없습니다.</h2>
 							) : (
+								isSuccess &&
 								Pics.map((pic, idx) => {
-									// console.log(pic.server);
+									// URL : https://www.flickr.com/services/api/misc.urls.html
 									return (
-										// URL : https://www.flickr.com/services/api/misc.urls.html
 										<article
 											key={pic.id}
 											onClick={() => {
@@ -231,10 +214,7 @@ export default function Gallery() {
 											}}>
 											<div className='picture'>
 												<div className='pic'>
-													<img
-														src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_b.jpg`}
-														alt={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-													/>
+													<img src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`} alt={pic.title} />
 												</div>
 											</div>
 
@@ -259,12 +239,10 @@ export default function Gallery() {
 						</Masonry>
 					</div>
 				</section>
-
-				{/* <div className='line-holizontal'></div> */}
 			</Layout>
 
 			<Modal Open={Open} setOpen={setOpen}>
-				{Pics.length !== 0 && (
+				{isSuccess && Pics.length !== 0 && (
 					<img src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`} alt={Pics[Index].title} />
 				)}
 			</Modal>

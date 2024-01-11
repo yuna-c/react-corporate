@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import './Modal.scss';
+import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 // 모달 컴포넌트 자체적으로 특정 state값에 따라서 자기 자신의 컨텐츠를 보여줄 지 말지 결정

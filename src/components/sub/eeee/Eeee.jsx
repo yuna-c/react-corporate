@@ -1,10 +1,12 @@
 import './Eeee.scss';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function Eeee() {
 	const colors = ['orange', 'hotpink', 'aqua', 'green'];
-
 	const [On, setOn] = useState(false);
+
+	const btnArr = useRef(['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT']);
+	const [Index, setIndex] = useState(0);
 
 	const data = [1, 2, 3, 4, 5];
 	const [btnActive, setBtnActive] = useState('');
@@ -27,7 +29,7 @@ export default function Eeee() {
 
 	return (
 		<div className='ex'>
-			<div className="hover">
+			<div className='hover'>
 				<div className={isHovering ? 'grow' : ''} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
 					Hover
 				</div>
@@ -67,6 +69,20 @@ export default function Eeee() {
 						</button>
 					);
 				})}
+			</div>
+
+			<div className='sort-area'>
+				{btnArr.current.map((el, idx) => (
+					<button
+						key={idx}
+						onClick={() => {
+							setIndex(idx);
+							idx !== Index && setIndex(idx);
+						}}
+						className={`btn ${idx === Index ? 'on' : ''} `}>
+						{el}
+					</button>
+				))}
 			</div>
 		</div>
 	);

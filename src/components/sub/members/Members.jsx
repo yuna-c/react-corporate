@@ -1,8 +1,8 @@
-import { useDebounce } from '../../../hooks/useDebounce';
-import Layout from '../../common/layout/Layout';
 import './Members.scss';
-import { useRef, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Layout from '../../common/layout/Layout';
+import { useRef, useState, useEffect } from 'react';
+import { useDebounce } from '../../../hooks/useDebounce';
 
 export default function Members() {
 	const history = useHistory();
