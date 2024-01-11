@@ -134,7 +134,7 @@ export default function Community() {
 		//전체 데이터갯수 / 한 페이지당 보일 포스트 갯수 (만약 나머지가 1,2개 남으면 나눈 몫의 1을 더한값)
 
 		pageNum.current = len.current % perNum.current === 0 ? len.current / perNum.current : parseInt(len.current / perNum.current) + 1;
-		console.log(pageNum.current);
+		// console.log(pageNum.current);
 
 		//새로고침했을때 페이징 버튼이 안뜨는 문제
 		//원인 : 현재 로직이 Post값자체게 변경되면 pageNum.current값이 변경되게 하고 있는데..

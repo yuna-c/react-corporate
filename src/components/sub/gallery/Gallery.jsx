@@ -37,7 +37,7 @@ export default function Gallery() {
 		isUser.current = '';
 		activateBtn(e);
 		fetchFlickr({ type: 'interest' });
-		console.log('hot');
+		// console.log('hot');
 	};
 
 	const handleMine = e => {
@@ -45,7 +45,7 @@ export default function Gallery() {
 		isUser.current = myID.current;
 		activateBtn(e);
 		fetchFlickr({ type: 'user', id: myID.current });
-		console.log('mine');
+		// console.log('mine');
 	};
 
 	const handleUser = e => {
@@ -76,7 +76,7 @@ export default function Gallery() {
 	};
 
 	const fetchFlickr = async opt => {
-		console.log('fetching again');
+		// console.log('fetching again');
 		const num = 100;
 		const flickr_api = process.env.REACT_APP_FLICKR_API;
 

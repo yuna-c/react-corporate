@@ -5,7 +5,8 @@ import Mobile from '../mobile/Mobile';
 // npm i framer-motion@4
 
 export default function Menu({ setToggle, Dark, setDark }) {
-	console.log(setToggle);
+	// console.log(setToggle);
+
 	const closeMenu = useCallback(() => {
 		// e.preventDefault();
 		window.innerWidth >= 1200 && setToggle(false);
