@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import './Mobile.scss';
 import { NavLink } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ export default function Mobile() {
 	const path = useRef(process.env.PUBLIC_URL);
 	const [MoblieMenu, setMoblieMenu] = useState([]);
 
-	const fetchMobile = async () => {
+	const fetchMobile = useCallback(async () => {
 		try {
 			const data = await fetch(`${path.current}/DB/mobileMenu.json`);
 			const json = await data.json();
@@ -15,11 +15,11 @@ export default function Mobile() {
 		} catch (err) {
 			console.log(err);
 		}
-	};
+	}, []);
 
 	useEffect(() => {
 		fetchMobile();
-	}, []);
+	}, [fetchMobile]);
 
 	return (
 		/* S : Mobile */
@@ -43,4 +43,3 @@ export default function Mobile() {
 		/* E : Mobile */
 	);
 }
-
