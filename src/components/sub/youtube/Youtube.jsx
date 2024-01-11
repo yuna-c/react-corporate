@@ -10,11 +10,10 @@ export default function Youtube() {
 	const shortenText = useCustomText('shorten');
 	const path = useRef(process.env.PUBLIC_URL);
 	const [Vids, setVids] = useState([]);
-	const [btnOn, setbtnOn] = useState('');
+	const [Index, setIndex] = useState(0);
+	const btnArr = useRef(['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT']);
 
 	const fetchYoutube = useCallback(async () => {
-		// const api_key = 'AIzaSyBgRldfomRBMNoipsSTKYAmfOarH1iIu8o';
-		// const pid = 'PL_gXk6OSOQ5LVWytUDP2MgKhA1-A5h1TJ';
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
 		const pid = process.env.REACT_APP_YOUTUBE_LIST;
 
@@ -29,14 +28,6 @@ export default function Youtube() {
 		}
 	}, []);
 
-	const toggleBtn = e => {
-		setbtnOn(btn => {
-			return e.target.value;
-		});
-	};
-	// console.log(btnData.values);
-	// console.log(toggleBtn);
-
 	useEffect(() => {
 		fetchYoutube();
 	}, [fetchYoutube]);
@@ -48,44 +39,17 @@ export default function Youtube() {
 				<h3>We create your brand together.</h3>
 
 				<div className='sort-area'>
-					{/*
-					<div className='btn-area'>
-						<div className='btn-inner'>
-							<button className='btn-active btn-inner-text'>BRANDING</button>
-							<button className='btn-active btn-inner-text-hover'>BRANDING</button>
-						</div>
-					</div>
-					<div className='btn-area'>
-						<div className='btn-inner'>
-							<button className='btn-active btn-inner-text'>MORE TEMPLATES</button>
-							<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
-						</div>
-					</div>
-					<div className='btn-area on'>
-						<div className='btn-inner'>
-							<button className='btn-active btn-inner-text'>VIDEO</button>
-							<button className='btn-active btn-inner-text-hover'>VIDEO</button>
-						</div>
-					</div>
-					<div className='btn-area'>
-						<div className='btn-inner'>
-							<button className='btn-active btn-inner-text'>CONTENT</button>
-							<button className='btn-active btn-inner-text-hover'>CONTENT</button>
-						</div>
-					</div> 
-					<button className='btn'>BRANDING</button>
-					<button className='btn'>DESIGN</button>
-					<button className='btn'>VIDEO</button>
-					<button className='btn'>CONTENT</button> 
-					*/}
-
-					{btnData.map((item, idx) => {
-						return (
-							<button value={idx} key={item + idx} className={`btn ${idx == btnOn ? 'on' : ''}`} onClick={toggleBtn}>
-								{item}
-							</button>
-						);
-					})}
+					{btnArr.current.map((el, idx) => (
+						<button
+							key={idx}
+							onClick={() => {
+								setIndex(idx);
+								idx !== Index && setIndex(idx);
+							}}
+							className={`btn ${idx === Index ? 'on' : ''} `}>
+							{el}
+						</button>
+					))}
 				</div>
 			</div>
 
