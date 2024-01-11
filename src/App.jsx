@@ -16,7 +16,6 @@ import Contact from './components/sub/contact/Contact';
 import Youtube from './components/sub/youtube/Youtube';
 import Gallery from './components/sub/gallery/Gallery';
 import AboutUs from './components/sub/aboutUs/AboutUs';
-import Contact_ from './components/sub/contact_/Contact_';
 import MainWrap from './components/main/mainWrap/MainWrap';
 import Community from './components/sub/community/Community';
 
@@ -36,7 +35,6 @@ export default function App() {
 				<Route path='/members' component={Members} />
 				<Route path='/contact' component={Contact} />
 				<Route path='/youtube' component={Youtube} />
-				<Route path='/contact_' component={Contact_} />
 				<Route path='/detail/:id' component={Detail} />
 				<Route path='/community' component={Community} />
 				<Footer />

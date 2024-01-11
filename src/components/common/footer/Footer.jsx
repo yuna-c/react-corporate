@@ -94,11 +94,6 @@ export default function Footer() {
 							<h3>Cms</h3>
 							<ul>
 								<li>
-									<NavLink to='/contact_' activeClassName={'on'}>
-										contact_
-									</NavLink>
-								</li>
-								<li>
 									<NavLink to='/eeee' activeClassName={'on'}>
 										Eeee
 									</NavLink>
