@@ -20,19 +20,18 @@ import AboutUs from './components/sub/aboutUs/AboutUs';
 import MainWrap from './components/main/mainWrap/MainWrap';
 import Community from './components/sub/community/Community';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import CookieModal from './components/common/cookieModal/CookieModal';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export default function App() {
+	const { Toggle, Mode } = useGlobalData();
 	const queryClient = new QueryClient();
-	const { Mode } = useGlobalData();
-	const [Dark, setDark] = useState(false);
-	const [Toggle, setToggle] = useState(false);
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<div className={`wrap ${Dark ? 'dark' : ''} ${useMedia()}`}>
+			<div className={`wrap ${Mode === 'light' ? 'light' : 'dark'} ${useMedia()}`}>
 				<div className='wrapper'>
-					<Header Dark={Dark} setDark={setDark} Toggle={Toggle} setToggle={setToggle} />
+					<Header />
 					<Route path='/eeee' component={Eeee} />
 					<Route path='/mouse' component={Mouse} />
 					<Route exact path='/' component={MainWrap} />
@@ -44,7 +43,10 @@ export default function App() {
 					<Route path='/detail/:id' component={Detail} />
 					<Route path='/community' component={Community} />
 					<Footer />
-					<AnimatePresence>{Toggle && <Menu setToggle={setToggle} Dark={Dark} setDark={setDark} />}</AnimatePresence>
+					<AnimatePresence>{Toggle && <Menu />}</AnimatePresence>
+					<CookieModal wid={300} ht={200}>
+						<h1>쿠키팝업</h1>
+					</CookieModal>
 				</div>
 			</div>
 			<ReactQueryDevtools />

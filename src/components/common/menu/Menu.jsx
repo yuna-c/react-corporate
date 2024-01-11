@@ -1,13 +1,16 @@
 import './Menu.scss';
 import Mobile from '../mobile/Mobile';
 import { motion } from 'framer-motion';
+import DarkMode from '../darkMode/DarkMode';
 import { useCallback, useEffect } from 'react';
+import { useGlobalData } from '../../../hooks/useGlobalData';
+
 // npm i framer-motion@4
 
-export default function Menu({ setToggle, Dark, setDark }) {
-	// console.log(setToggle);
+export default function Menu({ children }) {
+	const { Toggle, setToggle, Dark, setDark } = useGlobalData();
+
 	const closeMenu = useCallback(() => {
-		// e.preventDefault();
 		window.innerWidth >= 1200 && setToggle(false);
 	}, [setToggle]);
 
@@ -51,7 +54,7 @@ export default function Menu({ setToggle, Dark, setDark }) {
 					y: '100px',
 					transition: { duration: 0.4 }
 				}}>
-				<div className='content-padding'>
+				<div className='content-padding' onClick={() => setToggle(true)}>
 					<Mobile />
 
 					<div className='util-layout'>

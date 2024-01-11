@@ -27,7 +27,7 @@ export default function Gallery() {
 	const [Index, setIndex] = useState(0);
 
 	const { isSuccess, data: Pics } = useFlickrQuery(Opt);
-	// const { setModalOpen } = useGlobalData();
+	const { setModalOpen } = useGlobalData();
 
 	const activateBtn = e => {
 		const btns = refNav.current.querySelectorAll('button');
@@ -176,7 +176,7 @@ export default function Gallery() {
 										<article
 											key={pic.id}
 											onClick={() => {
-												setOpen(true);
+												setModalOpen(true);
 												setIndex(idx);
 											}}>
 											<div className='picture'>
@@ -208,7 +208,7 @@ export default function Gallery() {
 				</section>
 			</Layout>
 
-			<Modal Open={Open} setOpen={setOpen}>
+			<Modal>
 				{isSuccess && Pics.length !== 0 && (
 					<img src={`https://live.staticflickr.com/${Pics[Index].server}/${Pics[Index].id}_${Pics[Index].secret}_b.jpg`} alt={Pics[Index].title} />
 				)}

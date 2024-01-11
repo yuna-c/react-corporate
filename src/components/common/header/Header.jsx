@@ -1,9 +1,12 @@
 import './Header.scss';
 import { useRef } from 'react';
+import DarkMode from '../darkMode/DarkMode';
 import { NavLink, Link } from 'react-router-dom';
+import { useGlobalData } from '../../../hooks/useGlobalData';
 
-export default function Header({ Dark, setDark, Toggle, setToggle }) {
+export default function Header({ children }) {
 	const path = useRef(process.env.PUBLIC_URL);
+	const { Toggle, setToggle, Dark, setDark } = useGlobalData();
 
 	return (
 		/* S : Header */
@@ -54,11 +57,12 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 
 					<div className='side-layout'>
 						<div className='gnb-util'>
-							<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
+							{/* <div className={`thema ${Dark ? 'dark' : 'light'}`} onClick={() => setDark(!Dark)}>
 								<div className='ball'>
 									<span>ball</span>
 								</div>
-							</div>
+							</div> */}
+							<DarkMode />
 						</div>
 
 						<div className='line-vertical'></div>
