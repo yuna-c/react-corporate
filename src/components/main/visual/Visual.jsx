@@ -12,7 +12,7 @@ export default function Visual({ title }) {
 	const refFrame = useRef(null);
 	const refTitle = useRef(null);
 	const splitText = useSplitText();
-	console.log(refTitle);
+	// console.log(refTitle);
 
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
