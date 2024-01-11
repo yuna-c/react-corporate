@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import Layout from '../../common/layout/Layout';
 import './Contact_.scss';
+import emailjs from '@emailjs/browser';
+import Layout from '../../common/layout/Layout';
 import useScript from '../../../hooks/useScript';
 import { useThrottle } from '../../../hooks/useThrottle';
-import emailjs from '@emailjs/browser';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 export default function Contact_() {
 	const Script = useScript(`//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.REACT_APP_KAKAO_API}`, 'kakao');
@@ -77,7 +77,7 @@ export default function Contact_() {
 
 	// init map pos func
 	const setCenter = () => {
-		console.log('setCenter');
+		// console.log('setCenter');
 		map.current.setCenter(Info[Index].latlng);
 	};
 

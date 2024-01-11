@@ -1,7 +1,7 @@
-import { useEffect, useState, useCallback } from 'react';
-import Layout from '../../common/layout/Layout';
 import './Detail.scss';
 import { useParams } from 'react-router-dom';
+import Layout from '../../common/layout/Layout';
+import { useEffect, useState, useCallback } from 'react';
 
 export default function Detail() {
 	// const data = useParams();
@@ -24,7 +24,7 @@ export default function Detail() {
 
 	useEffect(() => {
 		fetchSingleData();
-		console.log(useEffect);
+		// console.log(useEffect);
 		//useEffect가 언제 실행되는지
 	}, [fetchSingleData]);
 

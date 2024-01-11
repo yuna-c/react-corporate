@@ -11,10 +11,10 @@ npm install @emailjs/browser --save 설치<br>
 
 # Git<br>
 
-git config --global user.name '사용자명'<br>
-git config --global user.email '이메일주소'<br>
 git config user.name<br>
 git config user.email<br>
+git config --global user.name '사용자명'<br>
+git config --global user.email '이메일주소'<br>
 git config --global safe.directory 'E:/2023/frontend/react/react-portfolio'<br>
 git config --global safe.directory 'E:/2023/frontend/react/react-corporate'<br>
 

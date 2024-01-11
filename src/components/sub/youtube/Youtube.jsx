@@ -1,11 +1,10 @@
-import { useCustomText } from '../../../hooks/useText';
-import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
-import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import Layout from '../../common/layout/Layout';
+import { useCustomText } from '../../../hooks/useText';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 export default function Youtube() {
-	const btnData = ['VIDEO', 'BRANDING', 'DESIGN', 'CONTENT'];
 	const customText = useCustomText('combined');
 	const shortenText = useCustomText('shorten');
 	const path = useRef(process.env.PUBLIC_URL);

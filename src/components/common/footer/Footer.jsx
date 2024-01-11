@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import './Footer.scss';
+import { useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -94,23 +94,23 @@ export default function Footer() {
 							<h3>Cms</h3>
 							<ul>
 								<li>
-									<NavLink to='/WORK' activeClassName={'on'}>
-										WORK
+									<NavLink to='/contact_' activeClassName={'on'}>
+										contact_
 									</NavLink>
 								</li>
 								<li>
-									<NavLink to='/WORK SINGLE' activeClassName={'on'}>
-										WORK SINGLE
+									<NavLink to='/eeee' activeClassName={'on'}>
+										Eeee
+									</NavLink>
+								</li>
+								<li>
+									<NavLink to='/mouse' activeClassName={'on'}>
+										mouse
 									</NavLink>
 								</li>
 								<li>
 									<NavLink to='/BLOG' activeClassName={'on'}>
 										BLOG
-									</NavLink>
-								</li>
-								<li>
-									<NavLink to='/Shopping' activeClassName={'on'}>
-										Shopping
 									</NavLink>
 								</li>
 								<li>
@@ -131,11 +131,6 @@ export default function Footer() {
 								<li>
 									<NavLink to='/404 ERROR PAGE' activeClassName={'on'}>
 										404 ERROR PAGE
-									</NavLink>
-								</li>
-								<li>
-									<NavLink to='/Password Protected' activeClassName={'on'}>
-										Password Protected
 									</NavLink>
 								</li>
 								<li>

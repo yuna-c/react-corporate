@@ -1,7 +1,7 @@
 import './AboutUs.scss';
 import Layout from '../../common/layout/Layout';
-import { useCustomText } from '../../../hooks/useText';
 import { useEffect, useRef, useState } from 'react';
+import { useCustomText } from '../../../hooks/useText';
 
 export default function AboutUs() {
 	const [memberTit, setmemberTit] = useState('');

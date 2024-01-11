@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import Masonry from 'react-masonry-component';
-import Layout from '../../common/layout/Layout';
 import './Gallery.scss';
 import { Link } from 'react-router-dom';
 import { LuSearch } from 'react-icons/lu';
-import { useCustomText } from '../../../hooks/useText';
 import Modal from '../../common/modal/Modal';
+import Masonry from 'react-masonry-component';
+import Layout from '../../common/layout/Layout';
+import { useEffect, useRef, useState } from 'react';
+import { useCustomText } from '../../../hooks/useText';
 
 // npm i react-masonry-component@6
 // https://www.flickr.com/services/api/
@@ -64,16 +64,16 @@ export default function Gallery() {
 
 		const keyword = e.target.children[0].value;
 		if (!keyword.trim()) return; // 빈 값 삭제
-		console.log(keyword);
+		// console.log(keyword);
 		e.target.children[0].value = ''; // 엔터 키워드 지우기
 		fetchFlickr({ type: 'search', keyword: keyword });
 
 		searched.current = true;
 	};
 
-	const openModal = e => {
-		setOpen(true);
-	};
+	// const openModal = e => {
+	// 	setOpen(true);
+	// };
 
 	const fetchFlickr = async opt => {
 		// console.log('fetching again');

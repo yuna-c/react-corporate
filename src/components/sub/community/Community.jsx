@@ -1,8 +1,8 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import './Community.scss';
+import Layout from '../../common/layout/Layout';
 import { useEffect, useRef, useState } from 'react';
 import { useCustomText } from '../../../hooks/useText';
-import Layout from '../../common/layout/Layout';
-import './Community.scss';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Community() {
 	const path = useRef(process.env.PUBLIC_URL);

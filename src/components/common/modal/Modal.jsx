@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './Modal.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 

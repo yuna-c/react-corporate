@@ -1,7 +1,7 @@
 import './Menu.scss';
-import { useCallback, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import Mobile from '../mobile/Mobile';
+import { motion } from 'framer-motion';
+import { useCallback, useEffect } from 'react';
 // npm i framer-motion@4
 
 export default function Menu({ setToggle, Dark, setDark }) {

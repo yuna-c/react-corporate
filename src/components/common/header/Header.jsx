@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import './Header.scss';
+import { useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 export default function Header({ Dark, setDark, Toggle, setToggle }) {
@@ -47,16 +47,6 @@ export default function Header({ Dark, setDark, Toggle, setToggle }) {
 							<li>
 								<NavLink to='/contact' activeClassName={'on'}>
 									Contact
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='/eeee' activeClassName={'on'}>
-									Eeee
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='/mouse' activeClassName={'on'}>
-									mouse
 								</NavLink>
 							</li>
 						</ul>

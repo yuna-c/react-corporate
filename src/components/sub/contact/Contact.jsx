@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
+import Layout from '../../common/layout/Layout';
+import { useEffect, useRef, useState, useCallback } from 'react';
 // npm install @emailjs/browser --save
 
 export default function Contact() {
@@ -11,7 +11,7 @@ export default function Contact() {
 		const elArr = form.current.children;
 
 		Array.from(elArr).forEach(el => {
-			console.log(el);
+			// console.log(el);
 			if (el.name === 'user_name' || el.name === 'user_email' || el.name === 'message') el.value = '';
 		});
 	};

@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
 import './Mobile.scss';
 import { NavLink } from 'react-router-dom';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export default function Mobile() {
 	const path = useRef(process.env.PUBLIC_URL);
