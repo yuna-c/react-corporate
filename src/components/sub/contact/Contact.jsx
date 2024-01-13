@@ -2,6 +2,7 @@ import './Contact.scss';
 import emailjs from '@emailjs/browser';
 import Layout from '../../common/layout/Layout';
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useThrottle } from '../../../hooks/useThrottle';
 // npm install @emailjs/browser --save
 
 export default function Contact() {
@@ -37,6 +38,7 @@ export default function Contact() {
 	};
 
 	const kakao = useRef(window.kakao);
+	console.log(kakao);
 
 	const [Index, setIndex] = useState(0);
 	const [Traffic, setTraffic] = useState(false);
@@ -46,8 +48,6 @@ export default function Contact() {
 	const viewFrame = useRef(null);
 	const marker = useRef(null);
 	const mapInstance = useRef(null);
-
-	// console.log(kakao);
 
 	//지점마다 출력할 정보를 개별적인 객체로 묶어서 배열로 그룹화
 	const mapInfo = useRef([
@@ -74,47 +74,51 @@ export default function Contact() {
 		}
 	]);
 
-	const roadview = useRef(() => {
-		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
-			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
-		});
-	});
-
-	const setCenter = useCallback(() => {
-		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
-		roadview.current();
-	}, [Index]);
-
 	//마커 인스턴스 생성
 	marker.current = new kakao.current.maps.Marker({
 		position: mapInfo.current[Index].latlng,
 		image: new kakao.current.maps.MarkerImage(mapInfo.current[Index].imgSrc, mapInfo.current[Index].imgSize, mapInfo.current[Index].imgOpt)
 	});
 
+	const roadview = useCallback(() => {
+		console.log('roadview');
+		new kakao.current.maps.RoadviewClient().getNearestPanoId(mapInfo.current[Index].latlng, 50, panoId => {
+			new kakao.current.maps.Roadview(viewFrame.current).setPanoId(panoId, mapInfo.current[Index].latlng);
+		});
+	}, [Index]);
+
+	const setCenter = useCallback(() => {
+		console.log('setCenter');
+		mapInstance.current.setCenter(mapInfo.current[Index].latlng);
+	}, [Index]);
+
+	const throttledSetCenter = useThrottle(setCenter);
+
+	//컴포넌트 마운트시 참조객체에 담아놓은 돔 프레임에 지도 인스턴스 출력 및 마커 세팅
 	useEffect(() => {
 		mapFrame.current.innerHTML = '';
+		viewFrame.current.innerHTML = '';
 		mapInstance.current = new kakao.current.maps.Map(mapFrame.current, {
 			center: mapInfo.current[Index].latlng,
 			level: 3
 		});
-
 		marker.current.setMap(mapInstance.current);
 		setTraffic(false);
 		setView(false);
-		roadview.current();
 
-		//지도 타입 컨트롤러 추가
 		mapInstance.current.addControl(new kakao.current.maps.MapTypeControl(), kakao.current.maps.ControlPosition.TOPRIGHT);
-
-		//지도 줌 컨트롤러 추가
 		mapInstance.current.addControl(new kakao.current.maps.ZoomControl(), kakao.current.maps.ControlPosition.RIGHT);
-
-		//휠에 맵 줌 기능 비활성화
 		mapInstance.current.setZoomable(false);
+	}, [Index]);
 
-		window.addEventListener('resize', setCenter);
-		return () => window.removeEventListener('resize', setCenter);
-	}, [Index, setCenter]);
+	useEffect(() => {
+		window.addEventListener('resize', throttledSetCenter);
+		return () => window.removeEventListener('resize', throttledSetCenter);
+	}, [throttledSetCenter]);
+
+	useEffect(() => {
+		View && viewFrame.current.children.length === 0 && roadview();
+	}, [View, roadview]);
 
 	useEffect(() => {
 		Traffic

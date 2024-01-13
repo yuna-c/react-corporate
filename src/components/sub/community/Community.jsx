@@ -5,22 +5,18 @@ import { useCustomText } from '../../../hooks/useText';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Community() {
+	console.log(document.cookie);
 	const path = useRef(process.env.PUBLIC_URL);
 	const customText = useCustomText('combined');
-	// console.log(customText);
 
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
-		// JSON.parse 문자열의 구문을 분석, Js 값이나 객체를 생성
-		// if (data) JSON.parse(data);
 		return JSON.parse(data);
-		//return postData.dummyPosts; info []빈배열에 json 파일 넣기
 	};
-	// console.log(getLocalData());
 
-	const [Post, setPost] = useState(getLocalData()); //핸들링 위한 state
-	const [CurNum, setCurNum] = useState(0); //페이징 버튼 클릭시 현재 보일 페이지 번호가 담길 state
-	const [PageNum, setPageNum] = useState(0); //전체 PageNum이 담길 state
+	const [Post, setPost] = useState(getLocalData());
+	const [CurNum, setCurNum] = useState(0);
+	const [PageNum, setPageNum] = useState(0);
 
 	const refTit = useRef(null);
 	const refEmail = useRef(null);
@@ -28,9 +24,9 @@ export default function Community() {
 	const refEditTit = useRef(null);
 	const refEditCon = useRef(null);
 	const editMode = useRef(false);
-	const len = useRef(0); //전체 Post갯수를 담을 참조 객체
-	const pageNum = useRef(0); //전체 페이지 갯수를 추후에 연산해서 담을 참조객체
-	const perNum = useRef(6); //한 페이지당 보일 포스트 갯수
+	const len = useRef(0);
+	const pageNum = useRef(0);
+	const perNum = useRef(6);
 
 	const resetPost = () => {
 		refTit.current.value = '';
@@ -62,14 +58,12 @@ export default function Community() {
 			},
 			...Post
 		]);
-		// resetPost();
 	};
 
 	const deletePost = delIndex => {
 		if (!window.confirm('정말 해당 게시글을 삭제하겠습니까?')) return;
 
 		setPost(Post.filter((_, idx) => delIndex !== idx));
-		// filter(callbackFn, thisArg) : 메서드는 주어진 배열의 일부에 대한 얕은 복사본을 생성, 주어진 배열에서 제공된 함수에 의해 구현된 테스트를 통과한 요소로만 필터링
 	};
 
 	const updatePost = updateIndex => {
@@ -101,7 +95,6 @@ export default function Community() {
 				return el;
 			})
 		);
-		// console.log("update");
 	};
 
 	//출력모드
@@ -122,27 +115,14 @@ export default function Community() {
 	};
 
 	useEffect(() => {
-		//Post데이터가 변경되면 수정모드를 강제로 false처리하면서 로컬저장소에 저장하고 컴포넌트 재실행
 		Post.map(el => (el.enableUpdate = false));
 		localStorage.setItem('post', JSON.stringify(Post));
 
-		//전체 Post갯수 구함
 		len.current = Post.length;
-
-		//전체 페이지버튼 갯수 구하는 공식
-		//전체 데이터갯수 / 한 페이지당 보일 포스트 갯수 (딱 나눠떨어지면 나눈 몫을 바로 담음)
-		//전체 데이터갯수 / 한 페이지당 보일 포스트 갯수 (만약 나머지가 1,2개 남으면 나눈 몫의 1을 더한값)
-
 		pageNum.current = len.current % perNum.current === 0 ? len.current / perNum.current : parseInt(len.current / perNum.current) + 1;
 		console.log(pageNum.current);
-
-		//새로고침했을때 페이징 버튼이 안뜨는 문제
-		//원인 : 현재 로직이 Post값자체게 변경되면 pageNum.current값이 변경되게 하고 있는데..
-		//pageNum.current가 변경되고 state가 아니기 때문에 화면을 자동 재랜더링하지 않는 문제 발생
-		//해결방법 : 만들어진 참조객체값을 state PageNum에 옮겨담음
 		setPageNum(pageNum.current);
 	}, [Post]);
-
 	// console.log(perNum);
 
 	return (
@@ -202,7 +182,6 @@ export default function Community() {
 					</div>
 
 					<form className='form-area' onSubmit={e => e.preventDefault()}>
-						{/* form tag 있으면 전송되면서 새로고침 됨 */}
 						<label>Title</label>
 						<input type='text' placeholder='Your Title' name='title' required='required' ref={refTit} />
 						<label>Email</label>
@@ -235,8 +214,6 @@ export default function Community() {
 					{Post.map((el, idx) => {
 						const date = JSON.stringify(el.date);
 						const strDate = customText(date.split('T')[0].slice(1), '.');
-						const strDate2 = customText(date.split('Z')[0].slice(12), ':');
-						const time = Math.floor(strDate2);
 
 						if (idx >= perNum.current * CurNum && idx < perNum.current * (CurNum + 1)) {
 							return (

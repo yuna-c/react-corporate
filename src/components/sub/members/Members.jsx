@@ -17,8 +17,6 @@ export default function Members() {
 	};
 
 	const handleChange = e => {
-		// console.log('name', e.target.name);
-		// console.log('value', e.target.value);
 		const { name, value } = e.target;
 		setVal({ ...Val, [name]: value });
 	};

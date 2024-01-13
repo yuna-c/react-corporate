@@ -59,11 +59,7 @@ export default function Menu({ children }) {
 
 					<div className='util-layout'>
 						<div className='gnb-util'>
-							<div className={`thema ${Dark && 'dark'}`} onClick={() => setDark(!Dark)}>
-								<div className='ball'>
-									<span>ball</span>
-								</div>
-							</div>
+							<DarkMode />
 						</div>
 
 						<div className='gnb-social'>
