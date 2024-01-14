@@ -6,7 +6,6 @@ import { useSplitText } from '../../../hooks/useText';
 export default function Layout({ children, title }) {
 	const refTitle = useRef(null);
 	const refBtnTop = useRef(null);
-	const [Frame, setFrame] = useState(null);
 	const splitText = useSplitText();
 
 	const handleCustomScroll = scroll => {
@@ -34,7 +33,7 @@ export default function Layout({ children, title }) {
 					{children}
 				</div>
 			</div>
-			<button ref={refBtnTop} className='btnTop' onClick={() => console.log('1')}>
+			<button ref={refBtnTop} className='btnTop' onClick={() => console.log('2')}>
 				{/*  scrollTo(0) */}
 				Top
 			</button>
