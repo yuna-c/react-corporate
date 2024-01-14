@@ -32,7 +32,7 @@ export default function Visual({ title }) {
 		spaceBetween: 50,
 		centeredSlides: true,
 		loopedSlides: num.current,
-		autoplay: { delay: 2000, disableOnInteraction: true },
+		autoplay: { delay: 2000, disableOnInteraction: false },
 		breakpoints: { 1000: { slidesPerView: 2 }, 1400: { slidesPerView: 3 } },
 		onSwiper: swiper => (swipeRef.current = swiper),
 		onSlideChange: swiper => {
