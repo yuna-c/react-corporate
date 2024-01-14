@@ -62,7 +62,7 @@ export default function Visual({ title }) {
 	return (
 		/* S : Visual */
 
-		<figure className='Visual'>
+		<figure className='Visual myScroll'>
 			<div className='visualBox'>
 				<div ref={refFrame} className='txt-area'>
 					<h2 ref={refTitle} className={` ${(title = 'React-Query')}`}>

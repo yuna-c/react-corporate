@@ -20,7 +20,7 @@ export default function Info() {
 	}, [Post]);
 
 	return (
-		<section className='Info'>
+		<section className='Info myScroll'>
 			<div className='showBox'>
 				<div className='line-holizontal'></div>
 				{Post.map((el, idx) => {
