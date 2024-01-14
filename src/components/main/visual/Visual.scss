@@ -61,42 +61,42 @@
 			}
 		}
 
-		.video-area {
-			width: 100%;
-			height: auto;
-			position: relative;
-			padding-bottom: 56.26%;
-			margin-bottom: 3rem;
-			border-radius: 1rem;
-			overflow: hidden;
-			cursor: pointer;
+		// .video-area {
+		// 	width: 100%;
+		// 	height: auto;
+		// 	position: relative;
+		// 	padding-bottom: 56.26%;
+		// 	margin-bottom: 3rem;
+		// 	border-radius: 1rem;
+		// 	overflow: hidden;
+		// 	cursor: pointer;
 
-			video {
-				width: 100%;
-				height: 100%;
-				margin: auto;
-				position: absolute;
-				top: -100%;
-				bottom: -100%;
-				left: -100%;
-				right: -100%;
-				object-fit: cover;
-				transform: scale3d(1.81, 1.815, 1);
+		// 	video {
+		// 		width: 100%;
+		// 		height: 100%;
+		// 		margin: auto;
+		// 		position: absolute;
+		// 		top: -100%;
+		// 		bottom: -100%;
+		// 		left: -100%;
+		// 		right: -100%;
+		// 		object-fit: cover;
+		// 		transform: scale3d(1.81, 1.815, 1);
 
-				// width: 100%;
-				// height: 100%;
-				// object-fit: cover;
-				// z-index: -100;
-				// background-position: 50%;
-				// background-size: cover;
-				// margin: auto;
-				// position: absolute;
-				// top: -100%;
-				// bottom: -100%;
-				// left: -100%;
-				// right: -100%;
-			}
-		}
+		// 		// width: 100%;
+		// 		// height: 100%;
+		// 		// object-fit: cover;
+		// 		// z-index: -100;
+		// 		// background-position: 50%;
+		// 		// background-size: cover;
+		// 		// margin: auto;
+		// 		// position: absolute;
+		// 		// top: -100%;
+		// 		// bottom: -100%;
+		// 		// left: -100%;
+		// 		// right: -100%;
+		// 	}
+		// }
 
 		.img-area {
 			width: 100%;
@@ -116,6 +116,249 @@
 		}
 	}
 
+	.swiperBox {
+		width: 100%;
+		height: calc(100vh - 120px);
+		position: relative;
+
+		.txtBox {
+			width: 40%;
+			height: 100%;
+			// padding-left: 15vw;
+			position: absolute;
+			top: 0px;
+			left: 0;
+			z-index: 2;
+
+			ul {
+				width: 100%;
+				height: 100%;
+				position: relative;
+
+				li {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: flex;
+					flex-wrap: wrap;
+					align-content: center;
+					font-size: 3rem;
+					opacity: 0;
+					z-index: 1;
+					transform: scale(1.5);
+					transition: opacity 1s, transform 1s;
+
+					h3 {
+						font-size: 3rem;
+						font-weight: normal;
+						color: var(--baseColor);
+						margin-bottom: 60px;
+					}
+
+					a {
+						display: inline-block;
+						padding: 8px 20px;
+						font-size: 0.8rem;
+						font-weight: bold;
+						color: transparent;
+						position: relative;
+						text-indent: -80px;
+						cursor: pointer;
+						transition-duration: 0.5s;
+						transition-delay: 0.5s;
+
+						&::before,
+						&::after {
+							content: '';
+							position: absolute;
+							width: 100%;
+							height: 1px;
+							background-color: rgba(var(--baseColor-code), 0.5);
+							opacity: 0;
+							left: -50px;
+							transition-property: opacity, left;
+							transition-duration: 0.5s;
+						}
+
+						&::before {
+							top: 0;
+							transition-delay: 0.3s;
+						}
+						&::after {
+							bottom: 0;
+							transition-delay: 0.9s;
+						}
+					}
+				}
+				li.on {
+					opacity: 1;
+					transform: scale(1);
+					z-index: 5;
+
+					a {
+						color: var(--baseColor);
+						text-indent: 0px;
+
+						&::before,
+						&::after {
+							left: 0;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+		.swiper {
+			display: inline-block;
+			width: 80%;
+			height: 100%;
+			padding: 5vw 0px;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			.swiper-wrapper {
+				height: inherit;
+
+				.swiper-slide {
+					width: 100%;
+					height: inherit;
+
+					.pic {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						opacity: 0.4;
+						transform: scale(0.5);
+						position: relative;
+						transition: opacity 0.5s, transform 0.5s;
+
+						> p {
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							top: 0;
+							left: 0;
+							overflow: hidden;
+
+							&:nth-of-type(1) {
+								filter: blur(30px) saturate(1.2);
+								transform: translate(40px, 40px);
+								opacity: 0.8;
+							}
+
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								transform: scale(1.5);
+							}
+						}
+					}
+				}
+
+				//prev-style
+				.swiper-slide-prev {
+					.pic {
+						transform: scale(1.5);
+						opacity: 0;
+					}
+				}
+				//active-style
+				.swiper-slide-active {
+					.pic {
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+				//active-style
+				.swiper-slide-next {
+					.pic {
+						transform: scale(0.7);
+						opacity: 0.5;
+					}
+				}
+			}
+		}
+
+		.pagination {
+			position: absolute;
+			bottom: 100px;
+			left: 15%;
+			display: flex;
+			gap: 10px;
+			z-index: 6;
+
+			li {
+				width: 10px;
+				height: 10px;
+				background: #888;
+				cursor: pointer;
+
+				&.on {
+					background: var(--pointColor);
+				}
+			}
+		}
+
+		.barFrame {
+			width: 70%;
+			height: 2px;
+			position: absolute;
+			bottom: 50px;
+			left: 15%;
+			background: #888;
+
+			.bar {
+				width: 0%;
+				height: 100%;
+				background: var(--pointColor);
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: width 0.5s;
+			}
+		}
+		.counter {
+			position: absolute;
+			bottom: 80px;
+			right: 15vw;
+			color: var(--baseColor);
+			font-size: 1.5rem;
+
+			strong {
+				font-size: 2.5rem;
+			}
+		}
+
+		//preview thumbnails
+		.preview {
+			p {
+				width: 120px;
+				height: 60px;
+				overflow: hidden;
+				position: absolute;
+				bottom: 5vh;
+				cursor: pointer;
+				z-index: 6;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			p.prevBox {
+				left: 50px;
+			}
+			p.nextBox {
+				right: 50px;
+			}
+		}
+	}
+
 	.videoBox {
 		width: 100%;
 		margin-top: 5rem;
@@ -123,6 +366,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		position: relative;
 
 		article {
 			width: calc(50% - 1rem);
@@ -178,6 +422,33 @@
 
 				p {
 					font-size: 1.5rem;
+				}
+			}
+		}
+
+		.swiperBox {
+			.txtBox {
+				width: 100%;
+				height: 30%;
+				padding-left: 0;
+				padding: 5vh 10vw;
+				position: relative;
+				top: 100px;
+
+				h3 {
+					font-size: 2.5rem;
+				}
+			}
+			.swiper {
+				width: 100%;
+				height: 70%;
+				padding: 5vh 10vw;
+				position: relative;
+
+				.swiper-wrapper {
+					.swiper-slide {
+						height: 100%;
+					}
 				}
 			}
 		}
@@ -243,6 +514,26 @@
 			article {
 				width: 100%;
 				margin-bottom: 2rem;
+			}
+		}
+	}
+}
+
+.dark {
+	.Visual {
+		.swiper {
+			.swiper-wrapper {
+				.swiper-slide {
+					.pic {
+						> p {
+							&:nth-of-type(1) {
+								filter: blur(30px) saturate(0.8);
+								transform: translate(20px, 20px);
+								opacity: 0.2;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
