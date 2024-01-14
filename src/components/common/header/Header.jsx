@@ -2,6 +2,7 @@ import './Header.scss';
 import { useRef } from 'react';
 import DarkMode from '../darkMode/DarkMode';
 import { NavLink, Link } from 'react-router-dom';
+import ThemeControl from '../themeControl/ThemeControl';
 import { useGlobalData } from '../../../hooks/useGlobalData';
 
 export default function Header({ children }) {
@@ -58,6 +59,12 @@ export default function Header({ children }) {
 					<div className='side-layout'>
 						<div className='gnb-util'>
 							<DarkMode />
+						</div>
+
+						<div className='line-vertical'></div>
+
+						<div className='gnb-color'>
+							<ThemeControl />
 						</div>
 
 						<div className='line-vertical'></div>

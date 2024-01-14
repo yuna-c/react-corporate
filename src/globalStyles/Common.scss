@@ -3,16 +3,16 @@ html {
 }
 
 body {
-	// &::-webkit-scrollbar {
-	// 	width: 4px;
-	// 	background-color: transparent;
-	// 	transition: background-color 1s;
-	// }
+	&::-webkit-scrollbar {
+		width: 4px;
+		background-color: transparent;
+		transition: background-color 1s;
+	}
 
-	// &::-webkit-scrollbar-thumb {
-	// 	border-radius: 4px;
-	// 	background-color: var(--pointColor);
-	// }
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: var(--pointColor);
+	}
 	background-color: var(--bgColor);
 }
 
@@ -126,18 +126,8 @@ body {
 				font-size: 1rem;
 				font-weight: 400;
 				letter-spacing: 1px;
-				// overflow: hidden;
-				// transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg)
-				//   rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-				// transform-style: preserve-3d;
 				transition: transform 0.3s;
 			}
-
-			// .btn-inner-text,
-			// .btn-inner-text-hover {
-			//   justify-content: center;
-			//   align-items: center;
-			// }
 		}
 
 		&:hover .btn-active {

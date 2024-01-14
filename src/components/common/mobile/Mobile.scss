@@ -18,10 +18,10 @@
 				letter-spacing: 1px;
 
 				.on {
-					color: rgba(var(--pointColor-code), 1);
+					color: var(--pointColor);
 				}
 				& :hover {
-					color: rgba(var(--pointColor-code), 1);
+					color: var(--pointColor);
 				}
 				&:first-child {
 					padding-top: 0;
