@@ -1,9 +1,11 @@
 import './Footer.scss';
 import { useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useCookie } from '../../../hooks/useCookie';
 
 export default function Footer() {
 	const path = useRef(process.env.PUBLIC_URL);
+	const { setCookie, isCookie, viewCookie } = useCookie();
 
 	return (
 		/* S : Footer */
@@ -115,7 +117,6 @@ export default function Footer() {
 											<button className='btn-active btn-inner-text-hover'>MORE TEMPLATES</button>
 										</div>
 									</div>
-									{/* <button className='btn'>MORE TEMPLATES</button> */}
 								</li>
 							</ul>
 						</div>
@@ -145,13 +146,39 @@ export default function Footer() {
 								</li>
 							</ul>
 						</div>
+						{/* 
+						<div className='footer-menu'>
+							<h3>Cms</h3>
+							<ul>
+								<li>
+									<button className='btn' onClick={() => setCookie('today', 'done', 60 * 60)}>
+										쿠키생성
+									</button>
+								</li>
+								<li>
+									<button className='btn' onClick={() => setCookie('today', 'done', 0)}>
+										쿠키삭제
+									</button>
+								</li>
+								<li>
+									<button className='btn' onClick={() => console.log(isCookie('today=done'))}>
+										쿠키확인
+									</button>
+								</li>
+								<li>
+									<button className='btn' onClick={() => viewCookie()}>
+										모든 쿠키 보기
+									</button>
+								</li>
+							</ul>
+						</div>
+						 */}
 					</div>
 				</div>
 
 				<div className='line-holizontal'></div>
 
-				<div className='footer-util'>
-					{/* style={{ border: '1px solid red' }} */}
+				<div className='footer-util' style={{ background: 'transparents' }}>
 					<div>
 						<p>
 							© Made by
