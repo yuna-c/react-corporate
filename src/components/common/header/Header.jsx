@@ -11,7 +11,7 @@ export default function Header({ children }) {
 
 	return (
 		/* S : Header */
-		<header className='header'>
+		<header className='header myScroll'>
 			<div className='header-layout'>
 				<h1 className='logo'>
 					<Link to='/'>

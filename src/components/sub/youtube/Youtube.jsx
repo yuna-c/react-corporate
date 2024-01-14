@@ -18,7 +18,7 @@ export default function Youtube() {
 	return (
 		/* S : Youtube */
 		<Layout title={'Youtube'}>
-			<div className='visualBox'>
+			<section className='visualBox'>
 				<h3>We create your brand together.</h3>
 
 				<div className='sort-area'>
@@ -34,7 +34,7 @@ export default function Youtube() {
 						</button>
 					))}
 				</div>
-			</div>
+			</section>
 
 			<div className='line-holizontal'></div>
 

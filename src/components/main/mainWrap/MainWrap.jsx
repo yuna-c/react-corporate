@@ -8,13 +8,15 @@ import Visual from '../visual/Visual';
 export default function MainWrap() {
 	return (
 		/* S : MainWrap */
-		<div className='MainWrap'>
-			<Visual />
-			<Info />
-			<Banner />
-			<Pics />
-			<Btns />
-		</div>
+		<>
+			<div className='MainWrap'>
+				<Visual />
+				<Info />
+				<Banner />
+				<Pics />
+				<Btns />
+			</div>
+		</>
 		/* E : MainWrap */
 	);
 }

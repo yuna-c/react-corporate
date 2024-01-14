@@ -1,11 +1,13 @@
-.layout {
+.Layout {
 	margin: 0 auto;
+	width: 100%;
 	min-height: 60vh;
 	position: relative;
-	transform-origin: left top;
-	transform: translateY(200px);
-	transition: opacity 1s, transform 1s;
+	top: 200px;
 	opacity: 0;
+	// transform-origin: left top;
+	// transform: translateY(200px);
+	transition: opacity 1s, top 1s;
 
 	h2 {
 		margin-bottom: 1rem;
@@ -43,9 +45,6 @@
 		bottom: 50px;
 		right: 50px;
 		z-index: 6;
-		opacity: 1;
-		transform: scale(1.4);
-		transition: opacity 0.5s, transform 0.5s, background-color 0.5s;
 
 		&.on {
 			opacity: 1;
@@ -58,7 +57,8 @@
 
 	&.on {
 		opacity: 1;
-		transform: translateY(0px);
+		// transform: translateY(0px);
+		top: 0;
 
 		h2 {
 			span {

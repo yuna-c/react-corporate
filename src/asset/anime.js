@@ -1,5 +1,5 @@
 import BezierEasing from 'bezier-easing';
-//npm i bezier-easing 가속도 애니메이션 추가
+//npm i bezier-easing
 
 export default class Anime {
 	#defOpt = { duration: 500, callback: null, easeType: 'linear' };
@@ -33,7 +33,9 @@ export default class Anime {
 			currentValue = parseFloat(getComputedStyle(this.selector)[key]);
 		}
 
-		key === 'scroll' ? (currentValue = this.selector.scrollTop) : (currentValue = parseFloat(getComputedStyle(this.selector)[key]));
+		key === 'scroll'
+			? (currentValue = this.selector.scrollTop ? this.selector.scrollTop : this.selector.scrollY)
+			: (currentValue = parseFloat(getComputedStyle(this.selector)[key]));
 
 		if (type === 'percent') {
 			const parentW = parseInt(getComputedStyle(this.selector.parentElement).width);
@@ -104,7 +106,7 @@ export default class Anime {
 		if (type === 'percent') this.selector.style[key] = result + '%';
 		else if (type === 'color') this.selector.style[key] = `rgb(${result[0]},${result[1]},${result[2]})`;
 		else if (key === 'opacity') this.selector.style[key] = result;
-		else if (key === 'scroll') this.selector.scrollTop = result;
+		else if (key === 'scroll') this.selector !== window ? (this.selector.scrollTop = result) : this.selector.scrollTo(0, result);
 		else this.selector.style[key] = result + 'px';
 	}
 

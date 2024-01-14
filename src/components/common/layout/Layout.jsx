@@ -24,17 +24,24 @@ export default function Layout({ children, title }) {
 		scrollTo(0);
 	}, []);
 
+	console.log(refBtnTop);
 	return (
 		/* S : Layout */
-		<main ref={refEl} className={`layout ${title}`}>
+		<main ref={refEl} className={`Layout ${title}`}>
 			<div className='content-layout'>
 				<div className='content-padding'>
 					<h2 ref={refTitle}>{title}</h2>
 					{children}
 				</div>
 			</div>
-			<button ref={refBtnTop} className='btnTop' onClick={() => console.log('2')}>
-				{/*  scrollTo(0) */}
+
+			<button
+				// ref={refBtnTop}
+				className='btnTop'
+				onClick={() => {
+					scrollTo(0);
+					// console.log('2');
+				}}>
 				Top
 			</button>
 		</main>
