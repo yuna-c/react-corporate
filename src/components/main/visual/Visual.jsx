@@ -1,32 +1,46 @@
+import 'swiper/css';
 import './Visual.scss';
+import { Autoplay } from 'swiper';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useRef, useState } from 'react';
 import { useSplitText } from '../../../hooks/useText';
+import { useYoutubeQuery } from '../../../hooks/useYoutubeQuery';
+// npm i swiper@8
+// swiper 8 docs
+// https://v8.swiperjs.com/get-started
 
 export default function Visual({ title }) {
 	// const customText = useCustomText('combined');
 	// const shortenText = useCustomText('shorten');
-	const [Vids, setVids] = useState([]);
 
 	const path = useRef(process.env.PUBLIC_URL);
 	const refFrame = useRef(null);
 	const refTitle = useRef(null);
 	const splitText = useSplitText();
+	const { isSuccess, data: Vids } = useYoutubeQuery();
 
-	const fetchYoutube = async () => {
-		const api_key = process.env.REACT_APP_YOUTUBE_API;
-		const pid = process.env.REACT_APP_YOUTUBE_LIST;
-
-		const num = 14;
-		const baseURL = `https://www.googleapis.com/youtube/v3/playlistItems?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
-		try {
-			const data = await fetch(baseURL);
-			const json = await data.json();
-			setVids(json.items);
-		} catch (err) {
-			console.error(err);
+	const swiperOpt = useRef({
+		modules: [Autoplay],
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		centeredSlides: true,
+		autoplay: {
+			delay: 1000,
+			disableOnInteraction: true
+		},
+		breakpoints: {
+			1000: {
+				sliderPerView: 2,
+				spaceBetween: 50
+			},
+			1400: {
+				sliderPerView: 3,
+				spaceBetween: 50
+			}
 		}
-	};
+	});
 
 	useEffect(() => {
 		splitText(refTitle.current, title, 0.7, 0.15);
@@ -34,10 +48,6 @@ export default function Visual({ title }) {
 			refFrame.current.classList.add('on');
 		}, 300);
 	}, [splitText, title]);
-
-	useEffect(() => {
-		fetchYoutube();
-	}, []);
 
 	return (
 		/* S : Visual */
@@ -61,9 +71,10 @@ export default function Visual({ title }) {
 			<div className='line-holizontal'></div>
 
 			<div className='videoBox'>
-				{Vids.message ? (
+				{/* {isSuccess && Vids.message ? (
 					<h1>{Vids.message}</h1>
 				) : (
+					isSuccess &&
 					Vids.map((vid, idx) => {
 						if (idx >= 6) return null;
 						return (
@@ -76,7 +87,26 @@ export default function Visual({ title }) {
 							</article>
 						);
 					})
-				)}
+				)} */}
+
+				<Swiper {...swiperOpt.current}>
+					{isSuccess &&
+						Vids.map((el, idx) => {
+							if (idx >= 5) return null;
+							return (
+								<SwiperSlide key={el.id}>
+									<div className='pic'>
+										<p>
+											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+										</p>
+										<p>
+											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+										</p>
+									</div>
+								</SwiperSlide>
+							);
+						})}
+				</Swiper>
 			</div>
 		</figure>
 		/* E : Visual */
