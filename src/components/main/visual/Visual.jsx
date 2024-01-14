@@ -1,5 +1,6 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper';
+import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { useSplitText } from '../../../hooks/useText';
@@ -16,6 +17,7 @@ export default function Visual({ title }) {
 	const [PrevIndex, setPrevIndex] = useState(0);
 	const [Index, setIndex] = useState(0);
 	const [NextIndex, setNextIndex] = useState(0);
+
 	// const customText = useCustomText('combined');
 	// const shortenText = useCustomText('shorten');
 

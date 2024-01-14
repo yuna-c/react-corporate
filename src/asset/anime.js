@@ -1,5 +1,5 @@
 import BezierEasing from 'bezier-easing';
-//npm i bezier-easing
+//npm i bezier-easing 가속도 애니메이션 추가
 
 export default class Anime {
 	#defOpt = { duration: 500, callback: null, easeType: 'linear' };
