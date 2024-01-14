@@ -6,7 +6,7 @@ import { useGlobalData } from '../../../hooks/useGlobalData';
 
 export default function Header({ children }) {
 	const path = useRef(process.env.PUBLIC_URL);
-	const { Toggle, setToggle, Dark, setDark } = useGlobalData();
+	const { Toggle, setToggle } = useGlobalData();
 
 	return (
 		/* S : Header */
@@ -57,11 +57,6 @@ export default function Header({ children }) {
 
 					<div className='side-layout'>
 						<div className='gnb-util'>
-							{/* <div className={`thema ${Dark ? 'dark' : 'light'}`} onClick={() => setDark(!Dark)}>
-								<div className='ball'>
-									<span>ball</span>
-								</div>
-							</div> */}
 							<DarkMode />
 						</div>
 
