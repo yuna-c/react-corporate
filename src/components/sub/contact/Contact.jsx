@@ -1,8 +1,8 @@
 import './Contact.scss';
 import emailjs from '@emailjs/browser';
 import Layout from '../../common/layout/Layout';
-import { useEffect, useRef, useState, useCallback } from 'react';
 import { useThrottle } from '../../../hooks/useThrottle';
+import { useEffect, useRef, useState, useCallback } from 'react';
 // npm install @emailjs/browser --save
 
 export default function Contact() {
