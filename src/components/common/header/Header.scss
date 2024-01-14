@@ -38,7 +38,7 @@
 			flex-wrap: wrap;
 			justify-content: flex-end;
 			align-items: center;
-			gap: 2rem;
+			gap: 1rem;
 
 			.gnb-layout {
 				ul {
@@ -66,13 +66,20 @@
 				align-items: center;
 				grid-column-gap: 15px;
 				transition: display 1s;
+				position: relative;
+
+				.gnb-color {
+					position: relative;
+					top: 2px;
+					right: -5px;
+				}
 
 				.gnb-util {
 					.thema {
 						width: 60px;
 						height: 26px;
 						position: relative;
-						top: 2px;
+						top: 1px;
 						border: 1px solid rgba(var(--baseColor-code), 1);
 						border-radius: 18px;
 						transform: scale(0.7);
@@ -206,6 +213,11 @@
 					.gnb-social {
 						display: none;
 					}
+					.gnb-color {
+						top: 0;
+						right: 0;
+					}
+
 					.gnb-util {
 						display: none;
 					}

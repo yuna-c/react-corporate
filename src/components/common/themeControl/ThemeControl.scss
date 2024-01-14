@@ -4,8 +4,6 @@
 	border-radius: 50%;
 	border: 0;
 	position: relative;
-	top: 2px;
-	right: -10px;
 	overflow: hidden;
 
 	input[type='color'] {
@@ -19,6 +17,7 @@
 		appearance: none;
 		background: transparent;
 		border: none;
+		cursor: pointer;
 	}
 	input[type='color']::-webkit-color-swatch {
 		border-radius: 50%;
@@ -35,12 +34,12 @@
 //mobile
 .mobile,
 .limit {
-	.ThemeControl {
-		top: 0;
-		right: 0;
-	}
 }
 
 //limit
 .limit {
 }
+
+// https://youtu.be/9Ds6dzhda0c
+// 출처: https://yebeen-study-note.tistory.com/30 [ღ:티스토리]
+// https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-color-swatch
