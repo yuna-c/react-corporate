@@ -32,7 +32,7 @@ export default function Visual({ title }) {
 		spaceBetween: 50,
 		centeredSlides: true,
 		loopedSlides: num.current,
-		autoplay: { delay: 2000, disableOnInteraction: false },
+		autoplay: { delay: 2000, disableOnInteraction: true },
 		breakpoints: { 1000: { slidesPerView: 2 }, 1400: { slidesPerView: 3 } },
 		onSwiper: swiper => (swipeRef.current = swiper),
 		onSlideChange: swiper => {
@@ -104,7 +104,7 @@ export default function Visual({ title }) {
 								<SwiperSlide key={el.id}>
 									<div className='pic'>
 										<p>
-											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
+											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />{' '}
 										</p>
 										<p>
 											<img src={el.snippet.thumbnails.standard.url} alt={el.snippet.title} />
