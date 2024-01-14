@@ -57,14 +57,12 @@ export default function Header({ children }) {
 					</div>
 
 					<div className='side-layout'>
-						<div className='gnb-util'>
-							<DarkMode />
-						</div>
-
-						<div className='line-vertical'></div>
-
 						<div className='gnb-color'>
 							<ThemeControl />
+						</div>
+
+						<div className='gnb-util'>
+							<DarkMode />
 						</div>
 
 						<div className='line-vertical'></div>
