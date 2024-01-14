@@ -1,11 +1,11 @@
-import 'swiper/css';
-import './Visual.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useRef, useState } from 'react';
 import { useSplitText } from '../../../hooks/useText';
 import { useYoutubeQuery } from '../../../hooks/useYoutubeQuery';
+import './Visual.scss';
+import 'swiper/css';
 // npm i swiper@8
 // swiper 8 docs
 // https://v8.swiperjs.com/get-started
