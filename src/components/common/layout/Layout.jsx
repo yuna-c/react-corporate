@@ -1,7 +1,7 @@
 import './Layout.scss';
-import { useEffect, useRef, useState } from 'react';
 import { useScroll } from '../../../hooks/useScroll';
 import { useSplitText } from '../../../hooks/useText';
+import { useEffect, useRef } from 'react';
 
 export default function Layout({ children, title }) {
 	const refTitle = useRef(null);
@@ -9,8 +9,9 @@ export default function Layout({ children, title }) {
 	const splitText = useSplitText();
 
 	const handleCustomScroll = scroll => {
-		scroll >= 100 ? refBtnTop.current.classList.add('on') : refBtnTop.current.classList.remove('on');
+		scroll >= 100 ? refBtnTop.current?.classList.add('on') : refBtnTop.current?.classList.remove('on');
 	};
+
 	const { scrollTo, refEl } = useScroll(handleCustomScroll, 0);
 
 	useEffect(() => {
@@ -18,13 +19,14 @@ export default function Layout({ children, title }) {
 		setTimeout(() => {
 			refEl.current?.classList.add('on');
 		}, 300);
-	}, [splitText, title, refEl]);
+		scrollTo(0);
+	}, [splitText, title, refEl, scrollTo]);
 
 	useEffect(() => {
 		scrollTo(0);
-	}, []);
+	}, [scrollTo]);
 
-	console.log(refBtnTop);
+	console.log(refEl, refBtnTop);
 	return (
 		/* S : Layout */
 		<main ref={refEl} className={`Layout ${title}`}>
@@ -36,11 +38,11 @@ export default function Layout({ children, title }) {
 			</div>
 
 			<button
-				// ref={refBtnTop}
+				ref={refBtnTop}
 				className='btnTop'
 				onClick={() => {
 					scrollTo(0);
-					// console.log('2');
+					// console.log(1);
 				}}>
 				Top
 			</button>

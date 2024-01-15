@@ -55,6 +55,7 @@ body {
 	font-family: var(--baseFont);
 	font-size: var(--baseSize);
 	color: var(--baseColor);
+	transition: color 1s, background-color 1s;
 }
 
 .wrapper {
