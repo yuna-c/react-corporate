@@ -4,10 +4,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 export function useScroll(customHandler, baseLine = -window.innerHeight / 2) {
 	const refEl = useRef(null);
 	const [Frame, setFrame] = useState(null);
+	console.log(Frame);
 
 	const scrollTo = useCallback(
 		targetPos => {
-			console.log(targetPos);
 			Frame && new Anime(Frame, { scroll: targetPos });
 		},
 		[Frame]
@@ -15,6 +15,8 @@ export function useScroll(customHandler, baseLine = -window.innerHeight / 2) {
 
 	const getCurrentScroll = useCallback(() => {
 		const scroll = Frame.scrollTop - baseLine;
+		console.log(scroll);
+
 		const modifiedScroll = scroll - refEl.current?.offsetTop;
 		return modifiedScroll;
 	}, [Frame, baseLine]);
