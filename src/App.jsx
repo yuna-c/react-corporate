@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './globalStyles/Reset.scss';
 import './globalStyles/Common.scss';
 import './globalStyles/Variables.scss';
@@ -22,6 +22,7 @@ import Community from './components/sub/community/Community';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import CookieModal from './components/common/cookieModal/CookieModal';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { useScroll } from './hooks/useScroll';
 
 export default function App() {
 	const { Toggle, Mode } = useGlobalData();

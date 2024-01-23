@@ -4,14 +4,32 @@ import DarkMode from '../darkMode/DarkMode';
 import { NavLink, Link } from 'react-router-dom';
 import ThemeControl from '../themeControl/ThemeControl';
 import { useGlobalData } from '../../../hooks/useGlobalData';
+import { useScroll } from '../../../hooks/useScroll';
 
 export default function Header({ children }) {
 	const path = useRef(process.env.PUBLIC_URL);
 	const { Toggle, setToggle } = useGlobalData();
+	const lineEl = useRef(null);
+
+	const handleCustomScroll = scroll => {
+		console.log(scroll);
+		if (scroll >= 0) {
+			lineEl.current.style.transform = ` translateX(${0}px)`;
+			lineEl.current.style.width = `100%`;
+			lineEl.current.style.opacity = 1;
+		}
+		if (scroll <= 400) {
+			lineEl.current.style.transform = `translateX(0px)`;
+			lineEl.current.style.width = `0`;
+			lineEl.current.style.opacity = 1 - scroll / 800;
+		}
+	};
+
+	const { refEl } = useScroll(handleCustomScroll);
 
 	return (
 		/* S : Header */
-		<header className='header myScroll'>
+		<header className='header myScroll' ref={refEl}>
 			<div className='header-layout'>
 				<h1 className='logo'>
 					<Link to='/'>
@@ -99,7 +117,8 @@ export default function Header({ children }) {
 				</div>
 			</div>
 
-			<div className='line-holizontal'></div>
+			{/* <div className='line-holizontal'></div> */}
+			<div className='line-holizontal' style={{ width: '0', borderColor: 'red', transition: '2s' }} ref={lineEl}></div>
 		</header>
 		/* E : Header */
 	);
